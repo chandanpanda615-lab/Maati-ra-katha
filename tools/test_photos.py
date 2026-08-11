@@ -98,6 +98,27 @@ def test_render_is_idempotent_on_the_real_files():
         assert t.read_bytes() == b, f"{t.name} changed when nothing in the manifest did"
 
 
+def test_captions_covers_every_published_photo_and_does_not_drift():
+    """Same contract as render: run twice, nothing changes. Plus the one thing that
+    would quietly lose a photograph — a published gallery row with no draft."""
+    target = photos.ROOT / "docs" / "CAPTIONS.md"
+
+    def captions():
+        r = subprocess.run([sys.executable, str(Path(__file__).parent / "photos.py"), "captions"],
+                           capture_output=True, cwd=photos.ROOT)
+        assert r.returncode == 0, r.stderr.decode(errors="replace")
+
+    captions()
+    before = target.read_bytes()
+    captions()
+    assert target.read_bytes() == before, "CAPTIONS.md changed when the manifest did not"
+
+    text = target.read_text(encoding="utf-8")
+    for row in photos.published():
+        if row.get("group", "").strip():
+            assert f"## {row['slug']} —" in text, f"no caption draft for {row['slug']}"
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

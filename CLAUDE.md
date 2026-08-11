@@ -1,8 +1,8 @@
-# Maati Katha — working notes for Claude
+# Maati Ra Katha — working notes for Claude
 
 ## What this is
 
-A static website for **Maati Katha**: a seven-day village life-exchange in **Sarangada,
+A static website for **Maati Ra Katha**: a seven-day village life-exchange in **Sarangada,
 Nuagaon Block, Kandhamal, Odisha** (20.227°N, 84.124°E). It is **not open**. Chandan is in
 Bangalore finishing CA Final; the village opens to visitors around 2028. Everything built
 now is groundwork — the site, the photograph archive, and the writing.
@@ -155,6 +155,11 @@ you add a page.
 Short sentences. Concrete nouns — chulha, paddy, jharana, borewell, laterite. Never
 "authentic", "immersive", "vibrant", "nestled", "hidden gem". Say what is in the frame.
 Full brand reference in **`docs/BRAND.md`**; do not restyle without reading it.
+Social — who else is in this space, what earns engagement, and what we post — is in
+**`docs/SOCIAL.md`** (measured 4 Aug 2026, $4.18 of Apify runs, re-runnable). The short
+version: **YouTube is the main channel, not Instagram** — 15–25 minutes, one named
+village, Odia title. `python tools/photos.py captions` turns the manifest into post
+drafts in `docs/CAPTIONS.md`; the `/post` skill drafts against the rules in §5.
 
 ## Before you commit
 

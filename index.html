@@ -3,23 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-<title>Maati Katha — The Weight of Belonging</title>
+<title>Maati Ra Katha — The Weight of Belonging</title>
 <meta name="description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#1F2A3A">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Maati Katha — The Weight of Belonging">
+<meta property="og:title" content="Maati Ra Katha — The Weight of Belonging">
 <meta property="og:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
 <meta property="og:url" content="https://maatirakatha.com/">
 <meta property="og:image" content="https://maatirakatha.com/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Maati Katha — The Weight of Belonging">
+<meta name="twitter:title" content="Maati Ra Katha — The Weight of Belonging">
 <meta name="twitter:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
 <meta name="twitter:image" content="https://maatirakatha.com/assets/hero.jpg">
 <link rel="canonical" href="https://maatirakatha.com/">
+<!-- Three established sites already answer to "Maati Katha": a Bengaluru heritage
+     publication (maatikatha.com), a touring Bengal doll-theatre project, and West
+     Bengal's matirkatha.in farming portal — the last is what Google's AI Overview
+     was describing for this domain. sameAs is what separates us from all three:
+     it ties the domain to accounts nobody else holds. Homepage only; Google reads
+     the site name from here. Nothing here implies the pilot is bookable — no
+     TouristAttraction, no LodgingBusiness, no offers. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://maatirakatha.com/#website",
+      "url": "https://maatirakatha.com/",
+      "name": "Maati Ra Katha",
+      "alternateName": ["Maati Katha", "Maatirakatha"],
+      "publisher": { "@id": "https://maatirakatha.com/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://maatirakatha.com/#org",
+      "name": "Maati Ra Katha",
+      "alternateName": ["Maati Katha"],
+      "url": "https://maatirakatha.com/",
+      "logo": "https://maatirakatha.com/assets/apple-touch-icon.png",
+      "description": "A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.",
+      "sameAs": [
+        "https://www.instagram.com/maati.ra.katha/",
+        "https://x.com/maatirakatha",
+        "https://www.youtube.com/@MaatiRaKatha"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sarangada, Nuagaon Block",
+        "addressRegion": "Kandhamal, Odisha",
+        "addressCountry": "IN"
+      }
+    }
+  ]
+}
+</script>
 <script>document.documentElement.className+=' js'</script>
 <link rel="stylesheet" href="assets/site.css">
 <!-- The hero is a CSS background (site.css .hero.has-photo), so the preload scanner
@@ -30,18 +73,19 @@
       media="not all and (max-aspect-ratio: 1/1) and (max-width: 820px)">
 <link rel="preload" as="image" href="assets/hero-portrait.jpg" fetchpriority="high"
       media="(max-aspect-ratio: 1/1) and (max-width: 820px)">
+</head>
 <body class="bg-hero">
 <div class="grain" aria-hidden="true"></div>
 <div class="progress-bar" aria-hidden="true"></div>
 
 <nav class="site-nav" aria-label="Primary navigation">
-  <a class="brand-mark" href="index.html" aria-label="Maati Katha home">
+  <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
     <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
       <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
       <path class="frame" d="M4.65 18.75h14.7"/>
     </svg>
-    <span>Maati Katha</span>
+    <span>Maati Ra Katha</span>
   </a>
   <!-- Shown only when JS is on (.js is set in <head>). Without JS the strip below
        stays exactly as it was — a scrolling row — so the nav never depends on this. -->
@@ -64,8 +108,8 @@
   <header class="hero has-photo">
     <div class="hero-inner">
       <p class="hero-kicker">Sarangada &middot; Kandhamal &middot; Odisha</p>
-      <h1 class="wordmark">Maati Katha</h1>
-      <p class="hero-lede">Seven days in a village in Kandhamal, Odisha. Not a tour — you live there. It isn't open yet.</p>
+      <h1 class="wordmark">Maati Ra Katha</h1>
+      <p class="hero-lede">A seven-day village life-exchange being prepared in Sarangada, Kandhamal. It is not open yet.</p>
     </div>
     <div class="hero-caption">
       <span class="cap-desktop">The place. (Monsoon, Sarangada) &middot; Photographed with permission</span>
@@ -217,7 +261,7 @@
   <!-- MANIFESTO -->
   <section class="manifesto">
     <p class="manifesto-line reveal">No fake experiences.<br>Just life as it is.</p>
-    <p class="manifesto-body reveal" style="--d:.2s">We don't host you in a village. The village absorbs you for seven days, and you leave heavier than you came.</p>
+    <p class="manifesto-body reveal" style="--d:.2s">This is being built slowly. Host, safety and consent details come before visitors.</p>
     <div class="reveal" style="--d:.36s">
       <p class="manifesto-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha</p>
       <p class="manifesto-coords display">20.227°N, 84.124°E</p>
@@ -229,13 +273,13 @@
 <footer class="site-foot">
   <div class="site-foot-inner">
     <div class="foot-col foot-brand">
-      <a class="brand-mark" href="index.html" aria-label="Maati Katha home">
+      <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
         <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
           <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
           <path class="frame" d="M4.65 18.75h14.7"/>
         </svg>
-        <span>Maati Katha</span>
+        <span>Maati Ra Katha</span>
       </a>
       <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha · 20.227°N, 84.124°E</p>
     </div>
@@ -252,7 +296,7 @@
       <a class="foot-mail" href="mailto:hello@maatirakatha.com">hello@maatirakatha.com</a>
       <!-- SOCIAL — same block on every page; change it here and in the other four. -->
       <nav class="foot-social" aria-label="Social links">
-        <a href="https://www.instagram.com/maati.ra.katha/" aria-label="Maati Katha on Instagram"
+        <a href="https://www.instagram.com/maati.ra.katha/" aria-label="Maati Ra Katha on Instagram"
            target="_blank" rel="me noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -260,13 +304,13 @@
             <circle cx="17.2" cy="6.8" r="1.1" class="dot"/>
           </svg>
         </a>
-        <a href="https://x.com/maatirakatha" aria-label="Maati Katha on X"
+        <a href="https://x.com/maatirakatha" aria-label="Maati Ra Katha on X"
            target="_blank" rel="me noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M4 3.5h4.2l5 6.6 5.4-6.6h2l-6.5 7.9 7 9.1h-4.2l-5.3-7-5.7 7h-2l6.8-8.3z" class="solid"/>
           </svg>
         </a>
-        <a href="https://www.youtube.com/@MaatiRaKatha" aria-label="Maati Katha on YouTube" target="_blank" rel="me noopener noreferrer">
+        <a href="https://www.youtube.com/@MaatiRaKatha" aria-label="Maati Ra Katha on YouTube" target="_blank" rel="me noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="2.5" y="5.5" width="19" height="13" rx="4"/>
             <path d="M10.2 9.4v5.2l4.6-2.6z" class="solid"/>

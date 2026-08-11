@@ -1,4 +1,4 @@
-# Maati Katha — brand notes
+# Maati Ra Katha — brand notes
 
 This documents what the site already does. It is a reference for keeping new pages
 consistent, not a rebrand. Everything here is defined once in the `:root` block of
@@ -6,7 +6,7 @@ consistent, not a rebrand. Everything here is defined once in the `:root` block 
 
 ## Name
 
-**Maati Katha.** *Maati* is soil, and also the place you are from. *Katha* is story.
+**Maati Ra Katha.** *Maati* is soil, and also the place you are from. *Katha* is story.
 The homepage explains this in the first note, so the name never needs a tagline
 next to it.
 
@@ -33,7 +33,7 @@ Rules:
 
 ## Lockup
 
-Mark + "Maati Katha" set in Cormorant Garamond 600, centred on the mark's optical
+Mark + "Maati Ra Katha" set in Cormorant Garamond 600, centred on the mark's optical
 middle, gap `0.7rem`. That is `.brand-mark` in `index.html`. Below 560px the wordmark
 is dropped and the mark stands alone.
 

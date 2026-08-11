@@ -1,0 +1,1640 @@
+ ▐▛███▜▌   Claude Code v2.1.221
+▝▜█████▛▘  Opus 5 · Claude Pro
+  ▘▘ ▝▝    ~\Projects\maati-ra-katha
+
+
+> can you  access to apify cli and  find the instagram actors and search for is 
+  there any id who is actively posting content on rural toyrism and related     
+  topic what I am doing now a days                                              
+
+  Made 2 scratchpad edits +40, ran 11 shell commands (ctrl+o to expand)
+
+● Run 1 done ($0.46, 177 posts, 143 accounts) — mostly homestay ads. Running a
+  second, sharper set closer to what you actually do.
+
+  Made 2 scratchpad edits +45, ran 4 shell commands (ctrl+o to expand)
+
+● Apify: yes, working
+
+  CLI is installed and logged in as fast_zone. Store search works: apify actors 
+  search instagram. The useful actors:
+
+  ┌─────────────────────────────────┬────────────────────────────────────────┐
+  │              Actor              │                  Use                   │
+  ├─────────────────────────────────┼────────────────────────────────────────┤
+  │ apify/instagram-hashtag-scraper │ find posts/accounts by hashtag or      │
+  │                                 │ keyword                                │
+  ├─────────────────────────────────┼────────────────────────────────────────┤
+  │ apify/instagram-profile-scraper │ follower count, bio, last post date    │
+  ├─────────────────────────────────┼────────────────────────────────────────┤
+  │ apify/instagram-post-scraper    │ pull one account's full posting        │
+  │                                 │ history                                │
+  ├─────────────────────────────────┼────────────────────────────────────────┤
+  │ apify/instagram-search-scraper  │ search places/accounts                 │
+  └─────────────────────────────────┴────────────────────────────────────────┘
+
+  I ran three jobs. Total spend ~$0.95 on your account.
+
+  What I found
+
+  16 hashtags (ruraltourism, villagetourism, ruralindia, odishatourism, 
+  homestayindia, villagelifeindia, farmstay, responsibletourism, kandhamal, 
+  ruralodisha, odishavillage, tribalodisha, villagestay, ruraltourismindia, 
+  communitybasedtourism, slowtravelindia) → 366 posts, 283 accounts. Then
+  profile-checked the 25 that looked closest to your work.
+
+  Genuinely active and close to what you do (last post = within days):
+
+  Account: @the_odishaindex
+  Followers: 40.6k
+  Last post: 3 Aug
+  What it is: Odisha news/culture aggregator. Biggest reach in this space. Runs
+  promotions — the one place a share actually travels
+  ────────────────────────────────────────
+  Account: @gramvikasodisha
+  Followers: 3.8k
+  Last post: 31 Jul
+  What it is: Gram Vikas NGO, rural Odisha water/sanitation. Closest to you in
+  seriousness, not in subject
+  ────────────────────────────────────────
+  Account: @baevuthevillage
+  Followers: 11.6k
+  Last post: 31 Jul
+  What it is: Village-stay resort, Kerala. The commercial version of your idea —
+
+  worth watching for what you don't want to become
+  ────────────────────────────────────────
+  Account: @captureboyz
+  Followers: 1.7k
+  Last post: 3 Aug
+  What it is: Mayurbhanj video creator, festivals and village culture. High
+  engagement (1000+ likes)
+  ────────────────────────────────────────
+  Account: @adivasisocialhub
+  Followers: 2.2k
+  Last post: 30 Jun
+  What it is: Ho & Santal tribal culture voice
+  ────────────────────────────────────────
+  Account: @fromod12
+  Followers: 93
+  Last post: 3 Aug
+  What it is: 219 posts of Odia village documentation. Small, but posts
+  constantly, in Odia
+  ────────────────────────────────────────
+  Account: @village_flux
+  Followers: 89
+  Last post: 26 Jul
+  What it is: "Life in motion, rooted in the village." Cinematic village clips,
+  Odisha
+  ────────────────────────────────────────
+  Account: @5sensestours
+  Followers: 267
+  Last post: 2 Aug
+  What it is: Cultural journeys India, posts on tribal Odisha responsibly
+  ────────────────────────────────────────
+  Account: @alternativetoursindia
+  Followers: 815
+  Last post: 16 Jul
+  What it is: Special-interest Odisha/Bhutan tours, 676 posts, Odisha phone
+  number
+  ────────────────────────────────────────
+  Account: @cllickaway
+  Followers: 69
+  Last post: 4 Aug
+  What it is: "Documenting Everyday Life." Same instinct as yours, tiny account
+  ────────────────────────────────────────
+  Account: @mitro.talab
+  Followers: 266
+  Last post: 31 Jul
+  What it is: Semiliguda, Koraput. Local, daily
+  ────────────────────────────────────────
+  Account: @rurallife_kanha
+  Followers: 75
+  Last post: 27 Jul
+  What it is: Rural life around Kanha — the MP equivalent of your project
+
+  Kandhamal specifically is near-empty: @su_bham__nk (14 followers) and one
+  Daringbadi coffee post. Nobody is documenting your district.
+
+  Honest read
+
+  Two clusters exist, and neither is you. One is homestay/resort marketing (most
+  of #homestayindia, #villagestay — ads, low engagement). The other is village 
+  nostalgia reels in Odia/Hindi/Telugu — decent likes, no continuity.
+
+  Nobody is doing a slow, honest, pre-opening record of one village. That is the
+  gap. It also means you have no ready-made audience to borrow —
+  @the_odishaindex and @captureboyz are the only two with reach worth engaging.
+
+  Skipped: pulling each account's full post history to measure real cadence, and
+  the #kandhamal / #daringbadi location scrape. Say so and I'll run either —
+  about $0.50 each.
+
+✻ Sautéed for 6m 40s
+
+> so as per the research there is a geniune gap ? and oppurtunity exist no body 
+  is exploring this path , but I want you to go a Lil deepar find the writting  
+  which attracts hte most omments and likes and similar things we can be        
+  geniunely helpful for us and please put all your finding inside this          
+  C:\Users\chandan.p\Projects\maati-ra-katha including he previous research     
+  also so we ahve a guide moving forward what to do what chages to make like    
+  that ! agree                                                                  
+
+● Agreed — the gap is real. Going deeper on what actually earns comments and
+  likes, then writing it all into the repo.
+
+  Made 5 scratchpad edits +172 -1, ran 7 shell commands (ctrl+o to expand)
+
+● Write(docs\INSTAGRAM.md)
+  ⎿  Wrote 215 lines to docs\INSTAGRAM.md
+       1 # Instagram — what is out there, what works, what we do
+       2 
+       3 Research run 4 August 2026 with the Apify CLI. Everything below 
+       4 Where a number is weak, it says so.
+       5 
+       6 Total cost of the research: **$2.19** on the Apify account `fast
+         _zone`.
+       8 ---
+       9 
+      10 ## 1. The finding, in one line
+     … +291 lines (ctrl+o to expand)
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+● Update(CLAUDE.md)
+  ⎿  Added 2 lines
+      155  Short sentences. Concrete nouns — chulha, paddy, jharana, bore
+           well, laterite. Never
+      156  "authentic", "immersive", "vibrant", "nestled", "hidden gem". 
+           Say what is in the frame.
+      157  Full brand reference in **`docs/BRAND.md`**; do not restyle wi
+           thout reading it.
+      158 +Instagram — who else is in this space, what captions earn comm
+          +ents, and what we post —                                      
+      159 +is in **`docs/INSTAGRAM.md`** (measured 4 Aug 2026, re-runnabl
+          +e with the Apify CLI).                                        
+      160  
+      161  ## Before you commit
+      162  
+
+  Recalled 1 memory, wrote 2 memories (ctrl+o to expand)
+
+● Written to docs/INSTAGRAM.md — both rounds of research in one file. Pointer
+  added in CLAUDE.md. Fourth Apify run cost $1.24; total for everything is
+  $2.19.
+
+  Yes, the gap is real
+
+  Nobody documents Kandhamal. @fromod12 (93 followers) is the only serious
+  account there — posts Karanjikana, Belaghar Block, Phulbani. Everything else
+  in the space is either homestay advertising or nostalgia reels.
+
+  The deeper finding on writing
+
+  I pulled 398 posts from 12 accounts with full engagement data. The clearest
+  single result:
+
+  The highest-comment post in the whole set — 125 comments — was a village stay 
+  reel where every comment said the same thing: "Location?" · "Details please" ·
+  "Location please".
+
+  People don't comment on beauty. They comment when they want to go and can't
+  work out how. That is your unfair advantage: Sarangada is real, shown, and not
+  open. The honest answer keeps them asking.
+
+  Measured, across all 398 posts:
+
+  ┌─────────────────────┬──────────┐
+  │                     │ comments │
+  ├─────────────────────┼──────────┤
+  │ Video               │ 2.9      │
+  ├─────────────────────┼──────────┤
+  │ Carousel            │ 2.1      │
+  ├─────────────────────┼──────────┤
+  │ Single image        │ 0.3      │
+  ├─────────────────────┼──────────┤
+  │ Odia script caption │ 5.2      │
+  ├─────────────────────┼──────────┤
+  │ English caption     │ 1.5      │
+  └─────────────────────┴──────────┘
+
+  Best caption length is 11–30 words. A question adds ~45%. Hashtags barely
+  matter.
+
+  What won: @fromod12 got 341 likes on 93 followers with a flat sentence —
+  "Karanjikana is a small, remote tribal village located in the Belaghar Block 
+  of Kandhamal district." No adjectives, real place named.
+
+  What died: "Escape. Unwind. Belong." — 2 likes. "Wishing everyone a happy Rath
+  Yatra" — 1 like. Being at the festival works; wishing people well does not.
+  Your docs/BRAND.md already bans this register; the data agrees with it.
+
+  The changes, short version
+
+  1. Name Sarangada, Nuagaon Block, Kandhamal in every caption. Never "a village
+  in Odisha".
+  2. ~20 words, one concrete noun, one question. The notes column in 
+  manifest.csv is already this — you wrote those as caption raw material. Use
+  them, don't write fresh.
+  3. Odia first, English second. Site stays English; captions should not.
+  4. Answer "where is this?" publicly, every time, including that it's closed
+  until ~2028.
+  5. Post albums, not single frames. Single image is the worst format measured.
+
+  Section 6 of the doc lists what the research does not prove — small sample,
+  hidden like counts on two accounts, one account inflating its own comments.
+  Worth reading before acting on any single number.
+
+✻ Sautéed for 6m 44s
+> what else we can do ?                                                         
+
+● Three groups. Cost and effort noted so you can pick.
+
+  More research (Apify, cheap)
+  - Hashtag reach check — which of our 16 tags actually deliver impressions vs.
+  which are dead. There's an Instagram Analytics Scraper for exactly this.
+  ~$0.30. Stops us guessing at tags.
+  - Who comments on @fromod12 and @captureboyz — scrape the commenters, see if
+  they're Odia diaspora, Bhubaneswar, or outside India. That tells us who the
+  audience for Kandhamal content actually is. ~$0.40.
+  - YouTube, not Instagram. You already have @MaatiRaKatha. Long-form village
+  documentation suits YouTube far better than reels, and the competition there
+  is probably thinner still. Nobody has checked. ~$0.50 to map it.
+
+  Repo work I can do now (free)
+  - tools/photos.py captions — a subcommand that turns the notes column into
+  ready-to-paste Instagram captions at ~20 words, place named, question at the
+  end. This is the actual bridge from the research to posting. Small addition,
+  ~30 lines.
+  - Fix posts/*.html — known gap in CLAUDE.md: no share tags, no nav, no
+  site.css. If you start posting and someone shares a journal post, it currently
+  unfurls as nothing. This matters the moment you go active.
+  - The --turmeric / --accent bug — ~20 rules, brand drift, already documented.
+
+  Only you can do
+  - Post three times a week for three months. Everything above is worth zero
+  without cadence. @fromod12 gets 341 likes on 93 followers because he posts
+  constantly.
+  - Talk to @fromod12. Same district, same instinct, no competition between you.
+
+  My pick: captions subcommand first (turns research into something you can act
+  on tomorrow), then fix the post share tags, then YouTube map. Say which and
+  I'll start.
+
+✻ Baked for 29s
+
+> do all the check I have 2.70 dollar left utilize the budget wisely be it      
+  youtube , instagram its your call  and tehn save this some how that claude    
+  can act on that                                                               
+
+  Searched for 1 pattern, read 1 file, ran 4 shell commands (ctrl+o to expand)
+
+● User answered Claude's questions:
+  ⎿  · The captions generator will turn each manifest row into a ready-to-post 
+     draft. The research says Odia-script captions get ~3.5× the comments of 
+     English. Which should it write? → English draft + Odia slot (Recommended)
+     · How should the findings be saved so Claude can act on them later? → Docs 
+     + captions file + /post skill (Recommended)
+
+● Updated plan
+  ⎿  /plan to preview
+
+● Plan written. Budget is allocated at $1.76 planned against your $2.70, with a
+  hard stop at $2.40 — my estimates ran over yesterday, so the reserve is
+  deliberate.
+
+  Verified before planning, not assumed: Instagram results cost $0.0026 each and
+  YouTube $0.004 each (read from each actor's live pricing), and published() in
+  tools/photos.py:252 already enforces the consent rule, so the captions
+  generator inherits it for free rather than re-implementing it.
+
+  One thing I'd flag: the generator will assemble place, tags and your notes
+  column, but it will not write the caption line itself. A python script
+  inventing prose about a village it has never seen is the same failure as a
+  stock photograph. Claude writes that line from your notes; you write the Odia.
+
+● User approved Claude's plan
+  ⎿  Plan saved to: ~\.claude\plans\zippy-leaping-thunder.md · /plan to edit
+     Finish the social research, then make it something Claude can act on
+
+     Context
+
+     Yesterday's research (docs/INSTAGRAM.md) found a real gap: nobody documents
+     Kandhamal, and
+     the thing that earns comments is a real place shown but not explained.
+     Three checks were left
+     open — which hashtags actually deliver, who the audience for this content
+     really is, and
+     whether YouTube is the better platform for a project built on long-form
+     village
+     documentation. Chandan has $2.70 of Apify credit left and wants all three
+     done.
+
+     The second half matters more than the research. Findings in prose rot. This
+     plan ends with a
+     generator that turns _incoming/manifest.csv into ready-to-post drafts, and
+     a /post skill
+     so the rules are applied automatically instead of remembered.
+
+     Out of scope, deliberately: fixing posts/*.html share tags and the
+     --turmeric/--accent
+     drift. Both are real, both are in CLAUDE.md as known gaps, neither is a
+     "check".
+
+     ---
+     Part 1 — The research ($2.70 cap, stop at $2.40)
+
+     Measured rates from yesterday's runs: Instagram results cost $0.0026 each,
+     YouTube video
+     results $0.004 each. All four runs use the CLI already authenticated as
+     fast_zone.
+
+     Spend check after every run — apify runs ls <actor> --limit 1 --desc --json
+     reports
+     usageTotalUsd. Keep a running total. If the total reaches $2.40, stop and 
+     report, even
+     with runs left. Yesterday's estimates ran slightly over; the $0.30 reserve
+     absorbs that.
+
+     ┌─────┬────────┬───────────────────────────────────┬───────────────┬──────┐
+     │  #  │  Run   │               Actor               │     Input     │ Est. │
+     ├─────┼────────┼───────────────────────────────────┼───────────────┼──────┤
+     │     │ YouTub │                                   │ 8 search      │ $0.6 │
+     │ 1   │ e map  │ streamers/youtube-scraper         │ queries × 20  │ 4    │
+     │     │        │                                   │ videos        │      │
+     ├─────┼────────┼───────────────────────────────────┼───────────────┼──────┤
+     │     │ YouTub │                                   │ top 3         │      │
+     │ 2   │ e chan │ streamers/youtube-scraper         │ channels from │ $0.3 │
+     │     │ nels   │                                   │  run 1, 25    │ 0    │
+     │     │        │                                   │ videos each   │      │
+     ├─────┼────────┼───────────────────────────────────┼───────────────┼──────┤
+     │     │ Hashta │ apify/instagram-hashtag-analytics │ the 16 tags   │ $0.2 │
+     │ 3   │ g      │ -scraper                          │ used so far   │ 0    │
+     │     │ reach  │                                   │               │      │
+     ├─────┼────────┼───────────────────────────────────┼───────────────┼──────┤
+     │     │        │                                   │ ~12 top Kandh │      │
+     │ 4   │ Audien │ apify/instagram-comment-scraper   │ amal/village  │ $0.6 │
+     │     │ ce     │                                   │ posts, 20     │ 2    │
+     │     │        │                                   │ comments each │      │
+     ├─────┼────────┼───────────────────────────────────┼───────────────┼──────┤
+     │     │        │                                   │ planned total │ $1.7 │
+     │     │        │                                   │               │ 6    │
+     └─────┴────────┴───────────────────────────────────┴───────────────┴──────┘
+
+     Run 2 depends on run 1's output, so those are sequential. Check each
+     actor's input schema
+     with apify actors info <actor> --input before writing the input file — do
+     not guess field
+     names.
+
+     Run 1 queries (Odia and English, because the audience is bilingual):
+     Kandhamal,
+     Daringbadi, Odisha village life, rural Odisha, Odia village vlog, tribal 
+     Odisha,
+     ଓଡ଼ିଶା ଗାଁ, Kandhamal tourism.
+
+     What each run has to answer — record the answer, not the raw data:
+     1. Does anyone document rural Odisha on YouTube, at what scale, and how
+     recently? Daringbadi
+     is already a known destination in Kandhamal, so there may be search demand
+     nobody serves.
+     2. What titles and video lengths win for the channels that exist?
+     3. Which of our 16 hashtags have reach worth using, and which are dead.
+     This becomes the
+     CORE_TAGS constant in Part 2 — it must not stay a guess.
+     4. Who comments on Kandhamal and village content — diaspora, Bhubaneswar,
+     or outside India.
+     This decides whether captions lead in Odia or English.
+
+     Raw datasets stay on Apify; keep the dataset IDs in the doc. Analysis
+     scripts go in the
+     scratchpad, not the repo.
+
+     ---
+     Part 2 — Make it actionable
+
+     a. docs/SOCIAL.md — one playbook
+
+     Rename docs/INSTAGRAM.md → docs/SOCIAL.md (it is new and uncommitted, so
+     nothing breaks),
+     keep its structure, and fold in the YouTube findings and the four answers
+     above. Same
+     discipline as the existing file: every claim carries its number, and
+     section 6 keeps saying
+     plainly what the research does not prove.
+
+     b. python tools/photos.py captions — the generator
+
+     New cmd_captions() in tools/photos.py, registered in the cmds dict at line
+     446.
+
+     - Reuse published() (line 252) — it already enforces the consent rule, so a
+     caption can
+     never be generated for a face that has not agreed.
+     - Skip rows with a blank group, exactly as cmd_render() does. Those are
+     page backdrops.
+     - Write the whole of docs/CAPTIONS.md each run. No GALLERY:START markers —
+     nothing in
+     that file is hand-written, so there is nothing to protect. Idempotent by
+     construction.
+
+     Per row it emits the deterministic parts only:
+
+     ## paddy-morning · village · Sarangada, Nuagaon Block · Jun 2025
+
+     EN:   Paddy at first light in Sarangada, Nuagaon Block.
+     Q:    ____
+     ODIA: ____
+
+     tags:  #Kandhamal #Sarangada #odishavillage #ruralodisha #paddy #harvest
+     notes: <the manifest notes column, verbatim — raw material for the line
+     above>
+
+     The script does not write the caption or the question. It assembles place,
+     site caption,
+     tag set and notes. Claude writes the ~20-word line and the question from
+     notes. Chandan
+     fills ODIA:. A python script inventing captions would violate the project's
+     first rule in
+     spirit — no invented detail.
+
+     Tags come from one module-level CORE_TAGS constant (set from research run
+     3) plus the row's
+     own tags column, deduplicated through the existing tidy_tags() (line 281).
+
+     Add one test to tools/test_photos.py: run captions twice, assert the file
+     is byte-identical
+     and that every published gallery row appears in it. Matches the existing
+     idempotency test.
+
+     c. .claude/skills/post/SKILL.md — the /post trigger
+
+     One small file. It does not restate the rules — it points at them, so there
+     is one source of
+     truth:
+
+     1. Read docs/SOCIAL.md §4 and §5, and docs/BRAND.md.
+     2. Take the next un-drafted entry in docs/CAPTIONS.md.
+     3. Draft the EN: line at 11–30 words, place named, one concrete noun, and
+     the Q: line as
+     a question only someone who has lived it can answer.
+     4. Check the draft against the banned register — "escape", "unwind",
+     "authentic",
+     "immersive", "hidden gem", "nestled" — and against the greeting-card and
+     stylised-unicode
+     failures the research recorded.
+     5. Leave ODIA: blank. Chandan writes that.
+
+     d. Pointers
+
+     Update the docs/INSTAGRAM.md line already added to CLAUDE.md (line ~158) to
+     name
+     docs/SOCIAL.md, docs/CAPTIONS.md and the captions command. Update the
+     apify-instagram-research memory with the new spend total and file names.
+
+     ---
+     Verification
+
+     python tools/photos.py captions          # writes docs/CAPTIONS.md
+     python tools/photos.py captions          # run twice
+     git diff --stat docs/CAPTIONS.md         # must be empty — that is the 
+     check
+     python tools/test_photos.py              # 7 tests now, incl. the consent 
+     guard
+     python tools/photos.py render && git diff --stat   # render must still be a
+     no-op
+     grep -rn 'life-with-love\|www\.maatirakatha' *.html   # must be empty
+
+     Then read three generated entries end to end and confirm each names a real
+     place and carries
+     its own notes. And confirm the Apify spend: sum usageTotalUsd across the
+     four runs, report
+     the actual figure against the $2.70.
+
+  Made 4 scratchpad edits +127, ran 8 shell commands (ctrl+o to expand)
+
+● YouTube is a different world — and one finding lands directly on your project.
+  Continuing with the Instagram checks.
+
+  Made 1 scratchpad edit +6, ran 3 shell commands (ctrl+o to expand)
+
+● Analytics run cost only $0.01 — running the full tag list rather than a
+  sample.
+
+  Made 4 scratchpad edits +130, ran 10 shell commands (ctrl+o to expand)
+● Comments are cheap on YouTube ($0.002 each) and that's where the real
+  conversation is. Spending the remainder there.
+
+  Made 2 scratchpad edits +57, ran 3 shell commands (ctrl+o to expand)
+
+● Research done — $1.99 of $2.70 spent. Stopping there; the picture is complete.
+  Now building the deliverables.
+
+  Read 2 files (ctrl+o to expand)
+
+● Update(tools\photos.py)
+  ⎿  Added 8 lines
+      58  MARK_START = "<!-- GALLERY:START"
+      59  MARK_END = "<!-- GALLERY:END -->"
+      60  
+      61 +# Hashtag reach, measured 4 Aug 2026 — docs/SOCIAL.md §3 has th
+         +e numbers. Tags under                                          
+      62 +# about 5k posts are dead ends (#ruralodisha has 1,270 posts, #
+         +ruraltourismindia 890);                                        
+      63 +# tags over about 5m are noise to vanish into. These sit in bet
+         +ween, and every one of                                         
+      64 +# them is true of where we actually are. #daringbadi is deliber
+         +ately absent: it is the                                        
+      65 +# tourist name in this district, it would pull traffic, and we 
+         +are not there.                                                 
+      66 +CORE_TAGS = ["sarangada", "kandhamal", "phulbani", "odishatouri
+         +sm",                                                           
+      67 +             "odisha", "adivasi", "ruraltourism", "villagetouri
+         +sm"]                                                           
+      68  
+      69 +                                                               
+      70  def scan():
+      71      """Every file under _incoming/, split into photos and video
+          s. Sorted, so the
+      72      index printed on a contact sheet is stable between runs."""
+
+● Update(tools\photos.py)
+  ⎿  Added 56 lines, removed 1 line
+      450      print("\nRun it again — the files should not change. That 
+           is the check.")
+      451  
+      452  
+      453 +def cmd_captions():                                           
+      454 +    """manifest.csv -> docs/CAPTIONS.md, one draft per publish
+          +ed gallery photograph.                                        
+      455 +                                                              
+      456 +    It fills in only what is already recorded: the place, the 
+          +date, the caption that is                                     
+      457 +    on the site, the notes, the tags. The caption line, the qu
+          +estion and the Odia are                                       
+      458 +    left blank on purpose. A script writing a sentence about a
+          + village it has never seen                                    
+      459 +    is the same failure as a stock photograph — rule 1 in CLAU
+          +DE.md. Claude drafts EN                                       
+      460 +    and Q from the notes (see /post); Chandan writes the Odia.
+          +"""                                                           
+      461 +    rows = [r for r in published() if r.get("group", "").strip
+          +()]                                                           
+      462 +    order = {g: i for i, (g, _, _) in enumerate(GROUPS)}      
+      463 +    rows.sort(key=lambda r: (order.get(r.get("group", "").stri
+          +p().lower(), len(order)),                                     
+      464 +                             r.get("slug", "")))              
+      465 +                                                              
+      466 +    out = ["# Captions — drafts",                             
+      467 +           "",                                                
+      468 +           "Generated by `python tools/photos.py captions` fro
+          +m `_incoming/manifest.csv`.",                                 
+      469 +           "Do not hand-edit: the next run overwrites it. Fix 
+          +the manifest, or copy a",                                     
+      470 +           "finished entry out of here and into the app you ar
+          +e posting from.",                                             
+      471 +           "",                                                
+      472 +           "Fill in `EN:`, `Q:` and `ODIA:`. `/post` drafts EN
+          + and Q against the rules in",                                 
+      473 +           "`docs/SOCIAL.md` §5. The Odia line is Chandan's — 
+          +nothing goes out in Odia that",                               
+      474 +           "he has not written.",                             
+      475 +           "",                                                
+      476 +           f"{len(rows)} photographs.",                       
+      477 +           ""]                                                
+      478 +                                                              
+      479 +    for r in rows:                                            
+      480 +        slug = r.get("slug", "").strip()                      
+      481 +        where = " · ".join(x for x in (r.get("place", "").stri
+          +p(),                                                          
+      482 +                                       r.get("when", "").strip
+          +()) if x)                                                     
+      483 +        tags = tidy_tags(",".join([",".join(CORE_TAGS), r.get(
+          +"tags", "")]))                                                
+      484 +        out += [                                              
+      485 +            f"## {slug} — {r.get('group', '').strip()}",      
+      486 +            "",                                               
+      487 +            f"- where: {where or '____  ← no place or date in 
+          +the manifest. Name it there first.'}",                        
+      488 +            f"- photo: `assets/photos/{slug}.jpg` · "         
+      489 +            f"https://maatirakatha.com/photographs.html#{slug}
+          +",                                                            
+      490 +            f"- on the site: {r.get('caption', '').strip() or 
+          +'—'}",                                                        
+      491 +            f"- tags: {' '.join('#' + t for t in tags.split(',
+          +') if t)}",                                                   
+      492 +            f"- notes: {r.get('notes', '').strip() or '—'}",  
+      493 +            "",                                               
+      494 +            "```",                                            
+      495 +            "EN:   ",                                         
+      496 +            "Q:    ",                                         
+      497 +            "ODIA: ",                                         
+      498 +            "```",                                            
+      499 +            "",                                               
+      500 +        ]                                                     
+      501 +                                                              
+      502 +    path = ROOT / "docs" / "CAPTIONS.md"                      
+      503 +    path.write_text("\n".join(out), encoding="utf-8")         
+      504 +    print(f"  CAPTIONS.md        {len(rows)} drafts")         
+      505 +    print("\nRun it again — the file should not change. That i
+          +s the check.")                                                
+      506 +                                                              
+      507 +                                                              
+      508  if __name__ == "__main__":
+      509      cmds = {"sheet": cmd_sheet, "manifest": cmd_manifest, "bui
+           ld": cmd_build,
+      455 -            "render": cmd_render}                             
+      510 +            "render": cmd_render, "captions": cmd_captions}   
+      511      if len(sys.argv) < 2 or sys.argv[1] not in cmds:
+      512          sys.exit(f"usage: python tools/photos.py [{'|'.join(cm
+           ds)}]")
+      513      SRC.mkdir(exist_ok=True)
+
+● Update(tools\photos.py)
+  ⎿  Added 1 line
+       7      python tools/photos.py manifest # write/refresh _incoming/m
+          anifest.csv
+       8      python tools/photos.py build    # web-sized, EXIF-stripped 
+          copies -> assets/photos/
+       9      python tools/photos.py render   # manifest -> the galleries
+           in the pages, and PHOTOS.md
+      10 +    python tools/photos.py captions # manifest -> docs/CAPTIONS
+         +.md, one post draft per photo                                  
+      11  
+      12  Originals never enter git. Only what build/ produces is committ
+          ed — plus manifest.csv,
+      13  which is the one file carrying every caption and consent record
+          .
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Update(tools\photos.py)
+  ⎿  Added 7 lines, removed 4 lines
+      479  
+      480      for r in rows:
+      481          slug = r.get("slug", "").strip()
+      482 -        where = " · ".join(x for x in (r.get("place", "").stri
+          -p(),                                                          
+      483 -                                       r.get("when", "").strip
+          -()) if x)                                                     
+      482 +        # Every caption has to name the place, so a missing on
+          +e is stated, not hidden                                       
+      483 +        # behind a tidy dash. Same for the date.              
+      484 +        missing = "____  ← not in the manifest. Fill it there 
+          +before posting."                                              
+      485          tags = tidy_tags(",".join([",".join(CORE_TAGS), r.get(
+           "tags", "")]))
+      486          out += [
+      487              f"## {slug} — {r.get('group', '').strip()}",
+      488              "",
+      488 -            f"- where: {where or '____  ← no place or date in 
+          -the manifest. Name it there first.'}",                        
+      489 +            f"- place: {r.get('place', '').strip() or missing}
+          +",                                                            
+      490 +            f"- when: {r.get('when', '').strip() or missing}",
+      491              f"- photo: `assets/photos/{slug}.jpg` · "
+      492              f"https://maatirakatha.com/photographs.html#{slug}
+           ",
+      493              f"- on the site: {r.get('caption', '').strip() or 
+           '—'}",
+      492 -            f"- tags: {' '.join('#' + t for t in tags.split(',
+          -') if t)}",                                                   
+      494 +            # A hashtag cannot hold a space: the manifest tag 
+          +"red earth" is #redearth.                                     
+      495 +            f"- tags: {' '.join('#' + t.replace(' ', '') for t
+          + in tags.split(',') if t)}",                                  
+      496              f"- notes: {r.get('notes', '').strip() or '—'}",
+      497              "",
+      498              "```",
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Update(tools\test_photos.py)
+  ⎿  Added 21 lines
+       98          assert t.read_bytes() == b, f"{t.name} changed when no
+           thing in the manifest did"
+       99  
+      100  
+      101 +def test_captions_covers_every_published_photo_and_does_not_dr
+          +ift():                                                        
+      102 +    """Same contract as render: run twice, nothing changes. Pl
+          +us the one thing that                                         
+      103 +    would quietly lose a photograph — a published gallery row 
+          +with no draft."""                                             
+      104 +    target = photos.ROOT / "docs" / "CAPTIONS.md"             
+      105 +                                                              
+      106 +    def captions():                                           
+      107 +        r = subprocess.run([sys.executable, str(Path(__file__)
+          +.parent / "photos.py"), "captions"],                          
+      108 +                           capture_output=True, cwd=photos.ROO
+          +T)                                                            
+      109 +        assert r.returncode == 0, r.stderr.decode(errors="repl
+          +ace")                                                         
+      110 +                                                              
+      111 +    captions()                                                
+      112 +    before = target.read_bytes()                              
+      113 +    captions()                                                
+      114 +    assert target.read_bytes() == before, "CAPTIONS.md changed
+          + when the manifest did not"                                   
+      115 +                                                              
+      116 +    text = target.read_text(encoding="utf-8")                 
+      117 +    for row in photos.published():                            
+      118 +        if row.get("group", "").strip():                      
+      119 +            assert f"## {row['slug']} —" in text, f"no caption
+          + draft for {row['slug']}"                                     
+      120 +                                                              
+      121 +                                                              
+      122  if __name__ == "__main__":
+      123      tests = [v for k, v in sorted(globals().items()) if k.star
+           tswith("test_")]
+      124      for t in tests:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Write(.claude\skills\post\SKILL.md)
+  ⎿  Wrote 58 lines to .claude\skills\post\SKILL.md
+       1 ---
+       3 description: Draft the next Instagram or YouTube post for Maati 
+         Ra Katha from the photograph archive, against the measured rules
+         n", "what should I post", "write the post for <slug>", or asks f
+         or a YouTube title or description.
+       5 
+       6 # Draft the next post
+       8 ## Before writing anything
+       9 
+         hem.
+     … +72 lines (ctrl+o to expand)
+
+● Caught a flaw in my own skill: it told Claude to write drafts back into a file
+  that gets regenerated. Fixing rather than shipping it.
+
+● Update(.claude\skills\post\SKILL.md)
+  ⎿  Added 3 lines, removed 2 lines
+      18  
+      19  ## Instagram
+      20  
+      21 -1. Take the next entry in `docs/CAPTIONS.md` whose `EN:` line i
+         -s still blank, unless                                          
+      22 -   Chandan named a slug.                                       
+      21 +1. Work on the slug Chandan named. If he did not name one, pick
+         + a photograph from                                             
+      22 +   `docs/CAPTIONS.md` that has a `place:` and rich `notes`, say
+         + why you picked it, and                                        
+      23 +   let him redirect you.                                       
+      24  2. Write `EN:` — **11 to 30 words.** Name the place. One concre
+          te noun from the frame
+      25     (chulha, jharana, laterite, paddy, borewell). Everything you
+           write must come from
+      26     that entry's `notes` and `on the site` lines. If the notes d
+          o not say it, it does
+
+● Update(.claude\skills\post\SKILL.md)
+  ⎿  Added 7 lines, removed 6 lines
+      50  
+      51  ## Always
+      52  
+      53 -Show the draft and stop. Do not post anything anywhere — there 
+         -is no posting tool here,                                       
+      54 -and nothing is scheduled without Chandan reading it first.     
+      53 +Show the draft in the reply and stop. Do not post anything anyw
+         +here — there is no                                             
+      54 +posting tool here, and nothing goes out without Chandan reading
+         + it first.                                                     
+      55  
+      56 -Once he approves a draft, write it back into that entry in `doc
+         -s/CAPTIONS.md` so the                                          
+      57 -next run of `/post` moves on to the next photograph. Remember t
+         -hat                                                            
+      58 -`python tools/photos.py captions` overwrites the file — approve
+         -d drafts belong in the                                         
+      59 -manifest's `notes`, or copied out, not left to be regenerated a
+         -way.                                                           
+      56 +`docs/CAPTIONS.md` is a workbench, not a ledger: `python tools/
+         +photos.py captions`                                            
+      57 +rewrites it from the manifest every run. Do not save approved d
+         +rafts into it, they                                            
+      58 +would be regenerated away. Chandan copies a finished caption st
+         +raight into Instagram.                                         
+      59 +If he ever wants posted/not-posted tracked, that belongs in a n
+         +ew manifest column —                                           
+      60 +the manifest is the source of truth for everything else already
+         +.                                                              
+
+● Now the playbook — merging both rounds of research into one document.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Write(docs\SOCIAL.md)
+  ⎿  Error writing file
+  ⎿  1 skill available
+  Read 1 file (ctrl+o to expand)
+
+● Write(docs\SOCIAL.md)
+  ⎿  Added 251 lines, removed 151 lines
+        1 -# Instagram — what is out there, what works, what we do       
+        1 +# Social — what is out there, what works, what we do          
+        2  
+        3 -Research run 4 August 2026 with the Apify CLI. Everything belo
+          -w is measured, not guessed.                                   
+        4 -Where a number is weak, it says so.                           
+        3 +Research run 4 August 2026 with the Apify CLI, in two rounds. 
+          +Everything below is measured,                                 
+        4 +not guessed. Where a number is weak, it says so. Section 6 say
+          +s plainly what none of this                                   
+        5 +proves.                                                       
+        6  
+        6 -Total cost of the research: **$2.19** on the Apify account `fa
+          -st_zone`.                                                     
+        7 +Total cost: **$4.18** on the Apify account `fast_zone` — $2.19
+          + for the Instagram round,                                     
+        8 +$1.99 for the YouTube and audience round.                     
+        9  
+       10 +`/post` reads §4 and §5 of this file every time it drafts a ca
+          +ption. Change a rule here and                                 
+       11 +the drafts change with it.                                    
+       12 +                                                              
+       13  ---
+       14  
+       10 -## 1. The finding, in one line                                
+       15 +## 1. The findings, in four lines                             
+       16  
+       12 -**Nobody is documenting Kandhamal.** Two clusters exist in thi
+          -s space and neither is us:                                    
+       13 -homestay advertising, and village nostalgia reels. A slow, hon
+          -est record of one village                                     
+       14 -kept before it opens to anyone — that is empty ground.        
+       17 +1. **Nobody documents Kandhamal.** Two clusters exist on Insta
+          +gram and neither is us:                                       
+       18 +   homestay advertising, and village nostalgia reels.         
+       19 +2. **We have been looking at the wrong platform.** On Instagra
+          +m this niche tops out around                                  
+       20 +   11,000 likes. On YouTube, "Odia village vlog" returns a **m
+          +edian of 319,220 views**. One                                 
+       21 +   Odia video about one named village pulled 360,202 views and
+          + 640 comments.                                                
+       22 +3. **Instagram comments here are ritual, not conversation** — 
+          +38% are emoji only, 3% ask a                                  
+       23 +   question. On YouTube 45–63% are real sentences and 48 of 30
+          +0 drew replies.                                               
+       24 +4. **The audience has already told us the risk.** The single m
+          +ost-upvoted comment we                                        
+       25 +   measured warns that videos like these attract moneyed outsi
+          +ders and wreck the village.                                   
+       26 +   That is not a hostile comment. It is the brief.            
+       27  
+       16 -That is opportunity and warning at once. Empty ground also mea
+          -ns no audience to borrow.                                     
+       17 -There are exactly two accounts in Odisha with reach worth enga
+          -ging.                                                         
+       18 -                                                              
+       28  ---
+       29  
+       30  ## 2. How the research was done
+       31  
+       23 -Four Apify runs. Re-runnable — the CLI is logged in already.  
+       32 +Ten Apify runs. All re-runnable — the CLI is logged in as `fas
+          +t_zone`.                                                      
+       33  
+       25 -| Run | Actor | Input | Got | Cost |                          
+       26 -|---|---|---|---|---|                                         
+       27 -| 1 | `apify/instagram-hashtag-scraper` | 8 broad tags, 30 pos
+          -ts each | 177 posts, 143 accounts | $0.46 |                   
+       28 -| 2 | `apify/instagram-hashtag-scraper` | 8 Odisha/rural tags,
+          - 30 each | 189 posts, 140 accounts | $0.43 |                  
+       29 -| 3 | `apify/instagram-profile-scraper` | 25 shortlisted usern
+          -ames | followers, bio, last post | $0.06 |                    
+       30 -| 4 | `apify/instagram-post-scraper` | 12 accounts × 40 posts 
+          -| 398 posts with engagement | $1.24 |                         
+       34 +| # | Actor | Input | Got | Cost | Dataset |                  
+       35 +|---|---|---|---|---|---|                                     
+       36 +| 1 | `apify/instagram-hashtag-scraper` | 8 broad tags × 30 | 
+          +177 posts, 143 accounts | $0.46 | `scYqC1NghKMm1MOWa` |       
+       37 +| 2 | `apify/instagram-hashtag-scraper` | 8 Odisha tags × 30 |
+          + 189 posts, 140 accounts | $0.43 | `d2Mgizr0GIGTsWOAY` |      
+       38 +| 3 | `apify/instagram-profile-scraper` | 25 usernames | follo
+          +wers, bios, last post | $0.06 | `PjykKpcigecCKcd3Q` |         
+       39 +| 4 | `apify/instagram-post-scraper` | 12 accounts × 40 | 398 
+          +posts with engagement | $1.24 | `nWLAxw1i7CcP64ZmL` |         
+       40 +| 5 | `streamers/youtube-scraper` | 8 search queries × 20 | 16
+          +0 videos | $0.64 | `iGGz5CEEYcYGycbk6` |                      
+       41 +| 6 | `streamers/youtube-scraper` | 3 channels × 25 | 75 video
+          +s | $0.30 | `C3TBMLKfe7QvKnpRd` |                             
+       42 +| 7–8 | `apify/instagram-hashtag-analytics-scraper` | 26 hasht
+          +ags | post volumes, related tags | $0.06 | `HuvIW6sdhFPPbwvry`
+          + |                                                            
+       43 +| 9 | `apify/instagram-comment-scraper` | 15 posts × 15 | 148 
+          +comments | $0.38 | `mqYVVr8gWVCOsTwSJ` |                      
+       44 +| 10 | `streamers/youtube-comments-scraper` | 4 videos × 75 | 
+          +300 comments | $0.60 | `1EfuALygG0GNTMsCa` |                  
+       45  
+       32 -Tags in run 1: `ruraltourism, villagetourism, ruralindia, odis
+          -hatourism, homestayindia,                                     
+       33 -villagelifeindia, farmstay, responsibletourism`.              
+       34 -Tags in run 2: `kandhamal, ruralodisha, odishavillage, tribalo
+          -disha, villagestay,                                           
+       35 -ruraltourismindia, communitybasedtourism, slowtravelindia`.   
+       46 +Instagram results cost **$0.0026 each**, YouTube videos **$0.0
+          +04**, YouTube comments                                        
+       47 +**$0.002**. Multiply before running anything; that is the whol
+          +e budgeting method.                                           
+       48  
+       37 -To repeat it:                                                 
+       38 -                                                              
+       49  ```bash
+       40 -apify actors search instagram                       # find act
+          -ors                                                           
+       41 -apify actors info apify/instagram-post-scraper --input   # see
+          - the input schema                                             
+       42 -apify actors call apify/instagram-post-scraper -f input.json -
+          --silent                                                       
+       43 -apify runs ls apify/instagram-post-scraper --limit 3 --desc --
+          -json   # get defaultDatasetId                                 
+       44 -apify datasets get-items <datasetId> --limit 1000 > posts.json
+       50 +apify actors search instagram                             # fi
+          +nd an actor                                                   
+       51 +apify actors info <actor> --input                         # re
+          +ad the schema, never guess fields                             
+       52 +apify actors call <actor> -f input.json --silent              
+       53 +apify runs ls <actor> --limit 1 --desc --json             # id
+          +, defaultDatasetId, usageTotalUsd                             
+       54 +apify datasets get-items <datasetId> --limit 1000 > out.json  
+       55  ```
+       56  
+       47 -Datasets from this round (they stay on Apify for a while, then
+          - expire):                                                     
+       48 -`scYqC1NghKMm1MOWa`, `d2Mgizr0GIGTsWOAY`, `PjykKpcigecCKcd3Q`,
+          - `nWLAxw1i7CcP64ZmL`.                                         
+       57 +Datasets expire on the free plan. The numbers in this file are
+          + the record; the JSON is not.                                 
+       58  
+       59  ---
+       60  
+       52 -## 3. Who is actually in this space                           
+       61 +## 3. Who is in this space                                    
+       62  
+       54 -283 accounts surfaced. These are the ones that matter, verifie
+          -d active by profile scrape.                                   
+       63 +### YouTube — where the audience actually is                  
+       64  
+       56 -### Worth engaging with                                       
+       65 +| Channel | Subs | Median views | What it is |                
+       66 +|---|---|---|---|                                             
+       67 +| `@CharigarhVlogs1614` | 183,000 | 36,344 | **The closest thi
+          +ng to a peer.** Tribal Odisha — weddings, rituals, haats. All 
+          +Odia titles, 18–31 minutes. Top video 1,973,037 views |       
+       68 +| `@Theodia_traveller` | 37,900 | 10,382 | Odia travel. Its bi
+          +ggest video by far is one named village. Also runs foreign gue
+          +sts through Odisha |                                          
+       69 +| `@DistrictPrisha` | 321,000 | — | Did the Kandhamal / Phulba
+          +ni / Daringbadi tour video: 444,580 views |                   
+       70 +| `@OdishaTourismOfficial` | 81,800 | — | State tourism. "Eco 
+          +Retreat Daringbadi", 972,142 views on a 30-second clip |      
+       71 +| `@talkintravel` | 113,000 | — | "I Stayed With The Tribals I
+          +n Their Village In A Jungle Of Odisha" — 821,779 views, **1,43
+          +6 comments** |                                                
+       72 +| `@RSOdiaVlogger` | 7,450 | 379 | What a small Odia travel ch
+          +annel actually looks like. A floor, not a model |             
+       73  
+       58 -| Account | Followers | Posts | Last post | What it is |      
+       59 -|---|---|---|---|---|                                         
+       60 -| `@the_odishaindex` | 40,598 | 5,764 | 3 Aug | Odisha news an
+          -d culture aggregator. **The only real reach in this space.** D
+          -oes paid promotion |                                          
+       61 -| `@baevuthevillage` | 11,635 | 875 | 31 Jul | Village-stay re
+          -sort, Karnataka. The commercial version of our idea. Study it 
+          -for what not to become |                                      
+       62 -| `@gramvikasodisha` | 3,816 | 604 | 31 Jul | Gram Vikas NGO —
+          - rural Odisha water and sanitation. Closest to us in seriousne
+          -ss, not in subject |                                          
+       63 -| `@adivasisocialhub` | 2,215 | 412 | 30 Jun | Ho and Santal t
+          -ribal culture |                                               
+       64 -| `@captureboyz` | 1,704 | 330 | 3 Aug | Mayurbhanj video crea
+          -tor. Festivals, culture. **Highest engagement of anyone here**
+          - |                                                            
+       74 +Daringbadi — inside Kandhamal — already carries real search de
+          +mand: 996,536 · 517,295 ·                                     
+       75 +271,545 · 258,872 views on plain tour videos. The district nam
+          +e itself is unserved:                                         
+       76 +"Kandhamal" returns a median of 1,741 views, "Kandhamal touris
+          +m" 1,836.                                                     
+       77  
+       66 -### The nearest peers — small, real, doing our thing          
+       78 +**71 of the 160 videos sampled were published in 2026.** This 
+          +is a live space, not an archive.                              
+       79  
+       68 -| Account | Followers | Last post | Note |                    
+       80 +### Instagram — small, and mostly advertising                 
+       81 +                                                              
+       82 +| Account | Followers | Last post | What it is |              
+       83  |---|---|---|---|
+       70 -| `@fromod12` | 93 | 3 Aug | **Kandhamal.** Posts Karanjikana,
+          - Belaghar Block, Phulbani. 219 posts. Our closest neighbour by
+          - geography and intent |                                       
+       71 -| `@village_flux` | 89 | 26 Jul | "Life in motion, rooted in t
+          -he village." Odisha. Cinematic stills |                       
+       72 -| `@cllickaway` | 69 | 4 Aug | "Documenting Everyday Life." Sa
+          -me instinct as ours |                                         
+       73 -| `@mitro.talab` | 266 | 31 Jul | Semiliguda, Koraput. Daily, 
+          -local |                                                       
+       74 -| `@rurallife_kanha` | 75 | 27 Jul | Baiga villages around Kan
+          -ha, MP. The nearest thing to a parallel project |             
+       75 -| `@luhurachati_official` | 89 | 27 Jul | A single village pos
+          -ting its own stories. Bargarh |                               
+       84 +| `@the_odishaindex` | 40,598 | 3 Aug | Odisha news and cultur
+          +e aggregator. The only real reach. Does paid promotion |      
+       85 +| `@baevuthevillage` | 11,635 | 31 Jul | Village-stay resort, 
+          +Karnataka. The commercial version of our idea |               
+       86 +| `@gramvikasodisha` | 3,816 | 31 Jul | Gram Vikas NGO, rural 
+          +Odisha. Closest in seriousness, not in subject |              
+       87 +| `@adivasisocialhub` | 2,215 | 30 Jun | Ho and Santal tribal 
+          +culture |                                                     
+       88 +| `@captureboyz` | 1,704 | 3 Aug | Mayurbhanj video creator. H
+          +ighest engagement of any Instagram account here |             
+       89  
+       77 -### Operators — tribal Odisha tourism, already selling        
+       90 +The nearest peers are tiny and real: **`@fromod12`** (93 follo
+          +wers, Kandhamal — posts                                       
+       91 +Karanjikana, Belaghar Block, Phulbani), `@village_flux` (89, O
+          +disha), `@cllickaway` (69,                                    
+       92 +"Documenting Everyday Life"), `@mitro.talab` (266, Koraput), `
+          +@rurallife_kanha` (75, Baiga                                  
+       93 +villages in MP — the nearest parallel project anywhere).      
+       94  
+       79 -`@alternativetoursindia` (815, Odisha phone number), `@5senses
+          -tours` (267),                                                 
+       80 -`@ride.koraput` (21), `@joyfultravelexperience`, `@cholan_tour
+          -s`, `@manasordipu` (3,998).                                   
+       95 +Operators already selling tribal Odisha: `@alternativetoursind
+          +ia` (815), `@5sensestours`                                    
+       96 +(267), `@manasordipu` (3,998). They post to almost no engageme
+          +nt. When the pilot opens they                                 
+       97 +matter; for building an audience they are not the model.      
+       98  
+       82 -Note for later: when the pilot opens, these are the people who
+          - will want to send guests.                                    
+       83 -Note for now: they post to almost no engagement. Selling is no
+          -t what works here.                                            
+       99 +**Kandhamal on Instagram is empty.** `@su_bham__nk` has 14 fol
+          +lowers and six posts.                                         
+      100 +`@fromod12` is the only serious account in the district.      
+      101  
+       85 -### Kandhamal specifically                                    
+      102 +---                                                           
+      103  
+       87 -Almost nothing. `@su_bham__nk` — 14 followers, six posts, a hi
+          -ll in Gudayagiri.                                             
+       88 -One Daringbadi coffee post from `@___mr____mallick___`. `@from
+          -od12` is the only serious one.                                
+      104 +## 4. What earns engagement                                   
+      105  
+       90 ----                                                           
+      106 +### 4a. Instagram — measured across 398 posts from 12 accounts
+      107  
+       92 -## 4. What writing actually earns comments and likes          
+      108 +Comments matter more than likes: likes are hidden on two of th
+          +e strongest accounts, and a                                   
+      109 +comment is worth more to reach.                               
+      110  
+       94 -Measured across 398 posts from twelve accounts. Comments matte
+          -r more than likes here —                                      
+       95 -likes are hidden on two of the strongest accounts, and a comme
+          -nt is worth far more to reach.                                
+      111 +| Cut | Mean comments |                                       
+      112 +|---|---|                                                     
+      113 +| **Video** | 2.9 |                                           
+      114 +| Carousel | 2.1 |                                            
+      115 +| **Single image** | **0.3** |                                
+      116 +| **Odia-script caption** | **5.2** |                         
+      117 +| Hindi / Devanagari | 0.8 |                                  
+      118 +| English | 1.5 |                                             
+      119  
+       97 -### The single clearest result                                
+      120 +Caption length: **11–30 words is the best bucket** (comment ra
+          +tio 2.92, against 0.91 for                                    
+      121 +1–10 words and 0.76 for 31–70). A question in the caption: 1.9
+          +4 against 1.33 without.                                       
+      122 +Hashtag count barely moves anything — 6–15 beats 1–5 slightly,
+          + and 1–5 is no better than                                    
+      123 +none.                                                         
+      124  
+       99 -The highest-comment post in the entire set — **125 comments** 
+          -— was a village-stay reel by                                  
+      100 -`@duosodyssey`. Every single comment was the same:            
+      125 +**What won.** `@fromod12`, on 93 followers, took **341 likes**
+          + with a flat sentence:                                        
+      126 +*"Karanjikana is a small, remote tribal village located in the
+          + Belaghar Block of Kandhamal                                  
+      127 +district."* No adjectives, a real place named. It took 232 lik
+          +es on *"Phulbani Ratha Yatra                                  
+      128 +1995 v/s Now"* — then and now, same frame. `@captureboyz` took
+          + **4,843 likes** on                                           
+      129 +*"ଆଉ ମାତ୍ର କିଛି ଦିନର ଅପେକ୍ଷା..."* — only a few days more to wait, befo
+          +re a festival, in Odia.                                       
+      130  
+      102 -> "Location?" · "Details please" · "Location and details pleas
+          -e" · "Location please"                                        
+      131 +**What failed.** Brochure voice — *"Escape. Unwind. Belong."* 
+          +and *"A slower kind of luxury,                                
+      132 +rooted in the simple joys of village life"* — 2 and 3 likes. G
+          +reeting cards — *"Wishing                                     
+      133 +everyone a very happy Rath Yatra"* — 1 like. Long essays with 
+          +no place in them. Stylised                                    
+      134 +unicode captions, which are also unreadable to a screen reader
+          +.                                                             
+      135  
+      104 -**The comment engine is a real place, shown but not explained.
+          -** People do not comment on                                   
+      105 -beauty. They comment when they want to *go* and cannot work ou
+          -t how.                                                        
+      136 +### 4b. YouTube — opposite rules, ten times the audience      
+      137  
+      107 -Second-highest driver, seen on `@captureboyz`: naming a local 
+          -deity or festival brings                                      
+      108 -identity comments — "Jay Badam", "ଜୟ ବଡାମ 🙏" — dozens of them.
+          - People comment to belong,                                    
+      109 -not to praise.                                                
+      138 +Duration, across 160 videos:                                  
+      139  
+      111 -### The numbers                                               
+      140 +| Length | Median views |                                     
+      141 +|---|---|                                                     
+      142 +| **30m+** | **161,134** |                                    
+      143 +| 15–30m | 116,742 |                                          
+      144 +| 5–15m | 18,002 |                                            
+      145 +| 1–5m | 2,448 |                                              
+      146 +| under 1m | 1,263 |                                          
+      147  
+      113 -| Cut | Result |                                              
+      148 +Normalised within the three channels studied, **15–25 minutes*
+          +* is the sweet spot (1.74×                                    
+      149 +that channel's median) and **under 5 minutes is 0.35×**. This 
+          +is the exact inverse of                                       
+      150 +Instagram. Short does not work here.                          
+      151 +                                                              
+      152 +Two results matter more than the averages:                    
+      153 +                                                              
+      154 +- **One named village beats any general theme.** `@Theodia_tra
+          +veller`'s single biggest video                                
+      155 +  — 34.7× its own median, 360,202 views, 640 comments, 8,100 l
+          +ikes — is                                                     
+      156 +  *"ଓଡ଼ିଶାର ସବୁଠୁ ସୁନ୍ଦର ଓ ସଫା ଗାଁ | Cleanest Village of Odisha Bobeijod
+          +a"*. Fifteen minutes,                                         
+      157 +  Odia title, one village, named. **That is our format, alread
+          +y proven, by someone else.**                                  
+      158 +- **Outsiders experiencing Odisha is a proven genre.** The sam
+          +e channel's next four best are                                
+      159 +  a Colombian (128,818), a South African trying muri for the f
+          +irst time (102,905), and a                                    
+      160 +  Russian guest (39,552 and 33,513) — 3× to 12× its median. Ta
+          +lkin Travel's                                                 
+      161 +  outsider-stays-with-tribals video took 821,779 views and 1,4
+          +36 comments. A life-exchange                                  
+      162 +  *is* this genre.                                            
+      163 +                                                              
+      164 +**Sensationalism loses.** `@CharigarhVlogs1614`'s worst videos
+          + are its most lurid — a                                       
+      165 +"man-eating village" (10,814 views) and a "cursed snake villag
+          +e" (9,177), both 0.3× its                                     
+      166 +median — while its ceremony and ritual videos run 3× to 54×. T
+          +he audience punishes the very                                 
+      167 +thing that would compromise us anyway.                        
+      168 +                                                              
+      169 +Title language: nothing conclusive. Odia-script titles scored 
+          +1.00 against 0.77 for                                         
+      170 +Latin-only, but that is 62 videos against 13 and confounded wi
+          +th channel. Not proven.                                       
+      171 +                                                              
+      172 +### 4c. Hashtags — measured post volumes, not guesses         
+      173 +                                                              
+      174 +Six of the sixteen tags used in round 1 are effectively dead: 
+      175 +                                                              
+      176 +| Tag | Posts |                                               
+      177  |---|---|
+      115 -| **Video** | mean 2.9 comments |                             
+      116 -| Carousel (Sidecar) | mean 2.1 |                             
+      117 -| **Single image** | mean 0.3 — nearly ten times worse |      
+      118 -| **Odia script caption** | mean 5.2 comments |               
+      119 -| Hindi/Devanagari | 0.8 |                                    
+      120 -| English/Latin | 1.5 |                                       
+      121 -| **Caption of 11–30 words** | best comment ratio of any lengt
+          -h, 2.92 |                                                     
+      122 -| 1–10 words | 0.91 |                                         
+      123 -| 31–70 words | 0.76 |                                        
+      124 -| 70+ words | 1.15 |                                          
+      125 -| **Question in the caption** | 1.94 vs 1.33 without |        
+      126 -| 1–5 hashtags | no better than none |                        
+      127 -| 6–15 hashtags | slightly better |                           
+      178 +| `#ruraltourismindia` | 890 |                                
+      179 +| `#kandhamaldiaries` | 1,030 |                               
+      180 +| `#ruralodisha` | 1,270 |                                    
+      181 +| `#villagestay` | 5,404 |                                    
+      182 +| `#villagelifeindia` | 7,550 |                               
+      183 +| `#tribalodisha`, `#kuidialect` | no data returned — treat as
+          + near-zero |                                                  
+      184  
+      129 -Read that as: **a video, an Odia caption of roughly twenty wor
+          -ds, with a question in it.**                                  
+      185 +Worth using — small enough to rank in, real enough to reach:  
+      186  
+      131 -### What the top posts had in common                          
+      187 +| Tag | Posts | | Tag | Posts |                               
+      188 +|---|---|---|---|---|                                         
+      189 +| `#homestayindia` | 16,150 | | `#kandhamal` | **49,770** |   
+      190 +| `#villagetourism` | 23,910 | | `#ruraltourism` | 165,120 |  
+      191 +| `#daringbadi` | 30,090 | | `#odiafood` | 540,500 |          
+      192 +| `#phulbani` | 30,180 | | `#adivasi` | 858,910 |             
+      193 +| `#odiablogger` | 43,770 | | `#odishatourism` | 1,100,000 |  
+      194  
+      133 -- `@fromod12`, 93 followers, got **341 likes** on: *"Karanjika
+          -na is a small, remote tribal                                  
+      134 -  village located in the Belaghar Block of Kandhamal district.
+          -"* A plain sentence naming a                                  
+      135 -  real place. No adjectives.                                  
+      136 -- `@fromod12` got **232 likes** on *"Phulbani Ratha Yatra 1995
+          - v/s Now"* — then and now,                                    
+      137 -  same frame.                                                 
+      138 -- `@captureboyz` got **4,843 likes** on *"ଆଉ ମାତ୍ର କିଛି ଦିନର ଅପେକ୍ଷା..
+          -."* — "only a few days                                        
+      139 -  more to wait." Anticipation before a festival, in Odia.     
+      140 -- `@gramvikasodisha` tops out on posts opening with a hard fac
+          -t:                                                            
+      141 -  *"For 518 habitations in Odisha and Jharkhand, natural sprin
+          -gs are the only source of water."*                            
+      195 +`#sarangada` exists with 5,514 posts. By volume that is a dead
+          + tag, and it is on our list                                   
+      196 +anyway — not for reach, but so anyone who ever searches the vi
+          +llage finds us. `#odisha`                                     
+      197 +(11.03m) and `#villagelife` (6.36m) are for company, not disco
+          +very.                                                         
+      198  
+      143 -### What failed                                               
+      199 +This list is the `CORE_TAGS` constant in `tools/photos.py`. `#
+          +daringbadi` is deliberately                                   
+      200 +left out of it: it would pull traffic, and we are not there.  
+      201  
+      145 -- **Homestay-brochure voice.** *"Escape. Unwind. Belong."* · *
+          -"A slower kind of luxury,                                     
+      146 -  rooted in the simple joys of village life."* — 2 and 3 likes
+          -. This is exactly the register                                
+      147 -  `docs/BRAND.md` already forbids, and the data agrees with th
+          -e brand rules.                                                
+      148 -- **Festival greeting cards.** *"Wishing everyone a very happy
+          - Rath Yatra"* — 1 like. Being                                 
+      149 -  *at* the festival works. Wishing people well does not.      
+      150 -- **Long essays with no place in them.** A 203-word post about
+          - Nobel physics on a travel                                    
+      151 -  account — 2 likes.                                          
+      152 -- **Stylised unicode captions** (`ˢᵒᵐᵉ ᵛⁱᵉʷˢ ᵇᵉᶜᵒᵐᵉ ʳᵒᵘᵗⁱⁿᵉ`).
+          - They look considered and                                     
+      153 -  they are unreadable to a screen reader. `@village_flux` uses
+          - them; its comment count is                                   
+      154 -  largely its own replies to itself.                          
+      202 +### 4d. Who is actually commenting — and what they are afraid 
+          +of                                                            
+      203  
+      204 +**Instagram, 148 comments across 15 posts in this niche:**    
+      205 +                                                              
+      206 +| | |                                                         
+      207 +|---|---|                                                     
+      208 +| emoji only | 38% |                                          
+      209 +| devotional call-and-response ("Jay Badam", "ଜୟ ଜଗନ୍ନାଥ") | 24%
+          + |                                                            
+      210 +| a real sentence | 20% |                                     
+      211 +| short praise, 1–3 words | 16% |                             
+      212 +| **asks where / how / how much** | **3%** |                  
+      213 +                                                              
+      214 +**This corrects the first round's reading.** The 125-comment f
+          +lood of "Location?" that looked                               
+      215 +like the engine was a Bengaluru weekend-getaway account with a
+          + bookable stay. Across the                                    
+      216 +Odisha village niche, almost nobody asks anything. Instagram h
+          +ere is applause, not                                          
+      217 +conversation. (One thing the first round overstated: author se
+          +lf-replies are only 4% of                                     
+      218 +comments, not enough to distort any account's numbers.)       
+      219 +                                                              
+      220 +**YouTube, 300 comments across 4 videos:** 45–63% are real sen
+          +tences, median six words, and                                 
+      221 +48 of 300 drew replies. On the outsider-stays-with-tribals vid
+          +eo, **13% ask where, how, or                                  
+      222 +how to book** — *"Where to do village stay booking please help
+          + us"* — the highest ask-rate of                               
+      223 +any content measured anywhere. And in Odia, on the wedding vid
+          +eo:                                                           
+      224 +*"ଭାଇ ଏ ଗ୍ରାମ ର ନାମ କଣ ଆଉ କଉ ଜିଲ୍ଲା ରେ ଅଛି"* — brother, what is this vi
+          +llage's name, and                                             
+      225 +which district.                                               
+      226 +                                                              
+      227 +Script: 77% Latin, 16% Odia. Odia-speakers largely type in Lat
+          +in letters. **Do not read the                                 
+      228 +"Odia script wins" result in §4a as "post only in Odia script"
+          + — write Odia, but expect to be                               
+      229 +answered in Latin.**                                          
+      230 +                                                              
+      231 +**The warning.** The most-upvoted comment in the entire sample
+          + — 85 votes, on the tribal                                    
+      232 +wedding video — is in Odia, and it bows to the simplicity of t
+          +he tradition while grieving the                               
+      233 +extreme poverty behind it. Another, plainer:                  
+      234 +                                                              
+      235 +> *"ଏମିତି ଭିଡିଓ ଦେଖିକି ପୁଞ୍ଜିପତି ଆକୃଷ୍ଟ ହେଉଛନ୍ତି ତା ପରେ ଏମାନଙ୍କ ଜୀବନ ନର୍କ । ସେମାନେ ପ୍ରକୃତି
+          + ସହିତ ଆରାମ ରେ ଅଛନ୍ତି"*                                             
+      236 +> — watching videos like this, moneyed people are drawn in, an
+          +d then these people's lives                                   
+      237 +> become hell. They are at peace with nature.                 
+      238 +                                                              
+      239 +That is this audience describing, precisely, the failure mode 
+          +of a village life-exchange. It                                
+      240 +belongs in §5 as a rule, not in a footnote.                   
+      241 +                                                              
+      242  ---
+      243  
+      158 -## 5. What we do — the changes                                
+      244 +## 5. What we do                                              
+      245  
+      160 -Ordered by how much they matter. Nothing here breaks the four 
+          -non-negotiable rules.                                         
+      246 +### The platform decision                                     
+      247  
+      162 -### Do now                                                    
+      248 +**YouTube is the main channel. Instagram is the notice board.*
+          +* One 15-minute video about                                   
+      249 +Sarangada has a measured ceiling ten to a hundred times higher
+          + than anything Instagram offers                               
+      250 +in this niche, and it is the only place where people talk back
+          +. Instagram gets the stills and                               
+      251 +points at the video.                                          
+      252  
+      164 -1. **Name the place in every caption.** Sarangada. Nuagaon Blo
+          -ck. Kandhamal. Not "a village                                 
+      165 -   in Odisha". `@fromod12` proves place names travel further t
+          -han the account behind them.                                  
+      166 -2. **Captions of about twenty words.** One concrete noun — chu
+          -lha, jharana, laterite, paddy.                                
+      167 -   Then a question that only someone who has lived it can answ
+          -er. This is already the                                       
+      168 -   `notes` column of `_incoming/manifest.csv` — the long descr
+          -iptions were written as raw                                   
+      169 -   material for exactly this. Use them; don't write fresh copy
+          -.                                                             
+      170 -3. **Odia first, English second.** The site stays English. The
+          - captions should not. The                                     
+      171 -   audience that comments in this space reads Odia.           
+      172 -4. **Answer "where is this?" in the comments, in public, every
+          - time.** And the true answer —                                
+      173 -   *this is Sarangada, and it is not open, the pilot is around
+          - 2028* — is the strongest thing                               
+      174 -   we have. It is honest, it is rule 3, and it keeps people as
+          -king. Do not move it to DMs.                                  
+      175 -5. **Carousels over single frames.** A single image is the wor
+          -st-performing format measured.                                
+      176 -   We have 40 photographs in seven albums, already grouped — p
+          -ost the album, not the photo.                                 
+      253 +### YouTube                                                   
+      254  
+      178 -### Do when there is video                                    
+      255 +1. **15 to 25 minutes.** Under five minutes measures at a thir
+          +d of the return. Do not cut the                               
+      256 +   project into reels.                                        
+      257 +2. **One named village per video.** Sarangada, Nuagaon Block, 
+          +Kandhamal. The best-performing                                
+      258 +   video in this entire study is one village, named, for fifte
+          +en minutes.                                                   
+      259 +3. **Odia title**, English in the second half of it for search
+          +.                                                             
+      260 +4. **Never the lurid frame.** Poverty, superstition and "untou
+          +ched tribe" framings measurably                               
+      261 +   lose, and they would break rule 1 anyway.                  
+      262 +5. **When the pilot opens, the outsider-guest format is proven
+          +** — a visitor's week in                                      
+      263 +   Sarangada, in their own words. Not before it opens, and nev
+          +er staged.                                                    
+      264  
+      180 -6. **Video beats stills roughly ten to one on comments.** Vide
+          -o originals exist locally and                                 
+      181 -   are gitignored. Nothing about posting real village video br
+          -eaks rule 1 — it is only a                                    
+      182 -   substitute that is forbidden, never the real thing.        
+      183 -7. **Anticipation before a festival, not greetings during it.*
+          -* "A few days more" outperforms                               
+      184 -   "happy festival" by three orders of magnitude in this data.
+          - Rath Yatra, Adivasi Mela, the                                
+      185 -   local parbas.                                              
+      265 +### Instagram                                                 
+      266  
+      187 -### Do not                                                    
+      267 +6. **Name the place in every caption.** Sarangada. Nuagaon Blo
+          +ck. Kandhamal. Never "a village                               
+      268 +   in Odisha".                                                
+      269 +7. **11–30 words, one concrete noun, one question.** The `note
+          +s` column of                                                  
+      270 +   `_incoming/manifest.csv` is the raw material — it was writt
+          +en for this. Run                                              
+      271 +   `python tools/photos.py captions` and draft from what is th
+          +ere, never from imagination.                                  
+      272 +8. **Odia first, English second.** The site stays English; cap
+          +tions should not. Expect replies                              
+      273 +   in Latin-script Odia.                                      
+      274 +9. **Carousels and video, not single frames.** A single image 
+          +is the worst format measured.                                 
+      275 +   Post the album, not the photo.                             
+      276 +10. **Anticipation before a festival, not greetings during it.
+          +** "A few days more" beat "happy                              
+      277 +    festival" by three orders of magnitude.                   
+      278 +11. **Answer "where is this?" in public, every time** — includ
+          +ing that it is Sarangada and it                               
+      279 +    is not open until around 2028. Rule 3 is also the best con
+          +tent we have.                                                 
+      280  
+      189 -8. No brochure verbs. No "escape", "unwind", "retreat", "hidde
+          -n gem". The data and                                          
+      190 -   `docs/BRAND.md` say the same thing for once.               
+      191 -9. No stylised unicode captions. Unreadable to screen readers.
+      192 -10. No greeting-card posts.                                   
+      281 +### Never                                                     
+      282  
+      283 +12. No brochure verbs: escape, unwind, retreat, discover, imme
+          +rse. No "authentic",                                          
+      284 +    "immersive", "vibrant", "nestled", "hidden gem" — `docs/BR
+          +AND.md` banned them and the data                              
+      285 +    agrees.                                                   
+      286 +13. No greeting cards. No stylised unicode captions.          
+      287 +14. **Nothing that invites the outcome that comment warned abo
+          +ut.** No "undiscovered", no                                   
+      288 +    "before it changes", no scarcity framing, no drone-over-po
+          +verty. The audience that would                                
+      289 +    love this project is watching for exactly that, and will s
+          +ay so.                                                        
+      290 +                                                              
+      291  ### Engage with, in this order
+      292  
+      196 -`@the_odishaindex` (reach), `@captureboyz` (engagement, Mayurb
+          -hanj), `@fromod12`                                            
+      197 -(Kandhamal, our nearest neighbour — worth a real relationship,
+          - not a follow),                                               
+      198 -`@gramvikasodisha`, `@rurallife_kanha` (parallel project, anot
+          -her state).                                                   
+      293 +`@CharigarhVlogs1614` and `@Theodia_traveller` on YouTube — bo
+          +th are doing our format well and                              
+      294 +neither is in Kandhamal. `@the_odishaindex` on Instagram for r
+          +each. **`@fromod12`** — same                                  
+      295 +district, same instinct, no competition between you; worth a r
+          +eal relationship rather than a                                
+      296 +follow. Then `@gramvikasodisha` and `@rurallife_kanha`.       
+      297  
+      298  ---
+      299  
+      202 -## 6. What this research does not prove                       
+      300 +## 6. What this does not prove                                
+      301  
+      204 -Say it plainly, because the sample is small.                  
+      205 -                                                              
+      206 -- 398 posts from 12 accounts. That is enough to see a directio
+          -n, not enough to be sure of                                   
+      207 -  any single number.                                          
+      208 -- Instagram hides like counts on `@captureboyz` (33 of 40 post
+          -s) and `@village_flux`                                        
+      209 -  (all 31). Like-based conclusions exclude them.              
+      210 -- `@village_flux` replies to its own posts, which inflates its
+          - comment count. The                                           
+      211 -  language and length findings hold without it; its own number
+          -s do not.                                                     
+      212 -- Hashtag scraping returns the first page only on the current 
+          -Apify plan. Rankings are of                                   
+      213 -  what was recent and visible, not of everything posted.      
+      214 -- Every account here is small. What works at 90 followers may 
+          -not be what works at 9,000.                                   
+      215 -  Re-run this when we have posted for six months and have our 
+          -own numbers to compare.                                       
+      302 +- 398 Instagram posts from 12 accounts, 235 YouTube videos, 44
+          +8 comments. Enough to see a                                   
+      303 +  direction, not enough to trust any single number.           
+      304 +- YouTube view counts are lifetime; Instagram engagement decay
+          +s in days. The two columns are                                
+      305 +  not directly comparable — the gap is real, the exact ratio i
+          +s not.                                                        
+      306 +- Instagram hides like counts on `@captureboyz` (33 of 40 post
+          +s) and `@village_flux` (all 31).                              
+      307 +  Like-based conclusions exclude them.                        
+      308 +- The Odia-title result on YouTube is confounded with channel.
+          + Not established.                                             
+      309 +- Hashtag volumes come from Instagram's own related-tag data. 
+          +`#odishavillage` reported zero                                
+      310 +  posts when we had already scraped posts from it, so treat an
+          +y single figure as indicative.                                
+      311 +- Comment sampling took the top 15 per Instagram post and 75 p
+          +er YouTube video, in the order                                
+      312 +  the platform returned them. Newest and top-voted comments ar
+          +e over-represented.                                           
+      313 +- Every account measured is small to mid-sized. What works at 
+          +93 followers may not be what                                  
+      314 +  works at 9,000. **Re-run this after six months of posting, w
+          +hen we have our own numbers to                                
+      315 +  compare against.**                                          
+
+● Now the pointers and final verification.
+
+● Update(CLAUDE.md)
+  ⎿  Added 5 lines, removed 2 lines
+      155  Short sentences. Concrete nouns — chulha, paddy, jharana, bore
+           well, laterite. Never
+      156  "authentic", "immersive", "vibrant", "nestled", "hidden gem". 
+           Say what is in the frame.
+      157  Full brand reference in **`docs/BRAND.md`**; do not restyle wi
+           thout reading it.
+      158 -Instagram — who else is in this space, what captions earn comm
+          -ents, and what we post —                                      
+      159 -is in **`docs/INSTAGRAM.md`** (measured 4 Aug 2026, re-runnabl
+          -e with the Apify CLI).                                        
+      158 +Social — who else is in this space, what earns engagement, and
+          + what we post — is in                                         
+      159 +**`docs/SOCIAL.md`** (measured 4 Aug 2026, $4.18 of Apify runs
+          +, re-runnable). The short                                     
+      160 +version: **YouTube is the main channel, not Instagram** — 15–2
+          +5 minutes, one named                                          
+      161 +village, Odia title. `python tools/photos.py captions` turns t
+          +he manifest into post                                         
+      162 +drafts in `docs/CAPTIONS.md`; the `/post` skill drafts against
+          + the rules in §5.                                             
+      163  
+      164  ## Before you commit
+      165  
+
+  Wrote 3 memories (ctrl+o to expand)
+
+● Running the full verification from the plan.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Done. $1.99 of your $2.70 spent — about $0.71 left.
+
+  The headline: you're on the wrong platform
+
+  Instagram in this niche tops out around 11,000 likes. On YouTube, the search
+  "Odia village vlog" returns a median of 319,220 views.
+
+  And the format that wins there is exactly yours. @Theodia_traveller's biggest
+  video — 34.7× his own median, 360,202 views, 640 comments — is "ଓଡ଼ିଶାର ସବୁଠୁ ସୁନ୍ଦର 
+  ଓ ସଫା ଗାଁ | Cleanest Village of Odisha Bobeijoda". Fifteen minutes, Odia title,
+  one village, named.
+
+  ┌──────────┬──────────────┐
+  │  Length  │ Median views │
+  ├──────────┼──────────────┤
+  │ 30m+     │ 161,134      │
+  ├──────────┼──────────────┤
+  │ 15–30m   │ 116,742      │
+  ├──────────┼──────────────┤
+  │ 5–15m    │ 18,002       │
+  ├──────────┼──────────────┤
+  │ under 1m │ 1,263        │
+  └──────────┴──────────────┘
+
+  The exact inverse of Instagram. Don't cut this project into reels.
+
+  Second: outsiders experiencing Odisha is a proven genre. Colombian guest 128k
+  views, South African trying muri 102k, Russian guest 39k. Talkin Travel's "I
+  stayed with the tribals in Odisha" — 821,779 views, 1,436 comments, and 13% of
+  comments ask how to book. A life-exchange is that genre. That's your 2028
+  content, already validated.
+
+  Third, and this one I'd read twice. The most-upvoted comment in the whole
+  448-comment sample, 85 votes, in Odia:
+
+  ▎ watching videos like this, moneyed people are drawn in, and then these 
+  ▎ people's lives become hell. They are at peace with nature.
+
+  Your audience has already named the failure mode of your project. I made it
+  rule 14.
+
+  One correction to yesterday. The "Location?" flood was a Bengaluru account
+  with a bookable stay. Across 148 comments in the actual Odisha village niche,
+  only 3% ask anything — 38% are emoji only. Instagram here is applause, not
+  conversation. That's why the platform call flipped.
+
+  Also measured: six of the sixteen hashtags you'd be using are dead.
+  #ruraltourismindia has 890 posts. #ruralodisha 1,270. #kandhamal has 49,770
+  and is the one worth owning.
+
+  What's in the repo
+
+  - docs/SOCIAL.md — both rounds, all ten runs, dataset IDs, and §6 stating what
+  none of it proves
+  - docs/CAPTIONS.md — 40 drafts generated from your manifest, via new python 
+  tools/photos.py captions
+  - .claude/skills/post/SKILL.md — type /post and it drafts against the rules
+  - Pointer in CLAUDE.md; 7 tests pass (added one for caption idempotency +
+  coverage)
+
+  The generator fills in place, date, tags and your notes, then leaves EN:, Q:
+  and ODIA: blank. It doesn't write the caption — a script inventing a sentence
+  about Sarangada is the same failure as a stock photograph. /post drafts EN and
+  Q from your notes; the Odia line stays yours, and I told the skill never to
+  fill it.
+
+  One thing to know: git diff shows changes in photographs.html and land.html,
+  but those are your pre-existing uncommitted edits (the "Maati Katha" → "Maati
+  Ra Katha" title fix and the favicon swap). Render is unchanged — the
+  idempotency test confirms it.
+
+✻ Crunched for 30m 42s

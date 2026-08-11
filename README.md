@@ -1,6 +1,6 @@
-# Maati Katha
+# Maati Ra Katha
 
-Research, visual material, and a static website prototype for **Maati Katha: The Weight of Belonging**.
+Research, visual material, and a static website prototype for **Maati Ra Katha: The Weight of Belonging**.
 
 The current website lives at:
 
