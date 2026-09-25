@@ -17,7 +17,7 @@ he has not written.
 - photo: `assets/photos/bikes-paddy.jpg` · https://maatirakatha.com/photographs.html#bikes-paddy
 - on the site: Bikes at the edge of the paddy
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #paddy #bikes #redearth #green
-- notes: Motorcycles and a bicycle parked on red mud at the edge of a bright green field, water tank behind.
+- notes: Motorcycles and a bicycle parked on red mud at the edge of a bright green field, water tank behind. Burnt-in camera stamp along the bottom edge cropped off (10.5%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -182,7 +182,7 @@ ODIA:
 - photo: `assets/photos/fire-night.jpg` · https://maatirakatha.com/photographs.html#fire-night
 - on the site: The fire after dark
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #night #fire #people #evening
-- notes: Four people standing around an open fire at night, one seated on a plastic stool on a phone. Firelight only. Use this one for a post about evenings — there is no wifi after seven and nobody minds.
+- notes: Four people standing around an open fire at night, one seated on a plastic stool on a phone. Firelight only. Use this one for a post about evenings — there is no wifi after seven and nobody minds. Burnt-in camera stamp along the bottom edge cropped off (10%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -332,7 +332,7 @@ ODIA:
 - photo: `assets/photos/women-earth.jpg` · https://maatirakatha.com/photographs.html#women-earth
 - on the site: Sorting the harvest on bare earth
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #work #women #harvest #redearth #people
-- notes: Four women sitting on bare packed earth outside a mud-walled house, sorting into baskets and sacks. Firewood stacked behind. Midday, hard shadows. The strongest photograph in the set for showing work rather than scenery.
+- notes: Four women sitting on bare packed earth outside a mud-walled house, sorting into baskets and sacks. Firewood stacked behind. Midday, hard shadows. The strongest photograph in the set for showing work rather than scenery. Burnt-in camera stamp along the bottom edge cropped off (8%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -497,7 +497,7 @@ ODIA:
 - photo: `assets/photos/school-outside.jpg` · https://maatirakatha.com/photographs.html#school-outside
 - on the site: Outside, in the winter light
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #children #school #uniform #winter
-- notes: Nine boys crowded into a pose on the paving outside. Winter light, hard shadows, a yellow hooded sweater on one of them. The student helpline number painted on the school wall is in the frame — leave it, it is part of what the building says. December 2025.
+- notes: Nine boys crowded into a pose on the paving outside. Winter light, hard shadows, a yellow hooded sweater on one of them. The student helpline number painted on the school wall is in the frame — leave it, it is part of what the building says. December 2025. Burnt-in camera stamp along the bottom edge cropped off (12.5%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -512,7 +512,7 @@ ODIA:
 - photo: `assets/photos/school-selfie.jpg` · https://maatirakatha.com/photographs.html#school-selfie
 - on the site: Everyone wants to be in it
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #children #school #play
-- notes: Every child within twenty metres arrived the moment the phone came out. Hands up, peace signs, one climbing on the bench. Not all of them are in uniform — some are younger siblings who came along. April 2026.
+- notes: Every child within twenty metres arrived the moment the phone came out. Hands up, peace signs, one climbing on the bench. Not all of them are in uniform — some are younger siblings who came along. April 2026. Burnt-in camera stamp along the bottom edge cropped off (13%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -542,7 +542,7 @@ ODIA:
 - photo: `assets/photos/pandal.jpg` · https://maatirakatha.com/photographs.html#pandal
 - on the site: Inside the festival pandal
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #festival #pandal #crowd #people #indoors
-- notes: Inside a decorated pandal — pink and yellow cloth, a latticed ceiling, balloons, a seated crowd facing a stage.
+- notes: Inside a decorated pandal — pink and yellow cloth, a latticed ceiling, balloons, a seated crowd facing a stage. Burnt-in camera stamp along the bottom edge cropped off (10.5%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -557,7 +557,7 @@ ODIA:
 - photo: `assets/photos/thali.jpg` · https://maatirakatha.com/photographs.html#thali
 - on the site: Rice, dal and greens
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #food #rice #steel #indoors
-- notes: Looking down at a meal. Rice, a dal, a dry green, a fish, a small bowl of something red. Steel and a patterned floor. Good for the "food is plain and there is a lot of it" post.
+- notes: Looking down at a meal. Rice, a dal, a dry green, a fish, a small bowl of something red. Steel and a patterned floor. Good for the "food is plain and there is a lot of it" post. Burnt-in camera stamp along the bottom edge cropped off (7%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -572,7 +572,7 @@ ODIA:
 - photo: `assets/photos/market-hills.jpg` · https://maatirakatha.com/photographs.html#market-hills
 - on the site: Market road, hills behind
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #market #road #hills #people
-- notes: The market strip — shopfronts, parked bikes, a hill rising directly behind the roofline. Two men in the foreground walking away.
+- notes: The market strip — shopfronts, parked bikes, a hill rising directly behind the roofline. Two men in the foreground walking away. Burnt-in camera stamp along the bottom edge cropped off (10.5%), measured 25 Sep 2026.
 
 ```
 EN:   
@@ -587,7 +587,7 @@ ODIA:
 - photo: `assets/photos/shop-night.jpg` · https://maatirakatha.com/photographs.html#shop-night
 - on the site: The shop stays open after dark
 - tags: #sarangada #kandhamal #phulbani #odishatourism #odisha #adivasi #ruraltourism #villagetourism #night #shop #market #people
-- notes: A green-painted shop lit by a single bulb, goods hung in rows, two people at the counter.
+- notes: A green-painted shop lit by a single bulb, goods hung in rows, two people at the counter. Burnt-in camera stamp along the bottom edge cropped off (10.5%), measured 25 Sep 2026.
 
 ```
 EN:   

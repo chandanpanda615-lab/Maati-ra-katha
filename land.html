@@ -2,273 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The land — Maati Ra Katha</title>
-<meta name="description" content="The soil, the hills and the monsoon of Sarangada, Kandhamal — notes and photographs.">
+<meta name="description" content="What the soil, the hills and the monsoon do in Sarangada, Kandhamal. Notes from the village: what maati means, a mixed village, old and new side by side, the first morning.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#1F2A3A">
+<meta name="theme-color" content="#161D28">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Maati Ra Katha">
 <meta property="og:title" content="The land — Maati Ra Katha">
-<meta property="og:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
+<meta property="og:description" content="What the soil, the hills and the monsoon do in Sarangada, Kandhamal. Notes from the village.">
 <meta property="og:url" content="https://maatirakatha.com/land.html">
 <meta property="og:image" content="https://maatirakatha.com/assets/land.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The land — Maati Ra Katha">
-<meta name="twitter:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
+<meta name="twitter:description" content="What the soil, the hills and the monsoon do in Sarangada, Kandhamal. Notes from the village.">
 <meta name="twitter:image" content="https://maatirakatha.com/assets/land.jpg">
 <link rel="canonical" href="https://maatirakatha.com/land.html">
 <script>document.documentElement.className+=' js'</script>
+<link rel="preload" href="assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<body class="bg-land">
-<div class="grain" aria-hidden="true"></div>
-<div class="progress-bar" aria-hidden="true"></div>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 
-<nav class="site-nav" aria-label="Primary navigation">
-  <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
+<!-- NAV:START — written by tools/pages.py sync. Change NAV there, not here. -->
+<nav class="site-nav" aria-label="Primary">
+  <a class="brand" href="index.html">
     <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
       <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
       <path class="frame" d="M4.65 18.75h14.7"/>
     </svg>
-    <span>Maati Ra Katha</span>
+    <span class="brand-name">Maati Ra Katha</span>
   </a>
-  <!-- Shown only when JS is on (.js is set in <head>). Without JS the strip below
-       stays exactly as it was — a scrolling row — so the nav never depends on this. -->
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
           aria-label="Open menu">
     <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
     <a href="land.html" aria-current="page">The land</a>
-    <a href="photographs.html">Moments</a>
+    <a href="photographs.html">Photographs</a>
     <a href="days.html">The days</a>
+    <a href="journal.html">Journal</a>
     <a href="visit.html">How to reach</a>
     <a class="nav-cta" href="visit.html#interest">Pilot</a>
   </div>
 </nav>
+<!-- NAV:END -->
 
-<main id="top">
+<main id="main">
 
-  <header class="page-head head-land">
-    <div class="page-head-inner">
-      <h1>The land</h1>
-      <p>Sarangada sits where it sits because of the soil. This is the writing. The photographs have their own page.</p>
+  <header class="page-head">
+    <img class="page-head-img" src="assets/land.jpg" alt="" width="1600" height="739" fetchpriority="high">
+    <div class="wrap page-head-inner">
+      <p class="label label--light">Notes from the village</p>
+      <h1 class="page-title">The land</h1>
+      <p class="page-lede">Sarangada sits where it sits because of the soil. This is the writing. The photographs have their own page.</p>
     </div>
   </header>
 
-  <!-- The photographs are not here. Every one of them lives once, on
-       photographs.html, and duplicating a selection onto this page put eight of
-       them on two pages at the same time. This page is the writing. -->
-  <section class="gallery-wrap" id="gallery">
-    <div class="gallery-header inner reveal">
-      <span class="eyebrow">moments and memories</span>
-      <h2 class="gallery-title">The photographs are next door</h2>
-      <p class="gallery-sub">In sets — the land, the village, work, the school, the market. Sarangada as it was on the day. Nothing staged, and no face published without the person agreeing to it first.</p>
-    </div>
-    <p class="gallery-more inner reveal">
-      <a class="btn primary" href="photographs.html">Moments and Memories &rarr;</a>
-    </p>
-  </section>
+  <!-- NOTES — open on the page, not folded into boxes: they are what this page is for.
+       To add one, copy an <article class="note"> and give it the next numeral. -->
+  <section class="section" id="notes" aria-label="Notes from the village">
+    <div class="wrap notes">
 
-  <!-- NOTES — click a box to open it. To add one, copy a <details> block. -->
-  <section class="notes" id="notes">
-    <span class="eyebrow reveal">notes from the village</span>
-    <div class="notes-grid">
-
-      <details class="note reveal" style="--d:.06s">
-        <summary>What maati means</summary>
-        <div class="note-body">
+      <article class="note reveal" id="maati">
+        <p class="note-n">I</p>
+        <h2 class="note-title">What maati means</h2>
+        <div class="prose">
           <p><em>Maati</em> means soil. It also means the place you are from.</p>
-          <p>The soil here is red, full of iron. That is why our turmeric comes out the colour it does. Under the red there is clay, and the clay holds monsoon water long enough for paddy to grow.</p>
+          <p>The soil here is red, full of iron. The same red ground runs under the turmeric fields in the villages around us. Under the red there is clay, and the clay holds monsoon water long enough for paddy to grow.</p>
           <p>The village sits exactly where it sits because of that soil. Three kilometres east and the floods would reach it.</p>
           <p><em>Katha</em> means story. The soil has one. You have to stay a while to hear it.</p>
         </div>
-      </details>
+      </article>
 
-      <details class="note reveal" style="--d:.12s">
-        <summary>A mixed village</summary>
-        <div class="note-body">
+      <article class="note reveal" style="--d:.08s" id="mixed">
+        <p class="note-n">II</p>
+        <h2 class="note-title">A mixed village</h2>
+        <div class="prose">
           <p>Sarangada is not a tribal village. It is not a non-tribal village either. It is mixed, the way most villages in Kandhamal actually are.</p>
           <p>Kondh families, who were here first. Brahmin and Kshatriya families who came later. Christian families whose churches stand near the older shrines.</p>
           <p>Kandhamal has had hard years. We will not pretend otherwise. But the well is the same well, the road is the same road, and the monsoon arrives on everyone at once.</p>
         </div>
-      </details>
+      </article>
 
-      <details class="note reveal" style="--d:.18s">
-        <summary>Old and new, side by side</summary>
-        <div class="note-body">
+      <article class="note reveal" id="old-and-new">
+        <p class="note-n">III</p>
+        <h2 class="note-title">Old and new, side by side</h2>
+        <div class="prose">
           <p>A mud wall holding up a metal roof. A wooden plough next to an electric borewell. Food cooked on a chulha, served on a leaf plate, photographed on a phone.</p>
           <p>That is not a contradiction. That is what a working village looks like in 2026. Both roofs kept the rain out. One cost less.</p>
           <p>So when you come, do not photograph only the old parts. The power lines over the field at sunset are in the picture too.</p>
         </div>
-      </details>
+      </article>
 
-      <details class="note reveal" style="--d:.24s">
-        <summary>The first morning</summary>
-        <div class="note-body">
+      <article class="note reveal" style="--d:.08s" id="first-morning">
+        <p class="note-n">IV</p>
+        <h2 class="note-title">The first morning</h2>
+        <div class="prose">
           <p>You will wake up before you are ready. Roosters, voices, someone lighting a chulha down the road.</p>
           <p>You will step outside before you have had tea. The air smells of woodsmoke and wet earth, and in the right season, drying turmeric.</p>
           <p>Then someone hands you tea. It is too sweet. You drink it anyway.</p>
         </div>
-      </details>
-
-      <!--
-      <details class="note soon reveal" style="--d:.30s">
-        <summary>A note, coming soon</summary>
-        <div class="note-body">
-          <p>I am writing more about this village. Writing about a place takes longer than writing about the idea of one. This space is held.</p>
-        </div>
-      </details>
-
-      <details class="note soon reveal" style="--d:.36s">
-        <summary>A note, coming soon</summary>
-        <div class="note-body">
-          <p>More will go here as the pilot takes shape.</p>
-        </div>
-      </details>
-      -->
+      </article>
 
     </div>
   </section>
 
-  <section class="page-jump">
-    <a class="btn primary" href="visit.html">How to reach &rarr;</a>
+  <!-- The land album lives once, on photographs.html. This is a door to it, not a copy:
+       the #land fragment opens that album and closes the others (gallery.js). The id
+       stays "gallery" so old links to land.html#gallery still land somewhere useful. -->
+  <section class="section" id="gallery" aria-label="The land, in photographs">
+    <div class="wrap">
+      <a class="album-door reveal" href="photographs.html#land">
+        <img src="assets/covers/terraces.jpg" alt="" width="1000" height="563" loading="lazy" decoding="async">
+        <span class="album-door-body">
+          <span class="label label--light">Next door</span>
+          <span class="album-door-title">The land, in photographs</span>
+          <span class="album-door-text">Soil, hills, water, and what the monsoon does to all three. Nothing staged, and no face published without the person agreeing to it first.</span>
+          <span class="door-go">Open the album &rarr;</span>
+        </span>
+      </a>
+    </div>
   </section>
+
+  <nav class="section" aria-label="Next page">
+    <div class="wrap page-jump">
+      <a class="link-arrow link-arrow--back" href="index.html">Home</a>
+      <a class="link-arrow" href="photographs.html">Photographs</a>
+    </div>
+  </nav>
 
 </main>
 
-<footer class="site-foot">
-  <div class="site-foot-inner">
-    <div class="foot-col foot-brand">
-      <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
+<!-- FOOT:START — written by tools/pages.py sync. Change FOOT there, not here. -->
+<footer class="site-foot on-night">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="index.html">
         <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
           <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
           <path class="frame" d="M4.65 18.75h14.7"/>
         </svg>
-        <span>Maati Ra Katha</span>
+        <span class="brand-name">Maati Ra Katha</span>
       </a>
-      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha · 20.227°N, 84.124°E</p>
+      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>
+      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is
+      published before it is verified on the ground and consented to.</p>
     </div>
-    <div class="foot-col foot-links">
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="land.html">The land</a>
-        <a href="photographs.html">Moments</a>
-        <a href="days.html">The days</a>
-        <a href="visit.html">How to reach</a>
-        <a href="visit.html#interest">Pilot</a>
-      </nav>
-      <p class="foot-disclaimer">Nothing on this site is bookable. No route, photograph, or host detail is published before it is verified on the ground and consented to.</p>
-      <a class="foot-mail" href="mailto:hello@maatirakatha.com">hello@maatirakatha.com</a>
-      <!-- SOCIAL — same block on every page; change it here and in the other four. -->
-      <nav class="foot-social" aria-label="Social links">
-        <a href="https://www.instagram.com/maati.ra.katha/" aria-label="Maati Ra Katha on Instagram"
-           target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.2" cy="6.8" r="1.1" class="dot"/>
-          </svg>
-        </a>
-        <a href="https://x.com/maatirakatha" aria-label="Maati Ra Katha on X"
-           target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4 3.5h4.2l5 6.6 5.4-6.6h2l-6.5 7.9 7 9.1h-4.2l-5.3-7-5.7 7h-2l6.8-8.3z" class="solid"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@MaatiRaKatha" aria-label="Maati Ra Katha on YouTube" target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <rect x="2.5" y="5.5" width="19" height="13" rx="4"/>
-            <path d="M10.2 9.4v5.2l4.6-2.6z" class="solid"/>
-          </svg>
-        </a>
-      </nav>
+    <nav class="foot-nav" aria-label="Footer">
+      <p class="foot-h">The site</p>
+      <a href="index.html">Home</a>
+      <a href="land.html" aria-current="page">The land</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="days.html">The days</a>
+      <a href="journal.html">Journal</a>
+      <a href="visit.html">How to reach</a>
+    </nav>
+    <div class="foot-follow">
+      <p class="foot-h">Follow the build</p>
+      <a class="follow" href="https://www.youtube.com/@MaatiRaKatha" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.4v5.2l4.6-2.6z" class="solid"/></svg>
+        <span>YouTube <small>@MaatiRaKatha</small></span>
+      </a>
+      <a class="follow" href="https://www.instagram.com/maati.ra.katha/" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" class="dot"/></svg>
+        <span>Instagram <small>@maati.ra.katha</small></span>
+      </a>
+      <a class="follow" href="https://x.com/maatirakatha" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3.5h4.2l5 6.6 5.4-6.6h2l-6.5 7.9 7 9.1h-4.2l-5.3-7-5.7 7h-2l6.8-8.3z" class="solid"/></svg>
+        <span>X <small>@maatirakatha</small></span>
+      </a>
+      <a class="follow" href="mailto:hello@maatirakatha.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.8 7 8.2 6.2L20.2 7"/></svg>
+        <span>Email <small>hello@maatirakatha.com</small></span>
+      </a>
     </div>
   </div>
+  <div class="wrap foot-base">
+    <p>&copy; 2026 Maati Ra Katha</p>
+    <p class="hand">the story the soil tells</p>
+  </div>
 </footer>
-
-<script>
-/* ============ Reveal + progress ============ */
-(function () {
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      // top < 0 catches anything already scrolled past. An anchor such as
-      // photographs.html#school-meal jumps straight down the page, and every
-      // element above it would otherwise never intersect and stay invisible.
-      if (e.isIntersecting || e.boundingClientRect.top < 0) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
-
-  // An anchor such as photographs.html#school-meal jumps the page before the
-  // observer's first entries land, so everything above the landing point never
-  // changes intersection state and would stay invisible for good. Sweep once,
-  // after the jump has settled.
-  addEventListener('load', function () {
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      if (el.getBoundingClientRect().top < innerHeight) {
-        el.classList.add('visible');
-        obs.unobserve(el);
-      }
-    });
-  });
-
-  var bar = document.querySelector('.progress-bar');
-  var nav = document.querySelector('.site-nav');
-  window.addEventListener('scroll', function () {
-    var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    bar.style.width = (pct * 100) + '%';
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
-
-  /* ---- Mobile menu ----
-     Six nav items need ~418px and a 390px phone gives the strip ~316px, so the
-     Pilot link sat off the edge. The button is invisible without .js, so this is
-     the only thing that can open the panel — there is no CSS-only state to
-     drift out of sync with aria-expanded. */
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.getElementById('nav-links');
-  if (toggle && links) {
-    var setMenu = function (open) {
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      links.classList.toggle('open', open);
-    };
-    toggle.addEventListener('click', function () {
-      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-    // A same-page anchor does not reload, so without this the panel stays open
-    // over the section it just jumped to.
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setMenu(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setMenu(false);
-        toggle.focus();
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (nav && !nav.contains(e.target)) setMenu(false);
-    });
-    // Rotating to landscape crosses the breakpoint; the panel would otherwise be
-    // left open as a stray block under a nav that is no longer collapsed.
-    addEventListener('resize', function () {
-      if (innerWidth > 768) setMenu(false);
-    }, { passive: true });
-  }
-})();
-</script>
-<script src="assets/gallery.js" defer></script>
+<!-- FOOT:END -->
 
 </body>
 </html>

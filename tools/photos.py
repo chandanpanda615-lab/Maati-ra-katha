@@ -6,7 +6,9 @@ Drop originals in _incoming/ (gitignored), then:
     python tools/photos.py sheet    # contact sheets, so the whole set can be looked at
     python tools/photos.py manifest # write/refresh _incoming/manifest.csv
     python tools/photos.py build    # web-sized, EXIF-stripped copies -> assets/photos/
-    python tools/photos.py render   # manifest -> the galleries in the pages, and PHOTOS.md
+                                    #   (+ the small sizes and album covers made from them)
+    python tools/photos.py sizes    # only the small sizes and covers — needs no originals
+    python tools/photos.py render   # manifest -> the archive, the homepage strip, PHOTOS.md
     python tools/photos.py captions # manifest -> docs/CAPTIONS.md, one post draft per photo
 
 Originals never enter git. Only what build/ produces is committed — plus manifest.csv,
@@ -36,6 +38,21 @@ WEB_QUALITY = 82
 # is a separate, smaller derivative for exactly that reason.
 COVER_MAX = 1000
 COVER_QUALITY = 68
+# Smaller copies of every gallery photograph, long edge in pixels, each in its own
+# folder: assets/photos/540/terraces.jpg. The homepage strip showed 1600px files in
+# 300px frames — 2.6 MB of a 3.6 MB page — because nothing smaller existed. With these
+# in the srcset the browser takes the smallest that is sharp at the size on screen,
+# and the full file is only fetched for a big screen, or the lightbox.
+# They are made from the built photo, not the original, so they can be rebuilt on any
+# clean checkout: `python tools/photos.py sizes`.
+SIZES = {540: 76, 1080: 78}             # long edge -> JPEG quality
+
+# The homepage filmstrip, in order. A teaser that links into the archive, not a
+# second gallery — every frame opens that photograph on photographs.html. Captions,
+# alt text and the "All N photographs" count come from the manifest, so none of it
+# can drift from the archive the way the hand-written count once did (42 against 40).
+STRIP = ["terraces", "paddy-plain", "cattle-hill", "tank-railing",
+         "bike-dusk", "market-hills", "thali", "fire-night"]
 
 FIELDS = ["file", "publish", "consent", "people", "by", "slug", "caption", "alt", "place",
           "when", "group", "span", "cover", "hero", "crop", "tags", "notes"]
@@ -58,6 +75,16 @@ GROUPS = [
 
 MARK_START = "<!-- GALLERY:START"
 MARK_END = "<!-- GALLERY:END -->"
+STRIP_START = "<!-- STRIP:START"
+STRIP_END = "<!-- STRIP:END -->"
+
+# `sizes` for a gallery cell, matching .gallery-grid in site.css: six columns inside a
+# 1180px column with a 48px gutter, one column under 700px. A plain or tall cell spans
+# two columns (~385px), a wide or feature cell four (~785px). Change the grid, change these.
+CELL_SIZES = {
+    "narrow": "(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1276px) 30vw, 385px",
+    "broad":  "(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1276px) 62vw, 785px",
+}
 
 # Hashtag reach, measured 4 Aug 2026 — docs/SOCIAL.md §3 has the numbers. Tags under
 # about 5k posts are dead ends (#ruralodisha has 1,270 posts, #ruraltourismindia 890);
@@ -165,7 +192,9 @@ def cmd_manifest():
     # and consent record in it. That has happened. Do not go back to the simple form.
     fd, tmp = tempfile.mkstemp(dir=str(MANIFEST.parent), suffix=".csv")
     with os.fdopen(fd, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
+        # "\n", not the csv module's default "\r\n": the committed file is LF, and a CRLF
+        # rewrite turns a one-cell edit into a 103-line diff that hides what changed.
+        w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     os.replace(tmp, MANIFEST)
@@ -255,7 +284,19 @@ def cmd_build():
         print(f"  {dst.name:28s} {im.width}x{im.height}  {kb:6.0f} KB")
     print(f"\n{len(rows)} photos -> {OUT.relative_to(ROOT)}, {total/1024:.1f} MB total")
     build_covers(rows)
+    build_sizes(rows)
     print("These are the only image files that belong in a commit.")
+
+
+def cmd_sizes():
+    """The small sizes and the album covers, made from what is already in assets/photos/.
+    Needs no originals — this is what to run on a checkout that has none."""
+    if not MANIFEST.exists():
+        sys.exit("No manifest yet. Run: python tools/photos.py manifest")
+    with MANIFEST.open(encoding="utf-8", newline="") as f:
+        rows = [r for r in csv.DictReader(f) if r["publish"].strip().lower() == "yes"]
+    build_covers(rows)
+    build_sizes(rows)
 
 
 def published():
@@ -341,15 +382,61 @@ def build_covers(rows):
     print(f"  {len(cover_picks(rows))} covers, {total:.0f} KB total ({made} rebuilt)")
 
 
+def build_sizes(rows):
+    """assets/photos/<edge>/<slug>.jpg for every gallery photograph and every edge in
+    SIZES that is smaller than the photograph itself. A size that would not be smaller
+    is skipped rather than written: re-encoding a 1080px file at 1080px only loses detail."""
+    made = total = 0
+    for r in rows:
+        if not r.get("group", "").strip():
+            continue                     # page backdrops live in assets/, not the gallery
+        src = OUT / f"{r['slug']}.jpg"
+        if not src.exists():
+            continue
+        with Image.open(src) as full:
+            long_edge = max(full.size)
+        for edge, quality in SIZES.items():
+            if edge >= long_edge:
+                continue
+            dst = OUT / str(edge) / f"{r['slug']}.jpg"
+            if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+                total += dst.stat().st_size / 1024
+                continue
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            im = Image.open(src)
+            im.thumbnail((edge, edge), Image.LANCZOS)
+            im.save(dst, quality=quality, optimize=True, progressive=True)
+            total += dst.stat().st_size / 1024
+            made += 1
+    print(f"  sizes  {', '.join(str(e) for e in SIZES)}px: {total / 1024:.1f} MB total ({made} rebuilt)")
+
+
+def srcset(slug, prefix="assets/photos/"):
+    """Every size of one photograph that exists, smallest first, then the full file:
+    'assets/photos/540/x.jpg 540w, assets/photos/1080/x.jpg 1080w, assets/photos/x.jpg 1600w'.
+    Widths are read off the files, so a portrait's 540px size is correctly '304w'."""
+    parts = []
+    for edge in sorted(SIZES):
+        p = OUT / str(edge) / f"{slug}.jpg"
+        if p.exists():
+            with Image.open(p) as im:
+                parts.append(f"{prefix}{edge}/{slug}.jpg {im.size[0]}w")
+    with Image.open(OUT / f"{slug}.jpg") as im:
+        parts.append(f"{prefix}{slug}.jpg {im.size[0]}w")
+    return ", ".join(parts)
+
+
 def figure(r, i):
     """One gallery cell. width/height come off the built file: without them a
     hundred lazy images collapse the page height and every scroll jumps."""
     src = OUT / f"{r['slug']}.jpg"
     if not src.exists():
         sys.exit(f"{src.relative_to(ROOT)} is missing. Run: python tools/photos.py build")
-    w, h = Image.open(src).size
+    with Image.open(src) as im:
+        w, h = im.size
     span = r.get("span", "").strip().lower()
     cls = "photo-card" + (f" photo-card--{span}" if span in {"feature", "tall", "wide"} else "")
+    sizes = CELL_SIZES["broad" if span in {"feature", "wide"} else "narrow"]
     cap = html.escape(r.get("caption", "").strip())
     alt = html.escape((r.get("alt") or r.get("caption", "")).strip())
     by = html.escape(r.get("by", "").strip())
@@ -357,15 +444,46 @@ def figure(r, i):
     delay = min(0.06 + i * 0.04, 0.34)      # stagger the first few, then stop waiting
     tags = html.escape(tidy_tags(r.get("tags", "")))
     # The id makes every photograph addressable — photographs.html#school-meal opens
-    # straight into it, so a written piece can point at one frame.
+    # straight into it, so a written piece can point at one frame. src stays the full
+    # file: that is what the lightbox shows, whichever size the cell happened to load.
+    # The photograph sits in a real <button>, which answers to Enter and Space and is
+    # announced as one. It used to be role="button" on the <figure>, which ARIA does not
+    # allow on that element, and which needed a keydown handler to pretend to be a button.
     return (
         f'      <figure id="{r["slug"]}" class="{cls} reveal" style="--d:{delay:.2f}s"\n'
-        f'              data-tags="{tags}"\n'
-        f'              tabindex="0" role="button" aria-label="Open photograph: {cap}">\n'
-        f'        <img src="assets/photos/{r["slug"]}.jpg" alt="{alt}"\n'
-        f'             width="{w}" height="{h}" loading="lazy" decoding="async">\n'
+        f'              data-tags="{tags}">\n'
+        f'        <button class="photo-open" type="button" aria-label="Open photograph: {cap}">\n'
+        f'          <img src="assets/photos/{r["slug"]}.jpg" alt="{alt}"\n'
+        f'               srcset="{srcset(r["slug"])}"\n'
+        f'               sizes="{sizes}"\n'
+        f'               width="{w}" height="{h}" loading="lazy" decoding="async">\n'
+        f'        </button>\n'
         f'        <figcaption>{cap}{credit}</figcaption>\n'
         f'      </figure>'
+    )
+
+
+def strip_frame(r):
+    """One frame of the homepage strip. Frames keep the photograph's own shape — a
+    panorama is wide, a portrait is narrow — so the strip never crops what is in them.
+    Their height is clamp(180px, 26vw, 300px) in site.css (.strip-frame img), so the
+    width on screen is that height times the aspect ratio; `sizes` says exactly that."""
+    slug = r["slug"]
+    with Image.open(OUT / f"{slug}.jpg") as im:
+        w, h = im.size
+    a = w / h
+    sizes = (f"(max-width: 692px) {round(180 * a)}px, "
+             f"(max-width: 1153px) {26 * a:.1f}vw, {round(300 * a)}px")
+    cap = html.escape(r.get("caption", "").strip())
+    alt = html.escape((r.get("alt") or r.get("caption", "")).strip())
+    return (
+        f'      <a class="strip-frame" href="photographs.html#{slug}">\n'
+        f'        <img src="assets/photos/{slug}.jpg" alt="{alt}"\n'
+        f'             srcset="{srcset(slug)}"\n'
+        f'             sizes="{sizes}"\n'
+        f'             width="{w}" height="{h}" loading="lazy" decoding="async">\n'
+        f'        <span class="strip-cap">{cap}</span>\n'
+        f'      </a>'
     )
 
 
@@ -393,11 +511,18 @@ def cmd_render():
         pick = picks[key]
         n = len(batch)
         album_index.append((key, title, n))
+        # The cover is an <img>, not an inline background-image: lazy covers below the
+        # fold wait until they are near, and the shade over the photograph is in CSS
+        # (.album-cover::after) where it can follow the theme. alt is empty on purpose —
+        # the title right beside it already says what the album is.
+        cover = COVERS / f"{pick['slug']}.jpg"
+        cw, ch = Image.open(cover).size if cover.exists() else (1000, 562)
+        lazy = "" if not sections else ' loading="lazy"'
         sections.append(
             f'  <details class="album" id="{key}">\n'
-            f'    <summary class="album-cover" style="background-image:'
-            f'linear-gradient(to top, rgba(8,10,18,.88), rgba(8,10,18,.25)),'
-            f'url(assets/covers/{pick["slug"]}.jpg)">\n'
+            f'    <summary class="album-cover">\n'
+            f'      <img class="album-img" src="assets/covers/{pick["slug"]}.jpg" alt=""\n'
+            f'           width="{cw}" height="{ch}"{lazy} decoding="async">\n'
             f'      <span class="album-eyebrow">{n} photograph{"s" if n != 1 else ""}</span>\n'
             f'      <span class="album-title">{title}</span>\n'
             f'      <span class="album-sub">{blurb}</span>\n'
@@ -427,6 +552,23 @@ def cmd_render():
     archive.write_text(replace_between(text, MARK_START, MARK_END, body, archive.name),
                        encoding="utf-8")
     print(f"  photographs.html   {len(rows)} photographs in {len(sections)} section(s)")
+
+    # --- index.html: the filmstrip, and the count at the end of it --------------------
+    by_slug = {r["slug"]: r for r in rows}
+    missing = [s for s in STRIP if s not in by_slug]
+    if missing:
+        sys.exit(f"STRIP names photographs that are not published: {', '.join(missing)}")
+    frames = "\n".join(strip_frame(by_slug[s]) for s in STRIP)
+    more = ('      <a class="strip-more" href="photographs.html">\n'
+            f'        <span class="strip-more-n">All {len(rows)} photographs</span>\n'
+            '        <span class="strip-more-go" aria-hidden="true">&rarr;</span>\n'
+            '      </a>')
+    home = ROOT / "index.html"
+    body = (f"{STRIP_START} — generated by tools/photos.py render from STRIP. Do not edit by hand. -->\n"
+            f"{frames}\n{more}\n      {STRIP_END}")
+    home.write_text(replace_between(home.read_text(encoding="utf-8"),
+                                    STRIP_START, STRIP_END, body, home.name), encoding="utf-8")
+    print(f"  index.html         {len(STRIP)} frames in the strip, count {len(rows)}")
 
     # land.html deliberately has no gallery. A curated copy of the archive put eight
     # photographs on two pages at once; one photograph belongs in exactly one place.
@@ -511,7 +653,7 @@ def cmd_captions():
 
 if __name__ == "__main__":
     cmds = {"sheet": cmd_sheet, "manifest": cmd_manifest, "build": cmd_build,
-            "render": cmd_render, "captions": cmd_captions}
+            "sizes": cmd_sizes, "render": cmd_render, "captions": cmd_captions}
     if len(sys.argv) < 2 or sys.argv[1] not in cmds:
         sys.exit(f"usage: python tools/photos.py [{'|'.join(cmds)}]")
     SRC.mkdir(exist_ok=True)

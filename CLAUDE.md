@@ -10,19 +10,18 @@ now is groundwork — the site, the photograph archive, and the writing.
 Published at **`https://maatirakatha.com/`** from `main` (GitHub Pages, `CNAME` holds the
 apex domain, Enforce HTTPS is on). The repo is `chandanpanda615-lab/Maati-ra-katha`.
 
-The old `chandanpanda615-lab.github.io/life-with-love/` URL is **dead — it 404s**. It
-survived in the `og:` tags of four pages long after the move and sent every social share
-to a missing page. If you see `life-with-love` anywhere, it is a bug:
+The old `chandanpanda615-lab.github.io/life-with-love/` URL is **dead — it 404s**. If you
+see `life-with-love` anywhere, it is a bug. `python tools/pages.py check` fails on it.
 
-```bash
-grep -rn 'life-with-love\|www\.maatirakatha' *.html   # must return nothing
-```
+The site was redesigned on 25 Sep 2026. The version before it is in
+`backups/site-2026-09-25/`, byte for byte, with a README on putting it back.
 
 ## The rules that are not negotiable
 
 1. **No fake experiences. Just life as it is.** No stock photography, no AI-generated or
    AI-upscaled images, no invented detail. This was already violated once and reverted
    (commit `7f5e922`). Real photograph or an empty frame — never a substitute.
+   `days.html` shows the rule: a day with no photograph of it gets an empty, drawn frame.
 2. **No face is published before the person agreed.** For children that means the school
    and the family. `tools/photos.py` enforces this: a row with `people=yes` and an empty
    `consent` cell stops the render.
@@ -31,39 +30,60 @@ grep -rn 'life-with-love\|www\.maatirakatha' *.html   # must return nothing
 4. **Originals never enter git.** `_incoming/` is ignored. Only `assets/photos/` (built,
    EXIF-stripped) and `_incoming/manifest.csv` are committed.
 
+And the one under all four: **only publish what is verified.** `maati-katha-research/
+truth-audit.md` sorts every claim into TRUE, LIKELY, NOT YET and DO NOT SAY. Two lines on
+the site broke it and were changed on 25 Sep: "our turmeric" (Sarangada does not grow it —
+see the GI file in `maati-katha-research/02-land/`) and "no wifi after seven" (NOT YET).
+
 ## Stack
 
-Plain HTML, one shared CSS file, small vanilla JS. **No framework, no build step, no npm.**
-This was decided deliberately over a Vite + React rewrite: the problem was never that HTML
-cannot hold 100 photos, it was that hand-editing 100 `<figure>` blocks is unbearable. A
-generator solved that. Do not reintroduce a bundler without a concrete reason.
+Plain HTML, one shared CSS file, two small vanilla JS files. **No framework, no build
+step, no npm.** This was decided deliberately over a Vite + React rewrite: the problem was
+never that HTML cannot hold 100 photos, it was that hand-editing 100 `<figure>` blocks is
+unbearable. Generators solved that — `tools/photos.py` for the photographs, `tools/pages.py`
+for the parts every page shares. Do not reintroduce a bundler without a concrete reason.
 
 | File | Holds |
 |---|---|
-| `index.html` | hero, status band, door cards, filmstrip, journal, manifesto |
-| `land.html` | the notes. **No photographs** — `#gallery` is a signpost section pointing next door, kept so old links still land |
+| `index.html` | hero, where this stands, four doors, the filmstrip, the journal, the manifesto |
+| `land.html` | the four notes, open, and a door into the land album. No gallery of its own |
 | `photographs.html` | "Moments and Memories" — seven album covers; click one to open that set |
-| `days.html` | the seven experiences. The "Seven held frames" block is **commented out** (`days.html:79-96`) and currently renders nothing |
-| `visit.html` | how to reach, writing, pilot enquiry |
-| `posts/*.html` | the journal. **Standalone pages** — no site nav, no footer, no `site.css`, forked palette. Known gap, needs a pass |
-| `assets/site.css` | everything visual, 52 KB. Fonts are real `.woff2` in `assets/fonts/` — never inline them back |
-| `assets/gallery.js` | lightbox, swipe, related-by-tag, `?tag=` filter |
+| `days.html` | the consent box and the seven days, each with a photograph or a held frame. The copy is a **draft** Chandan intends to rewrite in his own words |
+| `journal.html` | every post, newest first |
+| `posts/*.html` | the posts. On the site template like every other page |
+| `visit.html` | the route, what to know, and the pilot (`#interest`, where the nav's Pilot link lands) |
+| `404.html` | served by GitHub Pages for any missing path, so every path in it is root-absolute |
+| `assets/site.css` | everything visual. Tokens in `:root`; see `docs/BRAND.md` |
+| `assets/site.js` | reveal, progress line, nav state, phone menu, filmstrip arrows — every page |
+| `assets/gallery.js` | the archive: album bar, lightbox, swipe, `?tag=` filter |
+| `assets/fonts/` | real `.woff2`, latin subsets, OFL licences beside them. Never inline them |
 | `tools/photos.py` | the whole photo pipeline |
+| `tools/pages.py` | the nav and footer (`sync`), and the site check (`check`) |
+| `_config.yml` | what GitHub Pages must NOT publish. Without it, `CLAUDE.md` and `docs/` were live |
 
 ## The photo pipeline — how to add photographs
 
 Everything flows from **`_incoming/manifest.csv`**. It is the single source of truth for
-captions, alt text, consent, sections, tags and notes. Edit the CSV, never the HTML.
+captions, alt text, consent, crops, sections, tags and notes. Edit the CSV, never the HTML.
 
 ```bash
 # 1. drop originals into _incoming/<folder>/   (the folder name becomes the default group)
 python tools/photos.py sheet      # contact sheets to look through the set
 python tools/photos.py manifest   # add rows for new files, keep existing ones
 # 2. edit _incoming/manifest.csv — see the columns below
-python tools/photos.py build      # web-sized, EXIF/GPS-stripped -> assets/photos/
-python tools/photos.py render     # writes the galleries + PHOTOS.md
+python tools/photos.py build      # web-sized, EXIF/GPS-stripped -> assets/photos/, + sizes + covers
+python tools/photos.py render     # writes the archive, the homepage strip, PHOTOS.md
 python tools/test_photos.py       # self-check
 ```
+
+**Look at the bottom edge of every new photograph before publishing it.** Phones burn
+text into the pixels: a "Chandan" signature, "MR DEBENDRA" and a date, a "vivo V60 |
+ZEISS" bar with the time the photo was taken. EXIF stripping does not touch any of it.
+Nine photographs went live with one before 25 Sep. Put the trim in the `crop` column.
+
+`python tools/photos.py sizes` rebuilds the 540px and 1080px copies and the album covers
+from what is already in `assets/photos/` — it needs no originals, so it works on any
+checkout. The gallery, the strip and the journal cards use them through `srcset`.
 
 ### Manifest columns
 
@@ -72,88 +92,94 @@ python tools/test_photos.py       # self-check
 | `publish` | `yes` or nothing happens |
 | `people` | `yes` if anyone is identifiable |
 | `consent` | who agreed. Required when `people=yes` — render refuses otherwise |
+| `by` | who took it. Blank means Chandan. Shown as the credit under the caption |
 | `slug` | filename in `assets/photos/`, and the `#anchor` on the page |
 | `caption` | the line under the photo |
 | `alt` | screen-reader text; falls back to `caption` if blank |
 | `group` | section on `photographs.html`. **Blank = a page backdrop, not a gallery photo** |
 | `span` | `feature` (4×2), `tall` (2×2), `wide` (4×1), or blank for a plain cell |
 | `cover` | `yes` makes this photo the album's cover image. One per group |
-| `tags` | comma separated. Drives the tag bar, `?tag=`, and "also" in the lightbox |
-| `notes` | the long description — raw material for Instagram captions later |
+| `hero` | `yes` builds at 2400px instead of 1600px |
+| `crop` | `4%` trims that much off the bottom; `l,t,r,b` is a box in original pixels |
+| `tags` | comma separated. `photographs.html?tag=monsoon` shows only those, albums opened |
+| `notes` | the long description — raw material for captions and posts |
 
-Section order lives in `GROUPS` at the top of `tools/photos.py`.
+Section order lives in `GROUPS` at the top of `tools/photos.py`; the homepage filmstrip's
+eight photographs, in order, in `STRIP` beside it.
 
 ### Generated regions
 
-`photographs.html` and `PHOTOS.md` each contain:
+Nothing between these markers is written by hand. Everything outside them is.
 
-```
-<!-- GALLERY:START — generated by tools/photos.py render. Do not edit by hand. -->
-<!-- GALLERY:END -->
-```
+| Markers | In | Written by |
+|---|---|---|
+| `GALLERY:START` / `GALLERY:END` | `photographs.html`, `docs/PHOTOS.md` | `photos.py render` |
+| `STRIP:START` / `STRIP:END` | `index.html` (the filmstrip and its "All N photographs") | `photos.py render` |
+| `NAV:START` / `NAV:END`, `FOOT:START` / `FOOT:END` | every page | `pages.py sync` |
 
-Render replaces **only** what is between them. Everything else in those files is
-hand-written and safe. Render is idempotent — running it twice must produce no diff, and
-`tools/test_photos.py` checks that.
+The nav and the footer live once, in `NAV`, `FOOT_NAV` and `FOLLOW` at the top of
+`tools/pages.py`. Change them there and run `sync`; `check` fails on a page that drifted.
+Both generators are idempotent — a second run must change nothing, and the tests check it.
 
-### What the generator does NOT reach
+The one photo count that used to be typed by hand (the homepage's "All N photographs",
+which drifted to 42 while the archive held 40) is now generated.
 
-`index.html` is outside the markers entirely. Its filmstrip (8 photos, a deliberate teaser
-that links *into* the archive — not a second gallery) and its **"All N photographs" count**
-are hand-maintained. The count drifted to 42 while the real number was 40. After every
-`render`, check it:
+## The `<head>` convention — every page
 
-```bash
-grep -o 'All [0-9]* photographs' index.html   # must equal:
-ls assets/photos/*.jpg | wc -l
-```
+This has broken before. `python tools/pages.py check` now enforces all of it:
 
-## The `<head>` convention — all five pages
+- `og:url` and `canonical` → `https://maatirakatha.com/<page>.html`, **apex, no `www.`**
+  (`www` 301-redirects, and several unfurlers will not follow a redirect for `og:image`,
+  so the photograph silently vanishes from the share card)
+- `og:image` / `twitter:image` → `https://maatirakatha.com/assets/...jpg` — **same origin**,
+  and the file has to exist. Never `raw.githubusercontent.com`; it serves `text/plain`.
+- `<meta name="color-scheme" content="light dark">`, one `<h1>`, a closed `</head>`.
 
-This has broken once already. Every page needs, with the **apex** domain and **no `www.`**
-(`www` 301-redirects, and several link unfurlers will not follow a redirect for `og:image`,
-so the photograph silently vanishes from the share card):
+`robots.txt` and `sitemap.xml` sit in the repo root. Add a `<url>` to the sitemap when you
+add a page — `check` fails until you do.
 
-- `og:url` and `canonical` → `https://maatirakatha.com/<page>.html`
-- `og:image` / `twitter:image` → `https://maatirakatha.com/assets/<img>.jpg` — **same
-  origin**. Never `raw.githubusercontent.com`; it serves images as `text/plain` and card
-  scrapers reject them.
+## Adding a post
 
-`robots.txt` and `sitemap.xml` sit in the repo root. Add a `<url>` line to the sitemap when
-you add a page.
+1. Copy `posts/first-post.html` to `posts/<slug>.html` and write in it. Its `<head>` needs
+   its own title, description, canonical, `og:*`, date and BlogPosting data.
+2. Add a card to `journal.html` (newest first), and put the newest one or two on
+   `index.html`.
+3. Add the URL to `sitemap.xml`, run `python tools/pages.py sync` (it writes the nav and
+   footer into the new page), then `check`.
 
-## Current state (3 Aug 2026)
+## Current state (25 Sep 2026)
 
 - **40 photographs** across 7 albums (land 10, village 11, work 1, school 13, festival 1,
-  food 1, market 3), all on `photographs.html`. The archive lives there **once**;
-  duplicating it onto `land.html` put eight photos on two pages and cost that page its
-  gallery. `index.html`'s filmstrip is a curated teaser linking into the archive.
+  food 1, market 3), all on `photographs.html`. The archive lives there **once**; other
+  pages link into it (`photographs.html#slug` opens that photograph in the lightbox).
 - The 13 school photographs are live; consent is recorded per row in the manifest.
-- `days.html` copy is a **draft** Chandan intends to rewrite in his own words.
-- The archive is albums, not one long scroll: each group is a `<details>` closed by
-  default. The lightbox scopes to the album you opened, so swiping stays in that set.
-- Footer social links are **real** on all five pages: Instagram, X, YouTube
-  (`@MaatiRaKatha`). The footer block is byte-identical across the five — change it in one
-  place and copy it to the other four.
 - The mobile hero (`hero-portrait.jpg`) is a **different photograph** from the desktop one,
-  not a crop: women sorting harvest on red earth. That is why `.cap-desktop` and
-  `.cap-mobile` in `index.html` say different things. Change an image, change its caption.
+  not a crop: women-earth, sorting harvest on red earth. The `<picture>` in `index.html`
+  swaps it in on narrow portrait screens, and `.cap-desktop` / `.cap-mobile` swap at the
+  same point. Change an image, change its caption. Its manifest row now points at the
+  women-earth original; it used to point at the old road crop.
+- Footer follow links, YouTube first (docs/SOCIAL.md: it is the main channel): YouTube,
+  Instagram, X, email. `sameAs` in the homepage JSON-LD lists the same accounts.
+- Homepage weight on a laptop: 1.0 MB (was 3.6 MB). Accessibility: axe-core reports no
+  WCAG 2.1 AA violations on any page, in either theme, at 1280px or 390px.
 - Video originals, `Village_Image/` and `youtube_assets/` are local only, all gitignored.
 
-### Known gaps, not yet fixed
+### Open questions — not fixed, because only Chandan can answer them
 
-- `posts/*.html` are off-template: no nav, no footer, no share tags, and they fork the
-  palette in their own `:root` instead of loading `site.css`. Both set headings to Georgia,
-  so Cormorant never appears on either post.
-- `--font-accent` (Caveat) is used on ~8 headings; `docs/BRAND.md` says **eyebrows only**.
-- ~20 rules name `var(--turmeric)` directly where `--accent` is required, so they stay
-  turmeric on light-theme pages where the accent should be laterite.
-- `assets/photos/` is 8.4 MB. `tools/photos.py build` already resizes; the cap is generous.
+- `land.html` says "Three kilometres east and the floods would reach it." The Layer 1
+  research found no flood hazard at any sampled point in Sarangada, but nothing on record
+  covers three kilometres east. Verify, or cut the sentence.
+- `visit.html` states the languages (Kui in the older Kondh homes, Hindi among the
+  young) and the mixed-village description. truth-audit.md marks both LIKELY.
+- `days.html` is still the draft.
+- `maati-katha-research/` is published on purpose (with `noindex`). It holds a 47 MB video;
+  if that page is no longer shared, add the folder to `_config.yml`'s `exclude`.
 
 ## Voice
 
 Short sentences. Concrete nouns — chulha, paddy, jharana, borewell, laterite. Never
-"authentic", "immersive", "vibrant", "nestled", "hidden gem". Say what is in the frame.
+"authentic", "immersive", "vibrant", "nestled", "hidden gem", "undiscovered", "escape" —
+`tools/pages.py check` fails on them. Say what is in the frame.
 Full brand reference in **`docs/BRAND.md`**; do not restyle without reading it.
 Social — who else is in this space, what earns engagement, and what we post — is in
 **`docs/SOCIAL.md`** (measured 4 Aug 2026, $4.18 of Apify runs, re-runnable). The short
@@ -164,7 +190,8 @@ drafts in `docs/CAPTIONS.md`; the `/post` skill drafts against the rules in §5.
 ## Before you commit
 
 ```bash
-python tools/photos.py render && python tools/test_photos.py   # 6 tests, incl. consent guard
-git diff --stat                                                # render must be a no-op
-grep -rn 'life-with-love\|www\.maatirakatha' *.html            # must be empty
+python tools/photos.py render && python tools/pages.py sync   # both must be no-ops if nothing changed
+python tools/pages.py check                                    # links, anchors, <head>, images, sitemap, journal, count, voice
+python tools/test_photos.py && python tools/test_pages.py      # consent guard, idempotency, and a checker that is proven to fail
+git diff --stat
 ```

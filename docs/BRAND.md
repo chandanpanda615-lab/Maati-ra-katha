@@ -1,16 +1,18 @@
 # Maati Ra Katha — brand notes
 
-This documents what the site already does. It is a reference for keeping new pages
-consistent, not a rebrand. Everything here is defined once in the `:root` block of
-`assets/site.css` — change it there, not in individual rules.
+This documents what the site does. It is a reference for keeping new pages consistent,
+not a rebrand. Everything visual is defined once in the `:root` block of
+`assets/site.css` — change it there, not in individual rules. The locked decisions behind
+it (name, palette, type, mark) are in `maati-katha-research/Layer_1/brand-identity-master.md`.
 
 ## Name
 
 **Maati Ra Katha.** *Maati* is soil, and also the place you are from. *Katha* is story.
-The homepage explains this in the first note, so the name never needs a tagline
-next to it.
+`land.html` explains this in its first note, so the name never needs a tagline next to it.
+The editorial line is *The Weight of Belonging* — under the wordmark on the homepage, and
+in its `<title>`.
 
-Written as two words, both capitalised. Not "MaatiKatha", not all-caps in body text.
+Written as three words, each capitalised. Not "MaatiKatha", not all-caps in body text.
 
 ## Mark
 
@@ -18,132 +20,128 @@ A doorway standing on the ground, with the sun rising on its threshold.
 
 - `assets/logo-mark.svg` — 24 viewBox, the drawing of record
 - `assets/favicon.svg` — 32 viewBox, laterite tile, for browser tabs
-- `assets/favicon-32.png`, `assets/apple-touch-icon.png` (180×180) — raster fallbacks
-- The nav copy is inlined in `index.html` so its strokes inherit `currentColor` and
-  flip with the theme. Keep the two `.frame` paths and the one `.sun` path in sync
-  with `logo-mark.svg`.
+- `assets/favicon-48.png`, `favicon-96.png`, `apple-touch-icon.png` (180×180) — raster fallbacks
+- The nav and footer copies are inline, written by `tools/pages.py` (`logo()`), so their
+  strokes take `currentColor`. Keep the two `.frame` paths and the `.sun` path in step with
+  `logo-mark.svg`. The same drawing marks an empty frame on `days.html`.
 
 Rules:
 
 - **Clear space** — one jamb-width (about 1/5 of the mark) on all four sides.
-- **Minimum size** — 20px on screen. Below that the arch fills in; use the favicon
-  tile instead, which is drawn heavier for exactly this reason.
-- **Do not** recolour the sun, stretch the mark, add a stroke to the sun, or place the
+- **Minimum size** — 20px on screen. Below that the arch fills in; use the favicon tile.
+- **Do not** recolour the sun, stretch the mark, add a stroke to the sun, or put the
   open-stroke version on a busy photograph. Over imagery, use the laterite tile.
 
-## Lockup
+## Two registers
 
-Mark + "Maati Ra Katha" set in Cormorant Garamond 600, centred on the mark's optical
-middle, gap `0.7rem`. That is `.brand-mark` in `index.html`. Below 560px the wordmark
-is dropped and the mark stands alone.
+The brand lives in the tension between two surfaces, and the site uses exactly two.
+
+**Paper** — the journal. Chulha ash, indigo ink, laterite for anything that asks to be
+clicked. Every page's reading surface in the light theme.
+
+**Night** — the village sky thirty minutes after sunset. The manifesto, the pilot band, the
+footer, the lightbox. It is night in both themes; add `.on-night` to a section and every
+token inside it flips to ash-on-indigo.
+
+Dark mode turns the paper to night as well, and the accent to turmeric.
 
 ## Colour
 
-| Token | Value | Use |
+The five brand colours are named once. Rules use the **roles**, never a hex, so both themes
+hold.
+
+| Brand | Value | |
 |---|---|---|
-| `--laterite` | `#8B3A1F` | accent in light theme, favicon tile, soil |
-| `--turmeric` | `#C8842B` | accent in dark theme, the sun, primary button |
-| `--sal` | `#2D3B26` | deep green, sparingly |
-| `--ash` | `#E8E1D4` | text on dark, the status band surface in light theme |
-| `--indigo` | `#1F2A3A` | `theme-color`, nav ground |
-| `--band-bg` | `--ash` / `#241C15` | status band surface, flips with theme |
+| `--laterite` | `#8B3A1F` | wet red soil after the first monsoon shower |
+| `--turmeric` | `#C8842B` | late light on a mud wall |
+| `--sal` | `#2D3B26` | the canopy at noon — held in reserve |
+| `--ash` | `#E8E1D4` | cooled wood-ash, unbleached cotton |
+| `--indigo` | `#1F2A3A` | the sky after sunset; `theme-color` is its night shade `#161D28` |
 
-`--accent` is laterite in light and turmeric in dark — always use `--accent` rather
-than naming a colour directly, so both themes stay correct.
+| Role | Light | Dark | Use |
+|---|---|---|---|
+| `--paper` | `#F2EDE3` | `#11161E` | the page |
+| `--paper-2` | ash | `#18202B` | bands: where this stands, the journal band, the consent box |
+| `--card` | `#F8F4EC` | `#1B2330` | cards on paper |
+| `--ink` / `--ink-2` / `--ink-3` | indigo / `#544C40` / `#6B6254` | ash / `#B8AD99` / `#9C917E` | text, quieter text, captions and dates |
+| `--rule`, `--rule-2` | indigo at 14% / 28% | ash at 12% / 26% | hairlines |
+| `--accent` | laterite | turmeric | links, labels, the primary button |
+| `--night`, `--night-ink` | `#161D28`, `#EAE3D6` | `#0B0F15` | the night register |
+| `--sun` | turmeric | turmeric | the logo's sun, the progress line, accents on night |
 
-The page declares `color-scheme: light dark`. Without it Chrome force-darkens the
-page and strips the nav and hero gradients. Do not remove it.
+Every pair above is at least 4.5:1, and axe-core finds no contrast failure on any page in
+either theme. Turmeric on paper is 2.6:1 — never use it for text on a light surface.
+
+The page declares `color-scheme: light dark`. Without it Chrome force-darkens the page.
+Do not remove it.
 
 ## Type
 
 | Token | Face | Use |
 |---|---|---|
-| `--font-display` | Cormorant Garamond 500/600 + italic | wordmark, headings, ledger figures |
-| `--font-accent` | Caveat | eyebrows only |
-| `--font-body` | `system-ui` stack | everything else |
+| `--f-display` | Cormorant Garamond 500 / 600, italic 500 / 600 | the wordmark, every heading, the status line, captions on photographs |
+| `--f-body` | the system UI stack | everything else, including labels |
+| `--f-hand` | Caveat | **one handwritten line on a page**, as marginalia (`.hand`) |
 
-The display faces live in `assets/fonts/` as real woff2 files, loaded by the
-`@font-face` blocks at the top of `site.css` with `font-display: swap`. They were
-base64-inlined until they were measured: at 192 KB they were 82% of a
-render-blocking stylesheet, so nothing painted until every font byte arrived, and
-`swap` could never fire because the bytes were inside the CSS itself. Splitting
-them cut `site.css` from 234 KB to 42 KB. **Do not inline them again.**
+Small labels above headings (`.label`) are the body face in tracked capitals, not Caveat —
+handwriting at 12px read as a scribble.
 
-**Nothing may be added to the stack without shipping the file** — `'Inter'` was
-named there for a while with no font behind it, and every line of body text
-silently fell back to `system-ui`.
+The faces are real `.woff2` files in `assets/fonts/`, latin subsets from Fontsource, with
+their OFL licences beside them. **Check any replacement with fontTools before it goes in**
+— family, weight, and that the letter A is in it. Until 25 Sep 2026 the 600 file was a
+latin-*extended* subset with no A–Z, so every heading on the site fell back to Georgia and
+nobody noticed for months, and the "500" was the Light cut. Every page preloads the 600.
 
-Scale: `--text-sm` through `--text-hero`, all in the `:root` block. `--measure: 60ch`
-caps line length; the hero lede is tighter at `46ch`.
+**Nothing may be added to a font stack without shipping the file.** `'Inter'` was named
+once with no font behind it, and every line of body text silently fell back.
 
 ## Structure
 
-Five pages. The site does not scroll through the whole project — the homepage offers
-doors and you click into them.
-
 | Page | Holds |
 |---|---|
-| `index.html` | hero, status band, the two door cards, filmstrip, journal, manifesto |
-| `land.html` | the notes and the plain description of the land. **No photographs** — `#gallery` is a signpost to `photographs.html`, kept so old links still land |
-| `photographs.html` | the archive: seven albums, 40 photographs. Generated between the `GALLERY` markers by `tools/photos.py` |
-| `days.html` | the seven experiences |
-| `visit.html` | how to reach, writing, the pilot enquiry |
+| `index.html` | hero, where this stands, four doors, the filmstrip, the journal, the manifesto |
+| `land.html` | the notes, open on the page, and a door into the land album |
+| `photographs.html` | the archive: seven albums, generated by `tools/photos.py` |
+| `days.html` | the consent box and the seven days, each with a frame |
+| `journal.html` + `posts/` | the writing |
+| `visit.html` | the route, what to know, the pilot |
+| `404.html` | for any address that is not a page |
 
-All five share `assets/site.css` (52 KB). **Keep it that way.**
+Every page opens on a photograph (`.page-head`, or `.hero` on the homepage) except a post,
+which opens on paper (`.paper-head`, `body.nav-solid`) like the first page of an essay.
+Every page ends with a link to the next one along the nav, then the night footer.
 
-An earlier note here said the CSS carried "four embedded base64 fonts" and inlining it
-per page would triple ~217 KB. That has not been true since the fonts were split out:
-they are four real `.woff2` files in `assets/fonts/`, loaded by `@font-face` at the top
-of `site.css`, and there is no base64 anywhere in it. The claim outlived the change and
-is still quoted in `posts/first-post.html` as the reason those pages fork the stylesheet.
-**There is no blocker — the posts should load `site.css` like everything else.**
-
-Each page sets its own backdrop with a body class (`bg-hero`, `bg-land`, `bg-road`).
-There is no drawn canvas any more — every page sits on a real, darkened photograph.
-
-**Image paths belong in `site.css`, not in inline styles, and not inside a custom
-property.** A `url()` written in an ordinary declaration resolves against the
-stylesheet, so the bare filename is correct in `site.css`. A `url()` carried inside a
-*custom property* does not: Chrome resolves it against the document, so the old
-`--page-bg: url('road.jpg')` was fetched from the site root and 404'd on every page —
-which is why the backdrops rendered as flat dark panels with no photograph in them.
-
-The page photographs are therefore attached with plain `background-image` rules on
-`body.bg-*::before`, `.head-*` and `.card-*` at the foot of `site.css`. Only `--scrim`
-stays a custom property, because a gradient has no URL to resolve.
+All pages share `assets/site.css` and `assets/site.js`. **Keep it that way.**
 
 ## Photographs
 
-`assets/hero.jpg` (2400px), `land.jpg` and `road.jpg` are real photographs, built by
-`tools/photos.py` from originals in the gitignored `_incoming/`. Each is a **single
-swap point** — drop a new file at the same path and the page updates with no markup
-or CSS change.
+Shown whole and sharp, with their captions — not blurred and darkened behind text. That
+treatment was decoration, and it made the words on top harder to read.
 
-Nothing is upscaled. An earlier pass ran Real-ESRGAN 4× over compressed 1080p video
-frames; it invented detail that was never in the footage and the results looked fake.
-Video frames are published at native resolution or not at all.
+- **Page heads and the hero are `<img>` / `<picture>` elements**, not CSS backgrounds: the
+  browser's preload scanner finds them while it reads the HTML, and a `url()` inside a
+  custom property can never again be resolved against the wrong file.
+- The **filmstrip keeps each photograph's own shape**; nothing is cropped to fit a card.
+- **Every gallery photograph has 540px and 1080px copies** (`python tools/photos.py sizes`),
+  used through `srcset`. `src` stays the full file — that is what the lightbox shows.
+- **Nothing is upscaled.** An earlier pass ran Real-ESRGAN over 1080p video frames; it
+  invented detail that was never in the footage. Video frames are published at native
+  resolution or not at all.
+- **No burnt-in camera text.** Phones stamp names, models and times into the pixels. Crop
+  them in the manifest's `crop` column; EXIF stripping does not remove them.
+- An empty frame is allowed; a substitute is not. `days.html` draws a held frame where no
+  photograph of that day exists yet.
 
-The archive is a hand-curated mosaic and lives on `photographs.html`, not `land.html` —
-duplicating a selection onto that page put eight photographs on two pages at once, and
-the gallery was removed from it to fix that. Cards take `--feature` (4×2), `--tall` (2×2,
-for portraits) or `--wide` (4×1, for panoramas); no modifier gives an ordinary 2×1 cell.
-
-Every published photograph, its source and a longer description are logged in
-`docs/PHOTOS.md`. **`_incoming/manifest.csv` is committed** — it is the single source of
-every caption, consent record and gallery position, and losing it with the originals
-would lose all of that. Only the image originals in `_incoming/` are gitignored.
-
-`hero-portrait.jpg` is a **separate photograph**, not a crop of `hero.jpg`. The desktop
-and mobile hero captions in `index.html` therefore differ on purpose, and both must stay
-true to their own frame.
+`hero-portrait.jpg` is a **separate photograph**, not a crop of `hero.jpg`. The desktop and
+mobile hero captions differ on purpose, and both must stay true to their own frame.
 
 ## Voice
 
 Set by the manifesto line on the homepage: **"No fake experiences. Just life as it is."**
 
-- Say what is true now, including that the pilot is not open. The status band exists
+- Say what is true now, including that the pilot is not open. "Where this stands" exists
   for exactly this.
 - Short sentences. Concrete nouns — chulha, paddy, borewell — not "authentic" or
-  "immersive".
+  "immersive". `python tools/pages.py check` fails on the banned words.
 - Never publish a route, a photograph, or a host detail before it is verified on the
   ground and consented to. This is a content rule, not a style one.

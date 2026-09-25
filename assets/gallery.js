@@ -125,7 +125,17 @@
     var copy = fc && fc.cloneNode(true);
     var by = copy && copy.querySelector('.credit');
     var album = figures[at].closest('.album');
-    img.src = src.currentSrc || src.src;
+    // A cell loads whichever size its srcset chose, often a small one; `src` itself is
+    // always the full file. Show what is already loaded at once, then swap in the full
+    // photograph when it arrives — the lightbox is the one place the full file is for.
+    var full = src.src;
+    var loaded = src.currentSrc || full;
+    img.src = loaded;
+    if (loaded !== full) {
+      var want = at, hi = new Image();
+      hi.onload = function () { if (want === at && dlg.open) img.src = full; };
+      hi.src = full;
+    }
     img.alt = src.alt;
     if (by) by.remove();
     cap.textContent = copy ? copy.textContent.trim() : '';
@@ -173,11 +183,9 @@
   }
 
   withImg.forEach(function (fig) {
+    // A click anywhere on the card, caption included. The <button> inside it is what a
+    // keyboard reaches; a button answers to Enter and Space by itself.
     fig.addEventListener('click', function () { openFrom(fig); });
-    fig.addEventListener('keydown', function (e) {
-      // The figure carries role="button", so it has to answer to a keyboard like one.
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFrom(fig); }
-    });
   });
 
   prevButton.addEventListener('click', prev);
@@ -191,7 +199,7 @@
   // sit inside their own elements, so this only fires on the dialog's own padding.
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   dlg.addEventListener('close', function () {
-    if (opener) opener.focus();
+    if (opener) (opener.querySelector('.photo-open') || opener).focus();
     replaceHash(returnHash);
   });
 
