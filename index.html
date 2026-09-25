@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Maati Ra Katha — The Weight of Belonging</title>
-<meta name="description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
+<meta name="description" content="A seven-day village life-exchange being prepared in Sarangada, Kandhamal, Odisha. Not open yet. No fake experiences. Just life as it is.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#1F2A3A">
+<meta name="theme-color" content="#161D28">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Maati Ra Katha">
 <meta property="og:title" content="Maati Ra Katha — The Weight of Belonging">
 <meta property="og:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
 <meta property="og:url" content="https://maatirakatha.com/">
 <meta property="og:image" content="https://maatirakatha.com/assets/hero.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1225">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Maati Ra Katha — The Weight of Belonging">
 <meta name="twitter:description" content="A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.">
@@ -47,11 +50,12 @@
       "alternateName": ["Maati Katha"],
       "url": "https://maatirakatha.com/",
       "logo": "https://maatirakatha.com/assets/apple-touch-icon.png",
+      "email": "hello@maatirakatha.com",
       "description": "A seven-day life-exchange in Sarangada, Kandhamal, Odisha. No fake experiences. Just life as it is.",
       "sameAs": [
+        "https://www.youtube.com/@MaatiRaKatha",
         "https://www.instagram.com/maati.ra.katha/",
-        "https://x.com/maatirakatha",
-        "https://www.youtube.com/@MaatiRaKatha"
+        "https://x.com/maatirakatha"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -64,338 +68,349 @@
 }
 </script>
 <script>document.documentElement.className+=' js'</script>
+<link rel="preload" href="assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<!-- The hero is a CSS background (site.css .hero.has-photo), so the preload scanner
-     cannot see it until site.css has parsed. It is the LCP image, so preload it —
-     but mirror the art-direction query at site.css:158 exactly, or a phone downloads
-     the 309 KB landscape crop it will never show on top of the 464 KB portrait. -->
-<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high"
-      media="not all and (max-aspect-ratio: 1/1) and (max-width: 820px)">
-<link rel="preload" as="image" href="assets/hero-portrait.jpg" fetchpriority="high"
-      media="(max-aspect-ratio: 1/1) and (max-width: 820px)">
+<script src="assets/site.js" defer></script>
 </head>
-<body class="bg-hero">
-<div class="grain" aria-hidden="true"></div>
-<div class="progress-bar" aria-hidden="true"></div>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 
-<nav class="site-nav" aria-label="Primary navigation">
-  <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
+<!-- NAV:START — written by tools/pages.py sync. Change NAV there, not here. -->
+<nav class="site-nav" aria-label="Primary">
+  <a class="brand" href="index.html">
     <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
       <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
       <path class="frame" d="M4.65 18.75h14.7"/>
     </svg>
-    <span>Maati Ra Katha</span>
+    <span class="brand-name">Maati Ra Katha</span>
   </a>
-  <!-- Shown only when JS is on (.js is set in <head>). Without JS the strip below
-       stays exactly as it was — a scrolling row — so the nav never depends on this. -->
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
           aria-label="Open menu">
     <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="index.html" aria-current="page">Home</a>
     <a href="land.html">The land</a>
-    <a href="photographs.html">Moments</a>
+    <a href="photographs.html">Photographs</a>
     <a href="days.html">The days</a>
+    <a href="journal.html">Journal</a>
     <a href="visit.html">How to reach</a>
     <a class="nav-cta" href="visit.html#interest">Pilot</a>
   </div>
 </nav>
+<!-- NAV:END -->
 
-<main id="top">
-  <!-- HERO -->
-  <header class="hero has-photo">
+<main id="main">
+
+  <!-- HERO. An <img>, not a CSS background, so the browser finds it while it is still
+       reading the HTML. The <source> is art direction, not a smaller file: on a narrow
+       portrait screen the landscape frame would show 29% of its width, most of it grey
+       sky, so a different photograph stands in. See .hero-caption in site.css. -->
+  <header class="hero">
+    <picture class="hero-media">
+      <source media="(max-aspect-ratio: 1/1) and (max-width: 820px)" srcset="assets/hero-portrait.jpg" width="1200" height="1400">
+      <img src="assets/hero.jpg" alt="" width="2400" height="1225" fetchpriority="high">
+    </picture>
     <div class="hero-inner">
       <p class="hero-kicker">Sarangada &middot; Kandhamal &middot; Odisha</p>
       <h1 class="wordmark">Maati Ra Katha</h1>
+      <p class="hero-sub">The Weight of Belonging</p>
       <p class="hero-lede">A seven-day village life-exchange being prepared in Sarangada, Kandhamal. It is not open yet.</p>
     </div>
-    <div class="hero-caption">
-      <span class="cap-desktop">The place. (Monsoon, Sarangada) &middot; Photographed with permission</span>
-      <span class="cap-mobile">The people. (Sarangada) &middot; Photographed with permission</span>
-    </div>
+    <p class="hero-caption">
+      <span class="cap-desktop">The market road under monsoon cloud, Sarangada &middot; Photographed with permission</span>
+      <span class="cap-mobile">Sorting the harvest on bare earth, Sarangada &middot; Photographed with permission</span>
+    </p>
     <a class="scroll-cue" href="#status">
       <span>Where this stands</span>
-      <svg class="scroll-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 4v15M5.5 12.5 12 19l6.5-6.5"/>
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15M5.5 12.5 12 19l6.5-6.5"/></svg>
     </a>
   </header>
 
-  <!-- STATUS BAND — the honest state of the project, on solid ground under the photo. -->
-  <section class="status-band" id="status">
-    <div class="status-inner">
-      <p class="status-lead">This page is what exists so far. Nothing here is a booking, and nothing is published before it is verified on the ground.</p>
-      <div class="hero-ledger" aria-label="Current project status">
-        <div class="ledger-item">
-          <span>Status</span>
-          <strong>Pilot</strong>
-          <small>Invitation-only while host, safety, and consent details are settled.</small>
+  <!-- STATUS — the honest state of the project, first thing under the photograph. -->
+  <section class="status" id="status" aria-labelledby="status-h">
+    <div class="wrap">
+      <h2 class="label" id="status-h">Where this stands</h2>
+      <p class="status-lead">This site is what exists so far. Nothing here is a booking, and nothing is published before it is verified on the ground.</p>
+      <dl class="ledger">
+        <div>
+          <dt>Status</dt>
+          <dd><strong>Pilot</strong><span>Invitation-only while host, safety and consent details are settled.</span></dd>
         </div>
-        <div class="ledger-item">
-          <span>Ground</span>
-          <strong>20.227&deg;N</strong>
-          <small>Approximate Sarangada coordinate in Kandhamal, Odisha.</small>
+        <div>
+          <dt>Ground</dt>
+          <dd><strong>20.227&deg;N</strong><span>Approximate Sarangada coordinate, Nuagaon Block, Kandhamal.</span></dd>
         </div>
-        <div class="ledger-item">
-          <span>Spoken</span>
-          <strong>Odia &middot; Kui</strong>
-          <small>Odia in the market and the school. Kui in the older Kondh homes.</small>
+        <div>
+          <dt>Spoken</dt>
+          <dd><strong>Odia &middot; Kui</strong><span>Odia in the market and the school. Kui in the older Kondh homes.</span></dd>
         </div>
-        <div class="ledger-item">
-          <span>Rule</span>
-          <strong>Consent first</strong>
-          <small>No route, photograph, or stay is public until it is verified.</small>
+        <div>
+          <dt>Rule</dt>
+          <dd><strong>Consent first</strong><span>No route, photograph or stay is public until it is verified.</span></dd>
         </div>
-      </div>
-      <div class="hero-actions">
-        <a class="btn primary" href="land.html#notes">Read the notes</a>
-        <a class="btn secondary" href="photographs.html">See the photographs</a>
+      </dl>
+      <div class="actions">
+        <a class="btn btn--primary" href="land.html#notes">Read the notes</a>
+        <a class="btn btn--ghost" href="photographs.html">See the photographs</a>
       </div>
     </div>
   </section>
 
-  <!-- DOORS — the homepage does not scroll the whole project, it opens into it. -->
-  <section class="unfold" id="more">
-    <span class="eyebrow reveal">two ways in</span>
-    <div class="unfold-grid">
-      <a class="unfold-card card-land reveal" style="--d:.06s" href="land.html">
-        <span class="eyebrow-sm">The place</span>
-        <h3>The land</h3>
-        <p>What the soil, the hills and the monsoon actually do here — with the notes and the photographs.</p>
-        <span class="go">Open &rarr;</span>
-      </a>
-      <a class="unfold-card card-road reveal" style="--d:.12s" href="visit.html">
-        <span class="eyebrow-sm">Getting there</span>
-        <h3>How to reach</h3>
-        <p>The route from Bhubaneswar, what the stay is actually like, and where the pilot currently stands.</p>
-        <span class="go">Open &rarr;</span>
-      </a>
+  <!-- DOORS — the homepage does not scroll through the whole project, it opens into it.
+       Each card is one link, named by its title (the ::after on the title's link
+       stretches it over the card). The photographs are decoration here, so alt="". -->
+  <section class="section" aria-labelledby="doors-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">Four ways in</p>
+        <h2 class="section-title" id="doors-h">Read, look, and find the road</h2>
+      </div>
+      <div class="doors">
+        <article class="door reveal" style="--d:.04s">
+          <div class="door-img">
+            <img src="assets/photos/ridge-sun.jpg" alt=""
+                 srcset="assets/photos/540/ridge-sun.jpg 540w, assets/photos/1080/ridge-sun.jpg 1080w, assets/photos/ridge-sun.jpg 1600w"
+                 sizes="(max-width: 1000px) 80vw, 490px" width="1600" height="679" loading="lazy" decoding="async">
+          </div>
+          <div class="door-body">
+            <p class="label">The place</p>
+            <h3 class="door-title"><a href="land.html">The land</a></h3>
+            <p class="door-text">What the soil, the hills and the monsoon actually do here.</p>
+            <p class="door-go" aria-hidden="true">Read the notes &rarr;</p>
+          </div>
+        </article>
+        <article class="door reveal" style="--d:.1s">
+          <div class="door-img">
+            <img src="assets/photos/house-door.jpg" alt=""
+                 srcset="assets/photos/540/house-door.jpg 540w, assets/photos/1080/house-door.jpg 1080w, assets/photos/house-door.jpg 1280w"
+                 sizes="(max-width: 1000px) 80vw, 490px" width="1280" height="591" loading="lazy" decoding="async">
+          </div>
+          <div class="door-body">
+            <p class="label">The archive</p>
+            <h3 class="door-title"><a href="photographs.html">Photographs</a></h3>
+            <p class="door-text">Seven albums. Phone pictures, not a shoot, and no face without consent.</p>
+            <p class="door-go" aria-hidden="true">Open the albums &rarr;</p>
+          </div>
+        </article>
+        <article class="door reveal" style="--d:.16s">
+          <div class="door-img">
+            <img src="assets/photos/school-garden.jpg" alt=""
+                 srcset="assets/photos/540/school-garden.jpg 540w, assets/photos/school-garden.jpg 1040w"
+                 sizes="(max-width: 1000px) 80vw, 490px" width="1040" height="780" loading="lazy" decoding="async">
+          </div>
+          <div class="door-body">
+            <p class="label">The week</p>
+            <h3 class="door-title"><a href="days.html">The days</a></h3>
+            <p class="door-text">Seven things a week here is actually spent on. None of it arranged.</p>
+            <p class="door-go" aria-hidden="true">See the week &rarr;</p>
+          </div>
+        </article>
+        <article class="door reveal" style="--d:.22s">
+          <div class="door-img">
+            <img src="assets/photos/road-sunset.jpg" alt=""
+                 srcset="assets/photos/540/road-sunset.jpg 540w, assets/photos/1080/road-sunset.jpg 1080w, assets/photos/road-sunset.jpg 1600w"
+                 sizes="(max-width: 1000px) 80vw, 490px" width="1600" height="739" loading="lazy" decoding="async">
+          </div>
+          <div class="door-body">
+            <p class="label">Getting there</p>
+            <h3 class="door-title"><a href="visit.html">How to reach</a></h3>
+            <p class="door-text">The road in from Bhubaneswar, and where the pilot stands today.</p>
+            <p class="door-go" aria-hidden="true">Find the road &rarr;</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-
-  <!-- FILMSTRIP — a door into the archive. Native scroll-snap: swipe, drag and
-       keyboard scrolling all come free from the browser, so there is no JS here. -->
-  <section class="strip" aria-labelledby="strip-h">
-    <div class="strip-head">
-      <h2 id="strip-h" class="eyebrow reveal">from the archive</h2>
-      <!-- Count is hand-maintained: tools/photos.py only rewrites between the
-           GALLERY markers in photographs.html, so it cannot reach this line.
-           Check it against `ls assets/photos/*.jpg | wc -l` after every render. -->
-      <a class="strip-all reveal" href="photographs.html">All 40 photographs &rarr;</a>
+  <!-- FILMSTRIP — a door into the archive, not a second gallery. Every frame opens its
+       photograph on photographs.html. The frames and the count at the end are written by
+       `python tools/photos.py render` from STRIP in that file; change them there. -->
+  <section class="section" aria-labelledby="strip-h">
+    <div class="wrap">
+      <div class="section-head section-head--split reveal">
+        <div>
+          <p class="label">From the archive</p>
+          <h2 class="section-title" id="strip-h">Sarangada, as it was on the day</h2>
+        </div>
+        <a class="link-arrow" href="photographs.html">Open the archive</a>
+      </div>
     </div>
-    <div class="strip-rail" tabindex="0" role="region" aria-label="Photographs, scroll sideways">
-      <a class="strip-shot" href="photographs.html#terraces">
+    <div class="strip-rail" id="strip" tabindex="0" role="region" aria-label="Photographs from the archive. Scroll sideways.">
+      <!-- STRIP:START — generated by tools/photos.py render from STRIP. Do not edit by hand. -->
+      <a class="strip-frame" href="photographs.html#terraces">
         <img src="assets/photos/terraces.jpg" alt="Paddy terraced into a hillside in Kandhamal, banana and palm above the bunds"
+             srcset="assets/photos/540/terraces.jpg 540w, assets/photos/1080/terraces.jpg 1080w, assets/photos/terraces.jpg 1600w"
+             sizes="(max-width: 692px) 320px, (max-width: 1153px) 46.2vw, 533px"
              width="1600" height="900" loading="lazy" decoding="async">
-        <span>Paddy terraced into the hillside</span>
+        <span class="strip-cap">Paddy terraced into the hillside</span>
       </a>
-      <a class="strip-shot" href="photographs.html#paddy-plain">
+      <a class="strip-frame" href="photographs.html#paddy-plain">
         <img src="assets/photos/paddy-plain.jpg" alt="Green paddy stretching to low hills under a flat grey monsoon cloud, date palms and scrub in the foreground, a power line crossing the frame"
+             srcset="assets/photos/540/paddy-plain.jpg 540w, assets/photos/1080/paddy-plain.jpg 1080w, assets/photos/paddy-plain.jpg 1600w"
+             sizes="(max-width: 692px) 340px, (max-width: 1153px) 49.2vw, 567px"
              width="1600" height="846" loading="lazy" decoding="async">
-        <span>The whole plain under one cloud</span>
+        <span class="strip-cap">The whole plain under one cloud</span>
       </a>
-      <a class="strip-shot" href="photographs.html#cattle-hill">
+      <a class="strip-frame" href="photographs.html#cattle-hill">
         <img src="assets/photos/cattle-hill.jpg" alt="White and brown cattle grazing on rough ground below a forested hill, a strip of paddy turning yellow behind them, a metalled road curving away to the left"
+             srcset="assets/photos/540/cattle-hill.jpg 424w, assets/photos/1080/cattle-hill.jpg 848w, assets/photos/cattle-hill.jpg 1256w"
+             sizes="(max-width: 692px) 141px, (max-width: 1153px) 20.4vw, 236px"
              width="1256" height="1600" loading="lazy" decoding="async">
-        <span>Cattle out below the hill, paddy turning</span>
+        <span class="strip-cap">Cattle out below the hill, paddy turning</span>
       </a>
-      <a class="strip-shot" href="photographs.html#tank-railing">
+      <a class="strip-frame" href="photographs.html#tank-railing">
         <img src="assets/photos/tank-railing.jpg" alt="A rectangular village tank with stepped concrete sides, the railings around it painted yellow and blue, green paddy and houses on the far bank with a hill behind"
+             srcset="assets/photos/540/tank-railing.jpg 540w, assets/photos/1080/tank-railing.jpg 1080w, assets/photos/tank-railing.jpg 1600w"
+             sizes="(max-width: 692px) 340px, (max-width: 1153px) 49.2vw, 567px"
              width="1600" height="846" loading="lazy" decoding="async">
-        <span>The tank, and the railings someone painted</span>
+        <span class="strip-cap">The tank, and the railings someone painted</span>
       </a>
-      <a class="strip-shot" href="photographs.html#bike-dusk">
+      <a class="strip-frame" href="photographs.html#bike-dusk">
         <img src="assets/photos/bike-dusk.jpg" alt="A motorcycle standing alone on a red earth track along a ridge, a grey plastered house with a metal roof behind it, hills and a yellow evening sky"
+             srcset="assets/photos/540/bike-dusk.jpg 540w, assets/photos/1080/bike-dusk.jpg 1080w, assets/photos/bike-dusk.jpg 1600w"
+             sizes="(max-width: 692px) 340px, (max-width: 1153px) 49.2vw, 567px"
              width="1600" height="846" loading="lazy" decoding="async">
-        <span>The bike left on the ridge track at dusk</span>
+        <span class="strip-cap">The bike left on the ridge track at dusk</span>
       </a>
-      <a class="strip-shot" href="photographs.html#market-hills">
+      <a class="strip-frame" href="photographs.html#market-hills">
         <img src="assets/photos/market-hills.jpg" alt="The market road with hills rising behind the shopfronts"
-             width="1600" height="739" loading="lazy" decoding="async">
-        <span>Market road, hills behind</span>
+             srcset="assets/photos/540/market-hills.jpg 540w, assets/photos/1080/market-hills.jpg 1080w, assets/photos/market-hills.jpg 1600w"
+             sizes="(max-width: 692px) 436px, (max-width: 1153px) 62.9vw, 726px"
+             width="1600" height="661" loading="lazy" decoding="async">
+        <span class="strip-cap">Market road, hills behind</span>
       </a>
-      <a class="strip-shot" href="photographs.html#thali">
+      <a class="strip-frame" href="photographs.html#thali">
         <img src="assets/photos/thali.jpg" alt="Rice, dal and greens served in steel bowls"
-             width="901" height="1600" loading="lazy" decoding="async">
-        <span>Rice, dal and greens</span>
+             srcset="assets/photos/540/thali.jpg 327w, assets/photos/1080/thali.jpg 654w, assets/photos/thali.jpg 901w"
+             sizes="(max-width: 692px) 109px, (max-width: 1153px) 15.7vw, 182px"
+             width="901" height="1488" loading="lazy" decoding="async">
+        <span class="strip-cap">Rice, dal and greens</span>
       </a>
-      <a class="strip-shot" href="photographs.html#fire-night">
+      <a class="strip-frame" href="photographs.html#fire-night">
         <img src="assets/photos/fire-night.jpg" alt="People standing around a fire after dark"
-             width="1600" height="1600" loading="lazy" decoding="async">
-        <span>The fire after dark</span>
+             srcset="assets/photos/540/fire-night.jpg 540w, assets/photos/1080/fire-night.jpg 1080w, assets/photos/fire-night.jpg 1600w"
+             sizes="(max-width: 692px) 200px, (max-width: 1153px) 28.9vw, 333px"
+             width="1600" height="1440" loading="lazy" decoding="async">
+        <span class="strip-cap">The fire after dark</span>
       </a>
+      <a class="strip-more" href="photographs.html">
+        <span class="strip-more-n">All 40 photographs</span>
+        <span class="strip-more-go" aria-hidden="true">&rarr;</span>
+      </a>
+      <!-- STRIP:END -->
+    </div>
+    <div class="wrap strip-controls" data-rail="strip" hidden>
+      <button class="strip-btn" type="button" data-dir="-1" aria-label="Earlier photographs">&larr;</button>
+      <button class="strip-btn" type="button" data-dir="1" aria-label="Later photographs">&rarr;</button>
     </div>
   </section>
 
-  <!-- WRITING / JOURNAL — the same .posts/.post-card block visit.html uses. The
-       only thing this variant adds is the thumbnail, which .post-card img holds.
-       To add a post: copy a card, newest first. -->
-  <section class="posts" id="writing">
-    <h2 class="eyebrow reveal">from the journal</h2>
-    <div class="posts-grid posts-grid--fit">
-
-      <a class="post-card reveal" style="--d:.06s" href="posts/second-post.html">
-        <img src="assets/photos/mist-hills.jpg" alt="Mist sitting on forested hills of the Eastern Ghats"
-             width="1600" height="900" loading="lazy" decoding="async">
-        <span class="post-date">03 August 2026</span>
-        <h3>The stories the soil tells</h3>
-        <p>There are hundreds of stories here. They don't happen in grand, orchestrated events. They happen quietly at dawn when the mist still hangs...</p>
-        <span class="go">Read post &rarr;</span>
-      </a>
-
-      <a class="post-card reveal" style="--d:.12s" href="posts/first-post.html">
-        <img src="assets/photos/market-hills.jpg" alt="The market road with hills rising behind the shopfronts"
-             width="1600" height="739" loading="lazy" decoding="async">
-        <span class="post-date">28 July 2026</span>
-        <h3>Why I am building this slowly</h3>
-        <p>Every version of this idea that moves fast ends the same way. Somebody books a week, arrives with a camera, gets shown a performance...</p>
-        <span class="go">Read post &rarr;</span>
-      </a>
-
+  <!-- JOURNAL — the newest posts, newest first. The full list is journal.html, and
+       `python tools/pages.py check` fails if a post is missing from it. -->
+  <section class="section section--ash" aria-labelledby="journal-h">
+    <div class="wrap">
+      <div class="section-head section-head--split reveal">
+        <div>
+          <p class="label">From the journal</p>
+          <h2 class="section-title" id="journal-h">Answered in the village, then written down here</h2>
+        </div>
+        <a class="link-arrow" href="journal.html">All writing</a>
+      </div>
+      <div class="post-grid post-grid--fit">
+        <article class="post-card reveal" style="--d:.04s">
+          <div class="post-card-img">
+            <img src="assets/photos/mist-hills.jpg" alt=""
+                 srcset="assets/photos/540/mist-hills.jpg 540w, assets/photos/1080/mist-hills.jpg 1080w, assets/photos/mist-hills.jpg 1600w"
+                 sizes="(max-width: 700px) 100vw, 450px" width="1600" height="900" loading="lazy" decoding="async">
+          </div>
+          <div class="post-card-body">
+            <p class="post-date"><time datetime="2026-08-03">3 August 2026</time></p>
+            <h3 class="post-title"><a href="posts/second-post.html">The stories the soil tells</a></h3>
+            <p class="post-excerpt">There are hundreds of stories here. They don't happen in grand, orchestrated events. They happen quietly at dawn, when the mist still hangs over the hills.</p>
+            <p class="post-go" aria-hidden="true">Read &rarr;</p>
+          </div>
+        </article>
+        <article class="post-card reveal" style="--d:.1s">
+          <div class="post-card-img">
+            <img src="assets/photos/market-hills.jpg" alt=""
+                 srcset="assets/photos/540/market-hills.jpg 540w, assets/photos/1080/market-hills.jpg 1080w, assets/photos/market-hills.jpg 1600w"
+                 sizes="(max-width: 700px) 100vw, 450px" width="1600" height="661" loading="lazy" decoding="async">
+          </div>
+          <div class="post-card-body">
+            <p class="post-date"><time datetime="2026-07-28">28 July 2026</time></p>
+            <h3 class="post-title"><a href="posts/first-post.html">Why I am building this slowly</a></h3>
+            <p class="post-excerpt">Every version of this idea that moves fast ends the same way. Somebody books a week, arrives with a camera, gets shown a performance.</p>
+            <p class="post-go" aria-hidden="true">Read &rarr;</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <p class="manifesto-line reveal">No fake experiences.<br>Just life as it is.</p>
-    <p class="manifesto-body reveal" style="--d:.2s">This is being built slowly. Host, safety and consent details come before visitors.</p>
-    <div class="reveal" style="--d:.36s">
-      <p class="manifesto-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha</p>
-      <p class="manifesto-coords display">20.227°N, 84.124°E</p>
-      <p class="manifesto-close">the story the soil tells</p>
+  <!-- MANIFESTO — night falls here, and the footer carries on from it. -->
+  <section class="manifesto on-night" aria-label="Manifesto">
+    <div class="wrap">
+      <p class="manifesto-line reveal">No fake experiences.<br>Just life as it is.</p>
+      <p class="manifesto-body reveal" style="--d:.15s">This is being built slowly. Host, safety and consent details come before visitors.</p>
+      <p class="manifesto-coords reveal" style="--d:.3s">Sarangada &middot; Nuagaon Block &middot; Kandhamal &middot; Odisha &middot; 20.227&deg;N, 84.124&deg;E</p>
     </div>
   </section>
+
 </main>
 
-<footer class="site-foot">
-  <div class="site-foot-inner">
-    <div class="foot-col foot-brand">
-      <a class="brand-mark" href="index.html" aria-label="Maati Ra Katha home">
+<!-- FOOT:START — written by tools/pages.py sync. Change FOOT there, not here. -->
+<footer class="site-foot on-night">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="index.html">
         <svg class="brand-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path class="sun" d="M8.7 18.75a3.3 3.3 0 0 1 6.6 0z"/>
           <path class="frame" d="M6.6 18.75V12.15a5.4 5.4 0 0 1 10.8 0v6.6"/>
           <path class="frame" d="M4.65 18.75h14.7"/>
         </svg>
-        <span>Maati Ra Katha</span>
+        <span class="brand-name">Maati Ra Katha</span>
       </a>
-      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha · 20.227°N, 84.124°E</p>
+      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>
+      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is
+      published before it is verified on the ground and consented to.</p>
     </div>
-    <div class="foot-col foot-links">
-      <nav class="foot-nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="land.html">The land</a>
-        <a href="photographs.html">Moments</a>
-        <a href="days.html">The days</a>
-        <a href="visit.html">How to reach</a>
-        <a href="visit.html#interest">Pilot</a>
-      </nav>
-      <p class="foot-disclaimer">Nothing on this site is bookable. No route, photograph, or host detail is published before it is verified on the ground and consented to.</p>
-      <a class="foot-mail" href="mailto:hello@maatirakatha.com">hello@maatirakatha.com</a>
-      <!-- SOCIAL — same block on every page; change it here and in the other four. -->
-      <nav class="foot-social" aria-label="Social links">
-        <a href="https://www.instagram.com/maati.ra.katha/" aria-label="Maati Ra Katha on Instagram"
-           target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.2" cy="6.8" r="1.1" class="dot"/>
-          </svg>
-        </a>
-        <a href="https://x.com/maatirakatha" aria-label="Maati Ra Katha on X"
-           target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4 3.5h4.2l5 6.6 5.4-6.6h2l-6.5 7.9 7 9.1h-4.2l-5.3-7-5.7 7h-2l6.8-8.3z" class="solid"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@MaatiRaKatha" aria-label="Maati Ra Katha on YouTube" target="_blank" rel="me noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <rect x="2.5" y="5.5" width="19" height="13" rx="4"/>
-            <path d="M10.2 9.4v5.2l4.6-2.6z" class="solid"/>
-          </svg>
-        </a>
-      </nav>
+    <nav class="foot-nav" aria-label="Footer">
+      <p class="foot-h">The site</p>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="land.html">The land</a>
+      <a href="photographs.html">Photographs</a>
+      <a href="days.html">The days</a>
+      <a href="journal.html">Journal</a>
+      <a href="visit.html">How to reach</a>
+    </nav>
+    <div class="foot-follow">
+      <p class="foot-h">Follow the build</p>
+      <a class="follow" href="https://www.youtube.com/@MaatiRaKatha" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.4v5.2l4.6-2.6z" class="solid"/></svg>
+        <span>YouTube <small>@MaatiRaKatha</small></span>
+      </a>
+      <a class="follow" href="https://www.instagram.com/maati.ra.katha/" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" class="dot"/></svg>
+        <span>Instagram <small>@maati.ra.katha</small></span>
+      </a>
+      <a class="follow" href="https://x.com/maatirakatha" rel="me noopener" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3.5h4.2l5 6.6 5.4-6.6h2l-6.5 7.9 7 9.1h-4.2l-5.3-7-5.7 7h-2l6.8-8.3z" class="solid"/></svg>
+        <span>X <small>@maatirakatha</small></span>
+      </a>
+      <a class="follow" href="mailto:hello@maatirakatha.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.8 7 8.2 6.2L20.2 7"/></svg>
+        <span>Email <small>hello@maatirakatha.com</small></span>
+      </a>
     </div>
   </div>
+  <div class="wrap foot-base">
+    <p>&copy; 2026 Maati Ra Katha</p>
+    <p class="hand">the story the soil tells</p>
+  </div>
 </footer>
-
-<script>
-/* ============ Reveal + progress ============ */
-(function () {
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      // top < 0 catches anything already scrolled past. An anchor such as
-      // photographs.html#school-meal jumps straight down the page, and every
-      // element above it would otherwise never intersect and stay invisible.
-      if (e.isIntersecting || e.boundingClientRect.top < 0) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
-
-  // An anchor such as photographs.html#school-meal jumps the page before the
-  // observer's first entries land, so everything above the landing point never
-  // changes intersection state and would stay invisible for good. Sweep once,
-  // after the jump has settled.
-  addEventListener('load', function () {
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      if (el.getBoundingClientRect().top < innerHeight) {
-        el.classList.add('visible');
-        obs.unobserve(el);
-      }
-    });
-  });
-
-  var bar = document.querySelector('.progress-bar');
-  var nav = document.querySelector('.site-nav');
-  window.addEventListener('scroll', function () {
-    var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    bar.style.width = (pct * 100) + '%';
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
-
-  /* ---- Mobile menu ----
-     Six nav items need ~418px and a 390px phone gives the strip ~316px, so the
-     Pilot link sat off the edge. The button is invisible without .js, so this is
-     the only thing that can open the panel — there is no CSS-only state to
-     drift out of sync with aria-expanded. */
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.getElementById('nav-links');
-  if (toggle && links) {
-    var setMenu = function (open) {
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      links.classList.toggle('open', open);
-    };
-    toggle.addEventListener('click', function () {
-      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-    // A same-page anchor does not reload, so without this the panel stays open
-    // over the section it just jumped to.
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setMenu(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setMenu(false);
-        toggle.focus();
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (nav && !nav.contains(e.target)) setMenu(false);
-    });
-    // Rotating to landscape crosses the breakpoint; the panel would otherwise be
-    // left open as a stray block under a nav that is no longer collapsed.
-    addEventListener('resize', function () {
-      if (innerWidth > 768) setMenu(false);
-    }, { passive: true });
-  }
-})();
-</script>
+<!-- FOOT:END -->
 
 </body>
 </html>
