@@ -199,6 +199,7 @@ strong, b { font-weight: 650; }
 .section--ash + .section { padding-top: var(--section); }
 .section + .section--ash, .section--ash + .section--ash { padding-top: var(--section); }
 .on-night + .section { padding-top: var(--section); }
+.section.on-night { padding-top: var(--section); }   /* a band never loses its top edge */
 
 /* The night register. Anything inside reads ash-on-indigo in both themes. */
 .on-night {
@@ -276,6 +277,9 @@ strong, b { font-weight: 650; }
 
 /* Running text: notes, the days, the journal. */
 .prose { max-width: var(--measure); color: var(--ink-2); }
+/* On a .wrap the padding is the gutter, so the measure has to include it or the text
+   column ends up narrower than, and offset from, the heading above it. */
+.wrap.prose { max-width: calc(var(--measure) + 2 * var(--gutter)); }
 .prose p + p, .prose p + ul, .prose ul + p { margin-top: 1.1em; }
 .prose em { color: var(--ink); }
 .prose a { color: var(--accent); text-underline-offset: 0.18em; }
@@ -1497,6 +1501,7 @@ strong, b { font-weight: 650; }
 
 /* ============ Journal: an article ============ */
 .article { padding-bottom: var(--section); }
+.article-nav { padding-top: 2.5rem; }
 .article .prose { font-size: 1.125rem; line-height: 1.78; color: var(--ink); }
 .article .prose p + p { margin-top: 1.25em; }
 .article .prose h2 { margin: 2.2em 0 0.7em; font-size: var(--t-xl); }
@@ -1521,6 +1526,7 @@ strong, b { font-weight: 650; }
 .article figure img[height] { max-height: 82vh; width: auto; max-width: 100%; margin-inline: auto; }
 .article figcaption { margin-top: 0.7rem; font-size: 0.9rem; line-height: 1.5; color: var(--ink-3); }
 .article figcaption a { color: inherit; }
+.article .figure--tall figcaption { text-align: center; }
 .article-end {
   margin-top: 3rem;
   padding-top: 1.4rem;
