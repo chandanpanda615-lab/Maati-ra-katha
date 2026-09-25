@@ -1,0 +1,20 @@
+# GitHub Pages builds this repository with Jekyll. The site is plain HTML with no front
+# matter, so Jekyll only copies it — but it copies EVERYTHING not listed here, and it
+# renders every Markdown file as a page. Without this list, maatirakatha.com served
+# /CLAUDE.html, /AGENTS.html, the whole of docs/ (the chat transcript included), the
+# social research dump, tools/ and the backup of the old site.
+#
+# Working files stay in the repository; they just stop being published. Anything
+# starting with _ or . (like _incoming/ and .claude/) is already skipped by Jekyll.
+#
+# maati-katha-research/ is deliberately NOT excluded: its prototype page is published
+# on purpose and carries its own noindex. See the comment at the top of that page.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
+  - docs
+  - tools
+  - backups
+  - Village_Image
+  - the_complete_socialmedia_research.txt
