@@ -52,7 +52,7 @@ SIZES = {540: 76, 1080: 78}             # long edge -> JPEG quality
 # alt text and the "All N photographs" count come from the manifest, so none of it
 # can drift from the archive the way the hand-written count once did (42 against 40).
 STRIP = ["terraces", "paddy-plain", "cattle-hill", "tank-railing",
-         "bike-dusk", "market-hills", "thali", "fire-night"]
+         "house-door", "school-garden", "thali", "bike-dusk"]
 
 FIELDS = ["file", "publish", "consent", "people", "by", "slug", "caption", "alt", "place",
           "when", "group", "span", "cover", "hero", "crop", "tags", "notes"]
@@ -79,11 +79,12 @@ STRIP_START = "<!-- STRIP:START"
 STRIP_END = "<!-- STRIP:END -->"
 
 # `sizes` for a gallery cell, matching .gallery-grid in site.css: six columns inside a
-# 1180px column with a 48px gutter, one column under 700px. A plain or tall cell spans
-# two columns (~385px), a wide or feature cell four (~785px). Change the grid, change these.
+# 1224px column (1320px less the gutters), two columns under 900px, one under 520px.
+# A plain or tall cell spans two of six (~390px), a wide or feature cell four (~815px).
+# Change the grid, change these.
 CELL_SIZES = {
-    "narrow": "(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1276px) 30vw, 385px",
-    "broad":  "(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1276px) 62vw, 785px",
+    "narrow": "(max-width: 520px) calc(100vw - 2rem), (max-width: 900px) 46vw, (max-width: 1320px) 30vw, 390px",
+    "broad":  "(max-width: 520px) calc(100vw - 2rem), (max-width: 900px) 92vw, (max-width: 1320px) 62vw, 815px",
 }
 
 # Hashtag reach, measured 4 Aug 2026 — docs/SOCIAL.md §3 has the numbers. Tags under

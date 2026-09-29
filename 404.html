@@ -7,7 +7,8 @@
 <meta name="description" content="This page is not on maatirakatha.com.">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#161D28">
+<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141B" media="(prefers-color-scheme: dark)">
 <!-- GitHub Pages serves this file for ANY missing path — /posts/nope/deeper as much as
      /nope — so a relative "assets/site.css" would resolve under the missing folder and
      404 itself. Every path on this page starts at the root. tools/pages.py knows. -->
@@ -20,7 +21,6 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="progress" aria-hidden="true"></div>
 
 <!-- NAV:START — written by tools/pages.py sync. Change NAV there, not here. -->
 <nav class="site-nav" aria-label="Primary">
@@ -32,17 +32,25 @@
     </svg>
     <span class="brand-name">Maati Ra Katha</span>
   </a>
+  <span class="sundial" aria-hidden="true">
+    <svg viewBox="0 0 64 26" focusable="false">
+      <path class="sundial-ground" d="M2 23h60"/>
+      <path class="sundial-arc" d="M60 23A28 19 0 0 0 4 23"/>
+      <circle class="sundial-sun" cx="60" cy="23" r="3.4"/>
+    </svg>
+    <span class="sundial-w">W</span><span class="sundial-e">E</span>
+  </span>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
           aria-label="Open menu">
-    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="bars" aria-hidden="true"><i></i><i></i></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="/land.html">The land</a>
+    <a href="/land.html">The place</a>
+    <a href="/days.html">The week</a>
     <a href="/photographs.html">Photographs</a>
-    <a href="/days.html">The days</a>
     <a href="/journal.html">Journal</a>
-    <a href="/visit.html">How to reach</a>
-    <a class="nav-cta" href="/visit.html#interest">Pilot</a>
+    <a href="/visit.html">Coming here</a>
+    <a class="nav-cta" href="/visit.html#interest">Follow the build</a>
   </div>
 </nav>
 <!-- NAV:END -->
@@ -50,32 +58,30 @@
 <main id="main">
 
   <header class="page-head">
-    <img class="page-head-img" src="/assets/road.jpg" alt="" width="1600" height="901" fetchpriority="high">
-    <div class="wrap page-head-inner">
-      <p class="label label--light">Not found</p>
-      <h1 class="page-title">This page is not here</h1>
-      <p class="page-lede">The road goes on, but not to this address. It may have moved when the site did — it used to live somewhere else.</p>
-    </div>
-  </header>
-
-  <section class="section" aria-label="Where to go instead">
     <div class="wrap">
-      <p class="section-intro">Everything that exists so far is in one of these places.</p>
+      <p class="kicker"><span>404</span><span>Not found</span></p>
+      <h1 class="page-title">The road goes on, but not to this address.</h1>
+      <p class="lede page-lede">It may have moved when the site did. Everything that exists so far is in one of these places.</p>
       <div class="lost-links">
         <a class="btn btn--primary" href="/">Home</a>
-        <a class="btn btn--ghost" href="/land.html">The land</a>
+        <a class="btn btn--ghost" href="/land.html">The place</a>
+        <a class="btn btn--ghost" href="/days.html">The week</a>
         <a class="btn btn--ghost" href="/photographs.html">Photographs</a>
-        <a class="btn btn--ghost" href="/days.html">The days</a>
         <a class="btn btn--ghost" href="/journal.html">Journal</a>
-        <a class="btn btn--ghost" href="/visit.html">How to reach</a>
+        <a class="btn btn--ghost" href="/visit.html">Coming here</a>
       </div>
     </div>
-  </section>
+  </header>
 
 </main>
 
 <!-- FOOT:START — written by tools/pages.py sync. Change FOOT there, not here. -->
 <footer class="site-foot on-night">
+  <div class="wrap foot-top">
+    <p class="foot-line">No fake experiences.<br><em>Just life as it is.</em></p>
+    <p class="foot-note">Nothing on this site is bookable. No route, photograph or host detail
+    is published before it is verified on the ground and consented to.</p>
+  </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="brand" href="/index.html">
@@ -86,18 +92,16 @@
         </svg>
         <span class="brand-name">Maati Ra Katha</span>
       </a>
-      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>
-      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is
-      published before it is verified on the ground and consented to.</p>
+      <p class="foot-loc">Sarangada · Nuagaon Block<br>Kandhamal · Odisha 762106<br>20.227°N 84.124°E</p>
     </div>
     <nav class="foot-nav" aria-label="Footer">
       <p class="foot-h">The site</p>
       <a href="/index.html">Home</a>
-      <a href="/land.html">The land</a>
+      <a href="/land.html">The place</a>
+      <a href="/days.html">The week</a>
       <a href="/photographs.html">Photographs</a>
-      <a href="/days.html">The days</a>
       <a href="/journal.html">Journal</a>
-      <a href="/visit.html">How to reach</a>
+      <a href="/visit.html">Coming here</a>
     </nav>
     <div class="foot-follow">
       <p class="foot-h">Follow the build</p>
@@ -121,7 +125,7 @@
   </div>
   <div class="wrap foot-base">
     <p>&copy; 2026 Maati Ra Katha</p>
-    <p class="hand">the story the soil tells</p>
+    <p>Sunrise over the fields. Sunset into the forest.</p>
   </div>
 </footer>
 <!-- FOOT:END -->

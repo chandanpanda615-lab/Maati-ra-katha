@@ -2,7 +2,7 @@
 
 Success criteria:
   1. no console errors, no failed requests
-  2. the 4 woff2 fetch as separate files with 200
+  2. the font files fetch as separate files with 200
   3. no .reveal element sits at opacity 0 after a human-paced scroll
   4. opening an album leaves none of its photographs invisible
   5. an anchor jump does not strand everything above it at opacity 0
@@ -18,7 +18,7 @@ import sys
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ["index", "land", "days", "photographs", "visit"]
+PAGES = ["index", "land", "days", "photographs", "visit", "journal", "posts/first-post"]
 
 handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT))
 socketserver.TCPServer.allow_reuse_address = True

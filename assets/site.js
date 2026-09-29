@@ -1,4 +1,4 @@
-/* Behaviour every page shares: the reveal on scroll, the progress line, the nav, the
+/* Behaviour every page shares: the reveal on scroll, the sundial, the nav, the
    phone menu, and the filmstrip's arrows. Loaded with `defer` from each page's <head>.
    It used to be pasted inline into five pages; one copy cannot drift from the others.
 
@@ -38,18 +38,27 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---- Progress line and nav state -------------------------------------------- */
-  var bar = document.querySelector('.progress');
+  /* ---- The sundial and nav state ----------------------------------------------
+     The sun crosses the village as you read: up over the fields on the right (east),
+     down into the forest on the left (west). The arc in tools/pages.py sundial() is
+     half an ellipse centred on (32, 23), 28 wide and 19 high; the dot rides it. */
+  var sun = document.querySelector('.sundial-sun');
   var ticking = false;
   function onScroll() {
     ticking = false;
     var max = document.documentElement.scrollHeight - innerHeight;
-    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
-    if (nav) nav.classList.toggle('scrolled', scrollY > 60);
+    var t = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    if (sun) {
+      var a = Math.PI * t;
+      sun.setAttribute('cx', (32 + 28 * Math.cos(a)).toFixed(2));
+      sun.setAttribute('cy', (23 - 19 * Math.sin(a)).toFixed(2));
+    }
+    if (nav) nav.classList.toggle('scrolled', scrollY > 8);
   }
   addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
+  addEventListener('resize', onScroll, { passive: true });
   onScroll();
 
   /* ---- Phone menu ---------------------------------------------------------------
@@ -82,7 +91,7 @@
     });
     // Turning a phone to landscape can cross the breakpoint; do not leave a stray panel.
     addEventListener('resize', function () {
-      if (innerWidth > 960) setMenu(false);
+      if (innerWidth > 980) setMenu(false);
     }, { passive: true });
   }
 

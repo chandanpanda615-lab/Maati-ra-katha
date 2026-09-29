@@ -14,12 +14,12 @@ as it is; `_config.yml` keeps the working files out of what gets published.
 
 | Page | What it is |
 |---|---|
-| `index.html` | the front door: where this stands, four ways in, the filmstrip, the journal |
-| `land.html` | notes from the village |
+| `index.html` | one day across the village: where this stands, east to west, the four hours, the week, the filmstrip, the journal |
+| `land.html` | the place: the ground record, notes from the village, what is not known yet |
 | `photographs.html` | the archive, in albums |
-| `days.html` | what a week there is spent on |
-| `journal.html`, `posts/` | the writing |
-| `visit.html` | how to reach, and the pilot |
+| `days.html` | the week: seven days, a draft |
+| `journal.html`, `posts/` | the writing — The Weight of Belonging |
+| `visit.html` | coming here: what is checked, what is not decided, the road, following the build |
 
 To look at it locally:
 
@@ -46,5 +46,6 @@ python tools/test_photos.py && python tools/test_pages.py
 The working notes — the rules, how everything fits together, what broke before and why —
 are in **`CLAUDE.md`**. The look is in **`docs/BRAND.md`**.
 
-`backups/site-2026-09-25/` is the site exactly as it was before the September 2026
-redesign, byte for byte, with instructions for putting it back.
+`backups/site-2026-09-29/` is the site exactly as it was before the restructure of 29
+September 2026, and `backups/site-2026-09-25/` the one before that — each byte for byte,
+with instructions for putting it back.
