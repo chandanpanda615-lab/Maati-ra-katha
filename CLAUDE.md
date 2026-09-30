@@ -13,8 +13,11 @@ apex domain, Enforce HTTPS is on). The repo is `chandanpanda615-lab/Maati-ra-kat
 The old `chandanpanda615-lab.github.io/life-with-love/` URL is **dead — it 404s**. If you
 see `life-with-love` anywhere, it is a bug. `python tools/pages.py check` fails on it.
 
-The site was redesigned on 25 Sep 2026. The version before it is in
-`backups/site-2026-09-25/`, byte for byte, with a README on putting it back.
+The site was restructured from scratch on 29 Sep 2026 around one verified fact: the
+village lies along one road, fields to the east, forest to the west, so the sun comes up
+over the fields and goes down into the forest. The site is one day crossing it. The
+version before that is in `backups/site-2026-09-29/`, the one before *that* in
+`backups/site-2026-09-25/`, each byte for byte with a README on putting it back.
 
 ## The rules that are not negotiable
 
@@ -45,21 +48,25 @@ for the parts every page shares. Do not reintroduce a bundler without a concrete
 
 | File | Holds |
 |---|---|
-| `index.html` | hero, where this stands, four doors, the filmstrip, the journal, the manifesto |
-| `land.html` | the four notes, open, and a door into the land album. No gallery of its own |
-| `photographs.html` | "Moments and Memories" — seven album covers; click one to open that set |
-| `days.html` | the consent box and the seven days, each with a photograph or a held frame. The copy is a **draft** Chandan intends to rewrite in his own words |
-| `journal.html` | every post, newest first |
-| `posts/*.html` | the posts. On the site template like every other page |
-| `visit.html` | the route, what to know, and the pilot (`#interest`, where the nav's Pilot link lands) |
+| `index.html` | the wordmark and hero, where this stands (four steps, no dates), the east–west drawing, the four hours (morning, day, evening, night), the week as a list, the filmstrip, the journal |
+| `land.html` | **The place.** The ground record (every row TRUE in the audit, sources under it), four notes, what is not known yet, a door into the land album |
+| `days.html` | **The week.** The draft note, safeguarding and consent, the seven days, each with a photograph or a held frame. The copy is a **draft** Chandan intends to rewrite in his own words |
+| `photographs.html` | the archive: seven album covers in a grid; the open one spans the row |
+| `journal.html` | **The Weight of Belonging** — every post, newest first |
+| `posts/*.html` | the posts |
+| `visit.html` | **Coming here.** Checked / not decided yet (straight from the truth audit), the route, what to know, and `#interest` — where the nav's "Follow the build" lands |
 | `404.html` | served by GitHub Pages for any missing path, so every path in it is root-absolute |
 | `assets/site.css` | everything visual. Tokens in `:root`; see `docs/BRAND.md` |
-| `assets/site.js` | reveal, progress line, nav state, phone menu, filmstrip arrows — every page |
+| `assets/site.js` | reveal, the sundial, nav state, phone menu, filmstrip arrows — every page |
 | `assets/gallery.js` | the archive: album bar, lightbox, swipe, `?tag=` filter |
 | `assets/fonts/` | real `.woff2`, latin subsets, OFL licences beside them. Never inline them |
 | `tools/photos.py` | the whole photo pipeline |
-| `tools/pages.py` | the nav and footer (`sync`), and the site check (`check`) |
+| `tools/pages.py` | the nav, the sundial and the footer (`sync`), and the site check (`check`) |
+| `tools/test_reveal.py` | a real browser: no errors, no 404s, nothing stuck at opacity 0, JS-off readable |
 | `_config.yml` | what GitHub Pages must NOT publish. Without it, `CLAUDE.md` and `docs/` were live |
+
+Page URLs did not change in the restructure — `land.html` is "The place", `days.html` is
+"The week", `visit.html` is "Coming here" — so every link already shared still lands.
 
 ## The photo pipeline — how to add photographs
 
@@ -115,10 +122,10 @@ Nothing between these markers is written by hand. Everything outside them is.
 |---|---|---|
 | `GALLERY:START` / `GALLERY:END` | `photographs.html`, `docs/PHOTOS.md` | `photos.py render` |
 | `STRIP:START` / `STRIP:END` | `index.html` (the filmstrip and its "All N photographs") | `photos.py render` |
-| `NAV:START` / `NAV:END`, `FOOT:START` / `FOOT:END` | every page | `pages.py sync` |
+| `NAV:START` / `NAV:END`, `FOOT:START` / `FOOT:END` | every page (a new page needs only the empty markers) | `pages.py sync` |
 
-The nav and the footer live once, in `NAV`, `FOOT_NAV` and `FOLLOW` at the top of
-`tools/pages.py`. Change them there and run `sync`; `check` fails on a page that drifted.
+The nav, the sundial and the footer live once, in `NAV`, `FOOT_NAV`, `FOLLOW`,
+`sundial()` and `render_foot()` in `tools/pages.py`. Change them there and run `sync`; `check` fails on a page that drifted.
 Both generators are idempotent — a second run must change nothing, and the tests check it.
 
 The one photo count that used to be typed by hand (the homepage's "All N photographs",
@@ -147,7 +154,7 @@ add a page — `check` fails until you do.
 3. Add the URL to `sitemap.xml`, run `python tools/pages.py sync` (it writes the nav and
    footer into the new page), then `check`.
 
-## Current state (25 Sep 2026)
+## Current state (29 Sep 2026)
 
 - **40 photographs** across 7 albums (land 10, village 11, work 1, school 13, festival 1,
   food 1, market 3), all on `photographs.html`. The archive lives there **once**; other
@@ -156,19 +163,24 @@ add a page — `check` fails until you do.
 - The mobile hero (`hero-portrait.jpg`) is a **different photograph** from the desktop one,
   not a crop: women-earth, sorting harvest on red earth. The `<picture>` in `index.html`
   swaps it in on narrow portrait screens, and `.cap-desktop` / `.cap-mobile` swap at the
-  same point. Change an image, change its caption. Its manifest row now points at the
-  women-earth original; it used to point at the old road crop.
+  same point. Change an image, change its caption.
+- `land.jpg` carried a burnt-in "Chandan" signature until 29 Sep; it is cropped (11.5%, in
+  the manifest). Every other published image was checked along its bottom edge that day.
+- The homepage hours use one photograph each (paddy-green, market-hills, ridge-sun,
+  fire-night). Their captions give the place and month **only where the manifest has
+  them** — ridge-sun has no place, so it says only "Sep 2025". Never add "Sarangada" to a
+  photograph the manifest does not place there.
 - Footer follow links, YouTube first (docs/SOCIAL.md: it is the main channel): YouTube,
   Instagram, X, email. `sameAs` in the homepage JSON-LD lists the same accounts.
-- Homepage weight on a laptop: 1.0 MB (was 3.6 MB). Accessibility: axe-core reports no
-  WCAG 2.1 AA violations on any page, in either theme, at 1280px or 390px.
+- Accessibility: axe-core reports no WCAG 2.1 AA violations on any page, in either theme,
+  at 1280px or 390px (checked 29 Sep 2026).
 - Video originals, `Village_Image/` and `youtube_assets/` are local only, all gitignored.
 
 ### Open questions — not fixed, because only Chandan can answer them
 
-- `land.html` says "Three kilometres east and the floods would reach it." The Layer 1
-  research found no flood hazard at any sampled point in Sarangada, but nothing on record
-  covers three kilometres east. Verify, or cut the sentence.
+- *Resolved 29 Sep:* "Three kilometres east and the floods would reach it" was cut from
+  `land.html` and replaced with what is on record — no flood hazard at six sampled points.
+  "Drying turmeric" in the first-morning note went too: Sarangada does not grow it.
 - `visit.html` states the languages (Kui in the older Kondh homes, Hindi among the
   young) and the mixed-village description. truth-audit.md marks both LIKELY.
 - `days.html` is still the draft.

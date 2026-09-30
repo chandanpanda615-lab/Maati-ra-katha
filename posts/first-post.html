@@ -6,7 +6,8 @@
 <title>Why I am building this slowly — Maati Ra Katha</title>
 <meta name="description" content="A village is not a product, and I would rather take two years than get this wrong. Why nothing on Maati Ra Katha is bookable yet.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#161D28">
+<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" href="../assets/favicon-48.png" sizes="48x48" type="image/png">
@@ -38,13 +39,12 @@
 }
 </script>
 <script>document.documentElement.className+=' js'</script>
-<link rel="preload" href="../assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
 <script src="../assets/site.js" defer></script>
 </head>
-<body class="nav-solid">
+<body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="progress" aria-hidden="true"></div>
 
 <!-- NAV:START — written by tools/pages.py sync. Change NAV there, not here. -->
 <nav class="site-nav" aria-label="Primary">
@@ -56,17 +56,25 @@
     </svg>
     <span class="brand-name">Maati Ra Katha</span>
   </a>
+  <span class="sundial" aria-hidden="true">
+    <svg viewBox="0 0 64 26" focusable="false">
+      <path class="sundial-ground" d="M2 23h60"/>
+      <path class="sundial-arc" d="M60 23A28 19 0 0 0 4 23"/>
+      <circle class="sundial-sun" cx="60" cy="23" r="3.4"/>
+    </svg>
+    <span class="sundial-w">W</span><span class="sundial-e">E</span>
+  </span>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
           aria-label="Open menu">
-    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="bars" aria-hidden="true"><i></i><i></i></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="../land.html">The land</a>
+    <a href="../land.html">The place</a>
+    <a href="../days.html">The week</a>
     <a href="../photographs.html">Photographs</a>
-    <a href="../days.html">The days</a>
     <a href="../journal.html" aria-current="true">Journal</a>
-    <a href="../visit.html">How to reach</a>
-    <a class="nav-cta" href="../visit.html#interest">Pilot</a>
+    <a href="../visit.html">Coming here</a>
+    <a class="nav-cta" href="../visit.html#interest">Follow the build</a>
   </div>
 </nav>
 <!-- NAV:END -->
@@ -74,9 +82,9 @@
 <main id="main">
   <article>
 
-    <header class="paper-head">
+    <header class="page-head page-head--post">
       <div class="wrap wrap--text">
-        <p class="label"><a href="../journal.html">Journal</a> &middot; <time datetime="2026-07-28">28 July 2026</time></p>
+        <p class="kicker"><a href="../journal.html">The Weight of Belonging</a><span><time datetime="2026-07-28">28 July 2026</time></span></p>
         <h1 class="page-title">Why I am building this slowly</h1>
       </div>
     </header>
@@ -96,7 +104,7 @@
              _incoming/manifest.csv first, then copy a <figure> from second-post.html:
              ../assets/photos/<slug>.jpg with its srcset, and the manifest's alt text. -->
 
-        <p class="article-end">Written in Sarangada, Kandhamal.</p>
+        <p class="article-end">Written in Sarangada, Kandhamal</p>
       </div>
 
       <nav class="wrap wrap--text article-nav" aria-label="More writing">
@@ -112,6 +120,11 @@
 
 <!-- FOOT:START — written by tools/pages.py sync. Change FOOT there, not here. -->
 <footer class="site-foot on-night">
+  <div class="wrap foot-top">
+    <p class="foot-line">No fake experiences.<br><em>Just life as it is.</em></p>
+    <p class="foot-note">Nothing on this site is bookable. No route, photograph or host detail
+    is published before it is verified on the ground and consented to.</p>
+  </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="brand" href="../index.html">
@@ -122,18 +135,16 @@
         </svg>
         <span class="brand-name">Maati Ra Katha</span>
       </a>
-      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>
-      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is
-      published before it is verified on the ground and consented to.</p>
+      <p class="foot-loc">Sarangada · Nuagaon Block<br>Kandhamal · Odisha 762106<br>20.227°N 84.124°E</p>
     </div>
     <nav class="foot-nav" aria-label="Footer">
       <p class="foot-h">The site</p>
       <a href="../index.html">Home</a>
-      <a href="../land.html">The land</a>
+      <a href="../land.html">The place</a>
+      <a href="../days.html">The week</a>
       <a href="../photographs.html">Photographs</a>
-      <a href="../days.html">The days</a>
       <a href="../journal.html" aria-current="true">Journal</a>
-      <a href="../visit.html">How to reach</a>
+      <a href="../visit.html">Coming here</a>
     </nav>
     <div class="foot-follow">
       <p class="foot-h">Follow the build</p>
@@ -157,7 +168,7 @@
   </div>
   <div class="wrap foot-base">
     <p>&copy; 2026 Maati Ra Katha</p>
-    <p class="hand">the story the soil tells</p>
+    <p>Sunrise over the fields. Sunset into the forest.</p>
   </div>
 </footer>
 <!-- FOOT:END -->

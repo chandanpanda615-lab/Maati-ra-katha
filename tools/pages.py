@@ -40,11 +40,11 @@ BANNED = ["authentic", "immersive", "vibrant", "nestled", "hidden gem", "undisco
 # ---------------------------------------------------------------------------------------
 # The nav. (href, label, key). `key` is what makes aria-current land on the right link.
 NAV = [
-    ("land.html", "The land", "land"),
+    ("land.html", "The place", "land"),
+    ("days.html", "The week", "days"),
     ("photographs.html", "Photographs", "photographs"),
-    ("days.html", "The days", "days"),
     ("journal.html", "Journal", "journal"),
-    ("visit.html", "How to reach", "visit"),
+    ("visit.html", "Coming here", "visit"),
 ]
 FOOT_NAV = [("index.html", "Home", "home")] + NAV
 
@@ -58,6 +58,23 @@ def logo(pad):
         '  <path class="frame" d="M4.65 18.75h14.7"/>',
         "</svg>",
     ])
+
+def sundial(pad):
+    """The sun crossing the village as you read. Sarangada's fields are to the east and
+    its forest to the west, so on a north-up map the sun comes up on the right and goes
+    down on the left. site.js moves the dot along the arc with the scroll position;
+    without JavaScript it sits at sunrise. Decoration: aria-hidden."""
+    return "\n".join(pad + line for line in [
+        '<span class="sundial" aria-hidden="true">',
+        '  <svg viewBox="0 0 64 26" focusable="false">',
+        '    <path class="sundial-ground" d="M2 23h60"/>',
+        '    <path class="sundial-arc" d="M60 23A28 19 0 0 0 4 23"/>',
+        '    <circle class="sundial-sun" cx="60" cy="23" r="3.4"/>',
+        "  </svg>",
+        '  <span class="sundial-w">W</span><span class="sundial-e">E</span>',
+        "</span>",
+    ])
+
 
 # Follow links, YouTube first: docs/SOCIAL.md §5 — it is the main channel, Instagram the
 # notice board. rel="me" ties each account to this domain.
@@ -122,13 +139,14 @@ def render_nav(rel):
         logo("    "),
         '    <span class="brand-name">Maati Ra Katha</span>',
         "  </a>",
+        sundial("  "),
         '  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"',
         '          aria-label="Open menu">',
-        '    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>',
+        '    <span class="bars" aria-hidden="true"><i></i><i></i></span>',
         "  </button>",
         '  <div class="nav-links" id="nav-links">',
         *links,
-        f'    <a class="nav-cta" href="{p}visit.html#interest">Pilot</a>',
+        f'    <a class="nav-cta" href="{p}visit.html#interest">Follow the build</a>',
         "  </div>",
         "</nav>",
         NAV_END,
@@ -154,15 +172,18 @@ def render_foot(rel):
     return "\n".join([
         f"{FOOT_START} — written by tools/pages.py sync. Change FOOT there, not here. -->",
         '<footer class="site-foot on-night">',
+        '  <div class="wrap foot-top">',
+        '    <p class="foot-line">No fake experiences.<br><em>Just life as it is.</em></p>',
+        '    <p class="foot-note">Nothing on this site is bookable. No route, photograph or host detail',
+        "    is published before it is verified on the ground and consented to.</p>",
+        "  </div>",
         '  <div class="wrap foot-grid">',
         '    <div class="foot-brand">',
         f'      <a class="brand" href="{p}index.html">',
         logo("        "),
         '        <span class="brand-name">Maati Ra Katha</span>',
         "      </a>",
-        '      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>',
-        '      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is',
-        "      published before it is verified on the ground and consented to.</p>",
+        '      <p class="foot-loc">Sarangada · Nuagaon Block<br>Kandhamal · Odisha 762106<br>20.227°N 84.124°E</p>',
         "    </div>",
         '    <nav class="foot-nav" aria-label="Footer">',
         '      <p class="foot-h">The site</p>',
@@ -175,7 +196,7 @@ def render_foot(rel):
         "  </div>",
         '  <div class="wrap foot-base">',
         "    <p>&copy; 2026 Maati Ra Katha</p>",
-        '    <p class="hand">the story the soil tells</p>',
+        "    <p>Sunrise over the fields. Sunset into the forest.</p>",
         "  </div>",
         "</footer>",
         FOOT_END,

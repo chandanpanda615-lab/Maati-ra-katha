@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Journal — Maati Ra Katha</title>
+<title>Journal — The Weight of Belonging — Maati Ra Katha</title>
 <meta name="description" content="Writing from the build of Maati Ra Katha, a village life-exchange in Sarangada, Kandhamal: why it is being built slowly, and the stories the soil tells.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#161D28">
+<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141B" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
@@ -23,13 +24,12 @@
 <meta name="twitter:image" content="https://maatirakatha.com/assets/photos/roofs-dusk.jpg">
 <link rel="canonical" href="https://maatirakatha.com/journal.html">
 <script>document.documentElement.className+=' js'</script>
-<link rel="preload" href="assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="progress" aria-hidden="true"></div>
 
 <!-- NAV:START — written by tools/pages.py sync. Change NAV there, not here. -->
 <nav class="site-nav" aria-label="Primary">
@@ -41,17 +41,25 @@
     </svg>
     <span class="brand-name">Maati Ra Katha</span>
   </a>
+  <span class="sundial" aria-hidden="true">
+    <svg viewBox="0 0 64 26" focusable="false">
+      <path class="sundial-ground" d="M2 23h60"/>
+      <path class="sundial-arc" d="M60 23A28 19 0 0 0 4 23"/>
+      <circle class="sundial-sun" cx="60" cy="23" r="3.4"/>
+    </svg>
+    <span class="sundial-w">W</span><span class="sundial-e">E</span>
+  </span>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
           aria-label="Open menu">
-    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="bars" aria-hidden="true"><i></i><i></i></span>
   </button>
   <div class="nav-links" id="nav-links">
-    <a href="land.html">The land</a>
+    <a href="land.html">The place</a>
+    <a href="days.html">The week</a>
     <a href="photographs.html">Photographs</a>
-    <a href="days.html">The days</a>
     <a href="journal.html" aria-current="page">Journal</a>
-    <a href="visit.html">How to reach</a>
-    <a class="nav-cta" href="visit.html#interest">Pilot</a>
+    <a href="visit.html">Coming here</a>
+    <a class="nav-cta" href="visit.html#interest">Follow the build</a>
   </div>
 </nav>
 <!-- NAV:END -->
@@ -59,48 +67,45 @@
 <main id="main">
 
   <header class="page-head">
-    <img class="page-head-img" src="assets/photos/roofs-dusk.jpg" alt="" width="1600" height="727" fetchpriority="high">
-    <div class="wrap page-head-inner">
-      <p class="label label--light">Writing</p>
-      <h1 class="page-title">Journal</h1>
-      <p class="page-lede">None of this is answered on a website. It is answered in the village, and then written down here. Newest first.</p>
+    <div class="wrap">
+      <p class="kicker"><span>Journal</span><span>Newest first</span></p>
+      <h1 class="page-title">The Weight of Belonging</h1>
+      <p class="lede page-lede">None of this is answered on a website. It is answered in the village, and then written down here.</p>
     </div>
   </header>
 
   <!-- EVERY POST, newest first. To add one:
        1. copy posts/first-post.html to posts/<slug>.html and write in it
-       2. copy an <article class="post-card"> below, point it at the new file, put it first
+       2. copy an <article class="post-row"> below, point it at the new file, put it first
        3. put the newest one or two on index.html too, and add the URL to sitemap.xml
        `python tools/pages.py check` fails until a post is listed here and in the sitemap. -->
-  <section class="section" aria-label="All posts">
+  <section class="section section--tight" aria-label="All posts">
     <div class="wrap">
-      <div class="post-grid post-grid--fit">
+      <div class="posts">
 
-        <article class="post-card reveal">
-          <div class="post-card-img">
+        <article class="post-row reveal">
+          <p class="post-date"><time datetime="2026-08-03">3 Aug 2026</time></p>
+          <div>
+            <h2 class="post-title"><a href="posts/second-post.html">The stories the soil tells</a></h2>
+            <p class="post-excerpt">There are hundreds of stories here. They don&rsquo;t happen in grand, orchestrated events. They happen quietly at dawn, when the mist still hangs over the hills.</p>
+          </div>
+          <div class="post-img">
             <img src="assets/photos/mist-hills.jpg" alt=""
                  srcset="assets/photos/540/mist-hills.jpg 540w, assets/photos/1080/mist-hills.jpg 1080w, assets/photos/mist-hills.jpg 1600w"
-                 sizes="(max-width: 700px) 100vw, 450px" width="1600" height="900" loading="lazy" decoding="async">
-          </div>
-          <div class="post-card-body">
-            <p class="post-date"><time datetime="2026-08-03">3 August 2026</time></p>
-            <h2 class="post-title"><a href="posts/second-post.html">The stories the soil tells</a></h2>
-            <p class="post-excerpt">There are hundreds of stories here. They don't happen in grand, orchestrated events. They happen quietly at dawn, when the mist still hangs over the hills.</p>
-            <p class="post-go" aria-hidden="true">Read &rarr;</p>
+                 sizes="(max-width: 820px) 100vw, 288px" width="1600" height="900" loading="lazy" decoding="async">
           </div>
         </article>
 
-        <article class="post-card reveal" style="--d:.08s">
-          <div class="post-card-img">
-            <img src="assets/photos/market-hills.jpg" alt=""
-                 srcset="assets/photos/540/market-hills.jpg 540w, assets/photos/1080/market-hills.jpg 1080w, assets/photos/market-hills.jpg 1600w"
-                 sizes="(max-width: 700px) 100vw, 450px" width="1600" height="661" loading="lazy" decoding="async">
-          </div>
-          <div class="post-card-body">
-            <p class="post-date"><time datetime="2026-07-28">28 July 2026</time></p>
+        <article class="post-row reveal">
+          <p class="post-date"><time datetime="2026-07-28">28 Jul 2026</time></p>
+          <div>
             <h2 class="post-title"><a href="posts/first-post.html">Why I am building this slowly</a></h2>
             <p class="post-excerpt">A village is not a product, and I would rather take two years than get this wrong.</p>
-            <p class="post-go" aria-hidden="true">Read &rarr;</p>
+          </div>
+          <div class="post-img">
+            <img src="assets/photos/market-hills.jpg" alt=""
+                 srcset="assets/photos/540/market-hills.jpg 540w, assets/photos/1080/market-hills.jpg 1080w, assets/photos/market-hills.jpg 1600w"
+                 sizes="(max-width: 820px) 100vw, 288px" width="1600" height="661" loading="lazy" decoding="async">
           </div>
         </article>
 
@@ -108,10 +113,10 @@
     </div>
   </section>
 
-  <nav class="section" aria-label="Next page">
+  <nav class="section section--tight" aria-label="Next page">
     <div class="wrap page-jump">
-      <a class="link-arrow link-arrow--back" href="days.html">The days</a>
-      <a class="link-arrow" href="visit.html">How to reach</a>
+      <a class="link-arrow link-arrow--back" href="photographs.html">Photographs</a>
+      <a class="link-arrow" href="visit.html">Coming here</a>
     </div>
   </nav>
 
@@ -119,6 +124,11 @@
 
 <!-- FOOT:START — written by tools/pages.py sync. Change FOOT there, not here. -->
 <footer class="site-foot on-night">
+  <div class="wrap foot-top">
+    <p class="foot-line">No fake experiences.<br><em>Just life as it is.</em></p>
+    <p class="foot-note">Nothing on this site is bookable. No route, photograph or host detail
+    is published before it is verified on the ground and consented to.</p>
+  </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="brand" href="index.html">
@@ -129,18 +139,16 @@
         </svg>
         <span class="brand-name">Maati Ra Katha</span>
       </a>
-      <p class="foot-loc">Sarangada · Nuagaon Block · Kandhamal · Odisha<br>20.227°N, 84.124°E</p>
-      <p class="foot-note">Nothing on this site is bookable. No route, photograph, or host detail is
-      published before it is verified on the ground and consented to.</p>
+      <p class="foot-loc">Sarangada · Nuagaon Block<br>Kandhamal · Odisha 762106<br>20.227°N 84.124°E</p>
     </div>
     <nav class="foot-nav" aria-label="Footer">
       <p class="foot-h">The site</p>
       <a href="index.html">Home</a>
-      <a href="land.html">The land</a>
+      <a href="land.html">The place</a>
+      <a href="days.html">The week</a>
       <a href="photographs.html">Photographs</a>
-      <a href="days.html">The days</a>
       <a href="journal.html" aria-current="page">Journal</a>
-      <a href="visit.html">How to reach</a>
+      <a href="visit.html">Coming here</a>
     </nav>
     <div class="foot-follow">
       <p class="foot-h">Follow the build</p>
@@ -164,7 +172,7 @@
   </div>
   <div class="wrap foot-base">
     <p>&copy; 2026 Maati Ra Katha</p>
-    <p class="hand">the story the soil tells</p>
+    <p>Sunrise over the fields. Sunset into the forest.</p>
   </div>
 </footer>
 <!-- FOOT:END -->

@@ -96,7 +96,7 @@ def test_image_without_alt_is_caught():
 
 def test_hand_edited_footer_is_caught():
     """The footer lives in tools/pages.py. An edit to one page's copy is drift."""
-    out = broken(lambda r: replace(r, "days.html", "the story the soil tells", "the story of the soil"))
+    out = broken(lambda r: replace(r, "days.html", "Sunrise over the fields. Sunset into the forest.", "Sunrise over the fields."))
     assert "run: python tools/pages.py sync" in out, out
 
 
